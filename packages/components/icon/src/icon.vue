@@ -3,13 +3,9 @@
         <slot></slot>
     </i>
 </template>
-<script lang="ts">
-export default {
-    name: 'sakuraIcon'
-}
-</script>
-<script setup lang="ts">
+<script setup lang="ts" name="SakuraIcon">
 import { computed, defineComponent } from 'vue'
+
 // import { IconProps } from './icon.ts'
 // const props = defineProps<IconProps>()
 // const style = computed(() => {

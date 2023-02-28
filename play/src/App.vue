@@ -14,7 +14,7 @@ import SakuraIcon from "@sakura-ui/components/icon"
     </div>
     <HelloWorld msg="Vite + Vue"/>
     <SakuraIcon >
-        2222
+        2222333
     </SakuraIcon>
 </template>
 
