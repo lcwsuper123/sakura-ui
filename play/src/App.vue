@@ -13,7 +13,7 @@ import SakuraIcon from "@sakura-ui/components/icon"
         </a>
     </div>
     <HelloWorld msg="Vite + Vue"/>
-    <SakuraIcon >
+    <SakuraIcon color="red">
         2222333
     </SakuraIcon>
 </template>
