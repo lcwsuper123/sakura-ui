@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
-import SakuraIcon from "@sakura-ui/components/icon"
+import SText from '@sakura-ui/components/text'
 </script>
 
 <template>
@@ -13,9 +13,7 @@ import SakuraIcon from "@sakura-ui/components/icon"
         </a>
     </div>
     <HelloWorld msg="Vite + Vue"/>
-    <SakuraIcon color="red">
-        2222333
-    </SakuraIcon>
+   <s-text></s-text>
 </template>
 
 <style scoped>

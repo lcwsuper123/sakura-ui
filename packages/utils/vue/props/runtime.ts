@@ -139,7 +139,6 @@ export const buildProps = <
     // ])) as any
 }
 /**
- * 参考饿了么ui理解写的
  * @param value
  */
 export const uFormPairs = (value: [string, any][]): {
