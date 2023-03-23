@@ -18,7 +18,7 @@
         "@popperjs/core": "npm:@sxzz/popperjs-es@^2.11.7",
         "@sakura-ui/components": "workspace:^1.0.0",
         "@sakura-ui/hooks": "workspace:^1.0.0",
-        "@sakura-ui/theme": "workspace:^1.0.0",
+        "@sakura-ui/theme-chalk": "workspace:^1.0.0",
         "@sakura-ui/utils": "workspace:^1.0.0",
         "@types/lodash": "^4.14.182",
         "@types/lodash-es": "^4.17.6",

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cc07c7b1-2ef1-4c9d-8a8d-3936042bd441" name="变更" comment="收款账户书">
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/project.config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.private.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/project.private.config.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2MliQLHwCTKnHt03Hmg6E6mhcIJ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;NewWatcherDialog.advanced.open&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Work/sakura-ui&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;watcher.settings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Work\人民法院在线服务3.0小程序\rmfyzxfw-miniapp\pages\gxkj\zxts\components" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="cc07c7b1-2ef1-4c9d-8a8d-3936042bd441" name="变更" comment="" />
+      <created>1678348554395</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1678348554395</updated>
+      <workItem from="1678348555170" duration="627000" />
+      <workItem from="1678350615983" duration="9000" />
+      <workItem from="1678411266474" duration="560000" />
+      <workItem from="1678414319009" duration="220000" />
+      <workItem from="1678417981776" duration="8860000" />
+      <workItem from="1678434061058" duration="1413000" />
+      <workItem from="1678438278793" duration="2183000" />
+      <workItem from="1678669006719" duration="671000" />
+      <workItem from="1678674871107" duration="1448000" />
+      <workItem from="1678765923552" duration="82000" />
+      <workItem from="1678842431363" duration="59000" />
+      <workItem from="1678860032570" duration="5808000" />
+      <workItem from="1678929535184" duration="12570000" />
+      <workItem from="1679015572610" duration="174000" />
+      <workItem from="1679018064417" duration="19000" />
+      <workItem from="1679023846563" duration="126000" />
+      <workItem from="1679024863299" duration="391000" />
+      <workItem from="1679029950514" duration="632000" />
+      <workItem from="1679043195185" duration="2025000" />
+      <workItem from="1679273951803" duration="897000" />
+      <workItem from="1679276646761" duration="108000" />
+      <workItem from="1679277063330" duration="145000" />
+      <workItem from="1679279877392" duration="204000" />
+      <workItem from="1679381590678" duration="613000" />
+      <workItem from="1679447151102" duration="23235000" />
+      <workItem from="1679534183793" duration="14117000" />
+    </task>
+    <task id="LOCAL-00001" summary="选择法院-选择身份类型样式修改">
+      <created>1678431709691</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1678431709691</updated>
+    </task>
+    <task id="LOCAL-00002" summary="选择法院-选择身份类型样式修改">
+      <created>1678434790648</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1678434790648</updated>
+    </task>
+    <task id="LOCAL-00003" summary="选择法院-选择身份类型样式修改">
+      <created>1678439275455</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1678439275455</updated>
+    </task>
+    <task id="LOCAL-00004" summary="选择法院-选择身份类型样式修改">
+      <created>1678439816510</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1678439816510</updated>
+    </task>
+    <task id="LOCAL-00005" summary="选择法院-选择身份类型样式修改">
+      <created>1678863940132</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1678863940132</updated>
+    </task>
+    <task id="LOCAL-00006" summary="选择法院-选择身份类型样式修改">
+      <created>1678864133561</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1678864133561</updated>
+    </task>
+    <task id="LOCAL-00007" summary="取消在线庭审联审">
+      <created>1679043918342</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1679043918342</updated>
+    </task>
+    <task id="LOCAL-00008" summary="背景音频与结束庭审提示">
+      <created>1679044348927</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1679044348927</updated>
+    </task>
+    <task id="LOCAL-00009" summary="排期">
+      <created>1679276679850</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1679276679850</updated>
+    </task>
+    <task id="LOCAL-00010" summary="共享空间在线庭审庭审笔录签字,参与人签过字后依然显示未签字, 受托人的委托承诺书显示错误, 陈穗燕法官进入远程信访，上传材料未显示材料bug修复">
+      <created>1679464470148</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1679464470148</updated>
+    </task>
+    <task id="LOCAL-00011" summary="共享空间在线庭审庭审笔录签字,参与人签过字后依然显示未签字, 受托人的委托承诺书显示错误, 陈穗燕法官进入远程信访，上传材料未显示材料bug修复">
+      <created>1679477036886</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1679477036886</updated>
+    </task>
+    <task id="LOCAL-00012" summary="代理见证签字状态修改">
+      <created>1679542137918</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1679542137918</updated>
+    </task>
+    <task id="LOCAL-00013" summary="整理在线庭审">
+      <created>1679554124327</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1679554124327</updated>
+    </task>
+    <task id="LOCAL-00014" summary="整理在线庭审">
+      <created>1679554893260</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1679554893260</updated>
+    </task>
+    <task id="LOCAL-00015" summary="收款账户书">
+      <created>1679556175944</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1679556175944</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="选择法院-选择身份类型样式修改" />
+    <MESSAGE value="取消在线庭审联审" />
+    <MESSAGE value="背景音频与结束庭审提示" />
+    <MESSAGE value="排期" />
+    <MESSAGE value="共享空间在线庭审庭审笔录签字,参与人签过字后依然显示未签字, 受托人的委托承诺书显示错误, 陈穗燕法官进入远程信访，上传材料未显示材料bug修复" />
+    <MESSAGE value="代理见证签字状态修改" />
+    <MESSAGE value="整理在线庭审" />
+    <MESSAGE value="收款账户书" />
+    <option name="LAST_COMMIT_MESSAGE" value="收款账户书" />
+  </component>
+</project>
