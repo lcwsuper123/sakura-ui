@@ -34,9 +34,9 @@ $element-separator: '__';
             $currentSelector + '.' + $B + $element-separator + $unit + ','
         }
     }
-    #{$currentSelector} {
+    // #{$currentSelector} {
 
-    }
+    // }
 
 }
 
