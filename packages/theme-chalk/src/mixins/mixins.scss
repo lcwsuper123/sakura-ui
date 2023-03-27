@@ -1,16 +1,18 @@
+@use 'function' as *;
+@forward 'config';
+@forward 'function';
 @use 'config' as *;
-@forward "config";
 
 // s-text
-@mixin b($block: 'text') {
-    $B: $namespaces + $common-separator + $block !global;
+@mixin b($block) {
+    $B: $namespace + $common-separator + $block !global;
     .#{$B} {
         @content;
     }
 }
 
 // s-text__title
-@mixin e($element: '') {
+@mixin e($element) {
     $E: $element !global;
     $selector: &;
     $currentSelector: '';
@@ -19,8 +21,30 @@
             $currentSelector + '.' + $B + $element-separator + $unit + ','
         }
     }
-    #{$currentSelector} {
-        
+    @if hitAllSpecialNestRule($selector) {
+        /**
+        @at-root使用之后会将另起一行不在进行嵌套
+        .demo {
+            @at-root .a{
+                color: red;
+            }
+        }
+        .demo{}
+        .a{
+            color: red;
+        }
+         */
+        @at-root {
+            #{$selector} {
+                #{$currentSelector} {
+                    @content;
+                }
+            }
+        }
+    } @else {
+        #{$currentSelector} {
+            @content;
+        }
     }
 
 }

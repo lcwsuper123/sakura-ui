@@ -1,2 +1,54 @@
 @use 'config';
-//@mixin
+
+/**
+将选择器变成string
+ */
+@function selectorToString($selector) {
+    // 检查类型
+    $selector: inspect($selector);
+    $selector: str-slice($selector, 2, -2);
+    @return $selector
+}
+
+/**
+命名中含有特殊规则
+ */
+@function hitAllSpecialNestRule($selector) {
+    @return containModifier($selector) or containWhenFlag($selector) of containPseudoClass($selector);
+}
+
+/**
+包含修饰符
+ */
+@function containModifier($selector) {
+    $selector: selectorToString($selector);
+    @if str-index($selector, config.$modifier-separator) {
+        @return true;
+    } @else {
+        @return false;
+    }
+}
+
+/**
+包含when修饰符
+ */
+@function containWhenFlag($selector) {
+    $selector: selectorToString($selector);
+    @if str-index($selector, '.' + config.$state-prefix) {
+        @return true;
+    } @else {
+        @return false;
+    }
+}
+
+/**
+是否包含伪类
+ */
+@function containPseudoClass($selector) {
+    $selector: selectorToString($selector);
+    @if str-index($selector, ':') {
+        @return true;
+    } @else {
+        @return false;
+    }
+}

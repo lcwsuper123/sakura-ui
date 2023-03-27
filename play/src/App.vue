@@ -13,37 +13,24 @@ import SText from '@sakura-ui/components/text'
 
 
 <style scoped lang="scss">
-$namespaces: 's';
-$common-separator: '-';
-$element-separator: '__';
-// s-text
-@mixin b($block) {
-    $B: $namespaces + $common-separator + $block !global;
-    .#{$B} {
-        @content;
-    }
-}
-
-// s-text__title
-@mixin e($element) {
-    $E: $element !global;
-    $selector: &;
-    $currentSelector: '';
-    @each $unit in $element {
-        $currentSelector: #{
-            $currentSelector + '.' + $B + $element-separator + $unit + ','
-        }
-    }
-    // #{$currentSelector} {
-
-    // }
-
-}
-
+//@import '@sakura-ui/theme-chalk/src/mixins/config.scss';
+//@import '@sakura-ui/theme-chalk/src/mixins/function.scss';
+@import '@sakura-ui/theme-chalk/src/mixins/mixins.scss';
 @include b(title) {
     color: pink;
-    //@include e(data) {
-    //    color: pink;
-    //}
+    @include e(data) {
+        color: red;
+    }
+}
+@include b('title::before') {
+    content: "";
+    width: 100px;
+    height: 100px;
+    background-color: rebeccapurple;
+    display: block;
+}
+$demo: str-slice('.selector-data_title', 2, -2);
+#{$demo}{
+    width: 100px;
 }
 </style>
