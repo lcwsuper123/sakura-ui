@@ -46,5 +46,31 @@
             @content;
         }
     }
+}
 
+/**
+修饰符
+ */
+@mixin m($modifier) {
+    $selector: &;
+    $currentSelector: '';
+    @each $unit in $modifier {
+        $currentSelector: #{$currentSelector + $selector + $modifier-separator + $unit + ','}
+    }
+    @at-root {
+        #{$currentSelector} {
+            @content;
+        }
+    }
+}
+
+/**
+是否选中状态之类的 $state: active -> is-active
+ */
+@mixin when($state) {
+    @at-root {
+        &.#{$state-prefix + $state} {
+            @content;
+        }
+    }
 }

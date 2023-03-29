@@ -18,7 +18,7 @@
 }
 
 /**
-包含修饰符
+是否包含修饰符
  */
 @function containModifier($selector) {
     $selector: selectorToString($selector);
@@ -29,9 +29,6 @@
     }
 }
 
-/**
-包含when修饰符
- */
 @function containWhenFlag($selector) {
     $selector: selectorToString($selector);
     @if str-index($selector, '.' + config.$state-prefix) {
@@ -51,4 +48,52 @@
     } @else {
         @return false;
     }
+}
+
+/**
+连接变量名
+ */
+@function joinVarName($list) {
+    $name: '--' + config.$namespace;
+    @each $unit in $list {
+        @if $unit != '' {
+            $name: $name + '-' + $unit;
+        }
+    }
+    @return $name
+}
+
+/**
+获取css变量名称 getCssVarName('text', 'error') -> --s-text-error
+ */
+@function getCssVarName($args...) {
+    @return joinVarName($args);
+}
+
+/**
+获取css变量 getCssVar('text', 'success') ->  var(--s-text-success)
+ */
+@function getCssVar($args...) {
+    @return var(#{joinVarName($args)});
+}
+
+/**
+获取css变量能设置默认值 getCssVarWithDefault(('text', 'success'), red) -> var(--s-text-success, red)
+ */
+@function getCssVarWithDefault($args, $default) {
+    @return var(#{joinVarName($args)}, #{$default})
+}
+
+/**
+    bem('text', 'title', 'success') -> s-text__title--success
+ */
+@function bem($block, $element, $modifier) {
+    $name: config.$namespace + config.$common-separator + $block;
+    @if ($element != '') {
+        $name: $name + config.$element-separator + $element
+    }
+    @if ($modifier != '') {
+        $name: $name + config.$modifier-separator + $modifier
+    }
+    @return $name
 }

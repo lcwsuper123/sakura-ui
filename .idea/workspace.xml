@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc07c7b1-2ef1-4c9d-8a8d-3936042bd441" name="变更" comment="收款账户书">
+    <list default="true" id="cc07c7b1-2ef1-4c9d-8a8d-3936042bd441" name="变更" comment="theme-chalk">
+      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/theme-chalk/src/mixins/function.scss" beforeDir="false" afterPath="$PROJECT_DIR$/packages/theme-chalk/src/mixins/function.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/theme-chalk/src/mixins/mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/packages/theme-chalk/src/mixins/mixins.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/play/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/play/src/App.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,6 +82,8 @@
       <workItem from="1679447151102" duration="23235000" />
       <workItem from="1679534183793" duration="14117000" />
       <workItem from="1679904447757" duration="165000" />
+      <workItem from="1679986609518" duration="1067000" />
+      <workItem from="1680059469959" duration="5789000" />
     </task>
     <task id="LOCAL-00001" summary="选择法院-选择身份类型样式修改">
       <created>1678431709691</created>
