@@ -1,5 +1,10 @@
 <template>
-    <!--<s-text></s-text>-->
+    <s-text
+        tag="p"
+        type="error"
+    >
+        内容
+    </s-text>
     <p class="s-title">
         <span class="s-title__data">data1</span>
         <span class="s-title__sex">sex</span>

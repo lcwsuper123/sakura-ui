@@ -13,6 +13,7 @@ importers:
       '@pnpm/types': ^8.4.0
       '@popperjs/core': npm:@sxzz/popperjs-es@^2.11.7
       '@sakura-ui/components': workspace:^1.0.0
+      '@sakura-ui/constants': workspace:^1.0.0
       '@sakura-ui/hooks': workspace:^1.0.0
       '@sakura-ui/theme-chalk': workspace:^1.0.0
       '@sakura-ui/utils': workspace:^1.0.0
@@ -72,6 +73,7 @@ importers:
       '@floating-ui/dom': registry.npmmirror.com/@floating-ui/dom/1.2.5
       '@popperjs/core': registry.npmmirror.com/@sxzz/popperjs-es/2.11.7
       '@sakura-ui/components': link:packages/components
+      '@sakura-ui/constants': link:packages/constants
       '@sakura-ui/hooks': link:packages/hooks
       '@sakura-ui/theme-chalk': link:packages/theme-chalk
       '@sakura-ui/utils': link:packages/utils

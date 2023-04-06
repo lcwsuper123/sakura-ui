@@ -43,10 +43,9 @@ export const _bem = (
  */
 export const useGetDerivedNamespace = (namespaceOverrides?: Ref<string | undefined> | string) => {
     const derivedNamespace = namespaceOverrides || inject(namespaceContextKey, ref(defaultNamespace))
-    const namespace = computed(() => {
+    return computed(() => {
         return unref(derivedNamespace) || defaultNamespace
     })
-    return namespace
 }
 /**
  * 创建组件的命名空间

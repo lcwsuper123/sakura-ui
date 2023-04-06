@@ -17,6 +17,7 @@
         "@floating-ui/dom": "^1.0.1",
         "@popperjs/core": "npm:@sxzz/popperjs-es@^2.11.7",
         "@sakura-ui/components": "workspace:^1.0.0",
+        "@sakura-ui/constants": "workspace:^1.0.0",
         "@sakura-ui/hooks": "workspace:^1.0.0",
         "@sakura-ui/theme-chalk": "workspace:^1.0.0",
         "@sakura-ui/utils": "workspace:^1.0.0",

@@ -1,14 +1,28 @@
 import { ExtractPropTypes } from 'vue'
 import { buildProps } from '@sakura-ui/utils/index'
+import { componentSizes } from '@sakura-ui/constants/index'
+import type Text from './text.vue'
 
 export const textProps = buildProps({
-    text: {
+    // 文字标签
+    tag: {
         type: String,
-        default: '内容'
+        default: 'span'
     },
-    color: {
+    // 文字类型
+    type: {
         type: String,
-        default: 'pink'
+        values: ['primary', 'success', 'info', 'warning', 'danger', ''],
+        default: ''
+    },
+    // 是否只显示一行
+    truncated: Boolean,
+    // 文字尺寸
+    size: {
+        type: String,
+        values: componentSizes,
+        default: ''
     }
 })
-export type TextProp = ExtractPropTypes<typeof textProps>
+export type TextProps = ExtractPropTypes<typeof textProps>
+export type TextInstance = InstanceType<typeof Text>
