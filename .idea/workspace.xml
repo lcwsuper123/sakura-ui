@@ -4,20 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc07c7b1-2ef1-4c9d-8a8d-3936042bd441" name="变更" comment="funcation.scss完善与了解">
-      <change afterPath="$PROJECT_DIR$/packages/constants/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/constants/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/constants/size.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/theme-chalk/src/text.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+    <list default="true" id="cc07c7b1-2ef1-4c9d-8a8d-3936042bd441" name="变更" comment="var.scss完善">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/components/text/src/text.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/components/text/src/text.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/components/text/src/text.vue" beforeDir="false" afterPath="$PROJECT_DIR$/packages/components/text/src/text.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/hooks/use-namespace/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hooks/use-namespace/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/theme-chalk/src/common/var.scss" beforeDir="false" afterPath="$PROJECT_DIR$/packages/theme-chalk/src/common/var.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/play/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/play/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/theme-chalk/src/text.scss" beforeDir="false" afterPath="$PROJECT_DIR$/packages/theme-chalk/src/text.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,28 +22,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "NewWatcherDialog.advanced.open": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Work/sakura-ui/packages/constants",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "D:\\Work\\sakura-ui\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "watcher.settings",
-    "ts.external.directory.path": "D:\\Work\\sakura-ui\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;NewWatcherDialog.advanced.open&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Work/sakura-ui/packages/constants&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;D:\\Work\\sakura-ui\\node_modules\\prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;watcher.settings&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\Work\\sakura-ui\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Work\sakura-ui\packages\constants" />
       <recent name="D:\Work\人民法院在线服务3.0小程序\rmfyzxfw-miniapp\pages\gxkj\zxts\components" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Work\sakura-ui\packages\theme-chalk\src" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
@@ -97,7 +90,8 @@
       <workItem from="1680266969551" duration="1352000" />
       <workItem from="1680329059354" duration="245000" />
       <workItem from="1680332814480" duration="606000" />
-      <workItem from="1680766084578" duration="5228000" />
+      <workItem from="1680766084578" duration="7037000" />
+      <workItem from="1680829044014" duration="157000" />
     </task>
     <task id="LOCAL-00001" summary="选择法院-选择身份类型样式修改">
       <created>1678431709691</created>
@@ -211,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680075722590</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="var.scss完善">
+      <created>1680772909770</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1680772909770</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,6 +228,7 @@
     <MESSAGE value="整理在线庭审" />
     <MESSAGE value="收款账户书" />
     <MESSAGE value="funcation.scss完善与了解" />
-    <option name="LAST_COMMIT_MESSAGE" value="funcation.scss完善与了解" />
+    <MESSAGE value="var.scss完善" />
+    <option name="LAST_COMMIT_MESSAGE" value="var.scss完善" />
   </component>
 </project>

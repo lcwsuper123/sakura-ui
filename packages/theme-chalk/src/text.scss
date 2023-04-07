@@ -15,9 +15,12 @@
     align-self: center;
     font-size: getCssVar('text', 'font-size');
     color: getCssVar('text', 'color');
-    @each $type in $types {
-        @include m($type) {
-            color: getCssVar();
-        }
-    }
+    //@each $type in $types {
+    //    @include m($type) {
+    //        color: getCssVar();
+    //    }
+    //}
+}
+div{
+    width: 100px;
 }

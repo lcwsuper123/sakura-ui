@@ -1,5 +1,7 @@
 @use 'sass:math';
 @use 'sass:map';
+@use '../mixins/function' as *;
+
 
 $types: primary, success, warning, danger, error, info;
 
