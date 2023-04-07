@@ -7,6 +7,12 @@
 :root {
     @include set-css-var-value('color-white', $color-white);
     @include set-css-var-value('color-black', $color-black);
+    @include set-css-var-value('color-success', $color-success);
+    @include set-css-var-value('color-primary', $color-primary);
+    @include set-css-var-value('color-warning', $color-warning);
+    @include set-css-var-value('color-danger', $color-danger);
+    @include set-css-var-value('color-error', $color-error);
+    @include set-css-var-value('color-info', $color-info);
 
     // get rgb
     @each $type in (primary, success, warning, danger, error, info) {

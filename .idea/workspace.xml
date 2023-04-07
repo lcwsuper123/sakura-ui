@@ -6,8 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="cc07c7b1-2ef1-4c9d-8a8d-3936042bd441" name="变更" comment="var.scss完善">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/theme-chalk/src/common/var.scss" beforeDir="false" afterPath="$PROJECT_DIR$/packages/theme-chalk/src/common/var.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/theme-chalk/src/mixins/_var.scss" beforeDir="false" afterPath="$PROJECT_DIR$/packages/theme-chalk/src/mixins/_var.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/theme-chalk/src/text.scss" beforeDir="false" afterPath="$PROJECT_DIR$/packages/theme-chalk/src/text.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/play/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/play/src/App.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,6 +93,7 @@
       <workItem from="1680332814480" duration="606000" />
       <workItem from="1680766084578" duration="7037000" />
       <workItem from="1680829044014" duration="157000" />
+      <workItem from="1680850078495" duration="508000" />
     </task>
     <task id="LOCAL-00001" summary="选择法院-选择身份类型样式修改">
       <created>1678431709691</created>

@@ -1,7 +1,19 @@
 <template>
     <s-text
         tag="p"
-        type="error"
+        type="success"
+    >
+        内容
+    </s-text>
+    <s-text
+        tag="p"
+        type="warning"
+    >
+        内容
+    </s-text>
+    <s-text
+        tag="p"
+        type="info"
     >
         内容
     </s-text>

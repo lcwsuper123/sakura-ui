@@ -3,6 +3,7 @@
 @use 'mixins/mixins' as *;
 @use 'mixins/var' as *;
 @use 'common/var' as *;
+@use 'mixins/_var' as *;
 
 @include b(text) {
     @include set-component-css-var('text', $text)
@@ -17,10 +18,16 @@
     color: getCssVar('text', 'color');
     //@each $type in $types {
     //    @include m($type) {
-    //        color: getCssVar();
+    //        color: rgb(getCssVar('color', $type, 'rgb'));
     //    }
     //}
+    @each $type in $types {
+        &.#{bem('text', '', $type)} {
+            @include css-var-from-global(('text', 'color'), ('color', $type));
+        }
+    }
 }
-div{
+
+div {
     width: 100px;
 }
