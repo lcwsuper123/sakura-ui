@@ -22,6 +22,12 @@ export const textProps = buildProps({
         type: String,
         values: componentSizes,
         default: ''
+    },
+    // 第几行开始超出部分隐藏
+    multiline: {
+        type: Number,
+        values: [-1, 1, 2, 3, 4, 5],
+        default: -1
     }
 })
 export type TextProps = ExtractPropTypes<typeof textProps>

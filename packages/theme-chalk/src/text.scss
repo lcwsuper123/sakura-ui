@@ -16,18 +16,34 @@
     align-self: center;
     font-size: getCssVar('text', 'font-size');
     color: getCssVar('text', 'color');
-    //@each $type in $types {
-    //    @include m($type) {
-    //        color: rgb(getCssVar('color', $type, 'rgb'));
-    //    }
-    //}
     @each $type in $types {
         &.#{bem('text', '', $type)} {
             @include css-var-from-global(('text', 'color'), ('color', $type));
         }
     }
-}
-
-div {
-    width: 100px;
+    @include when(truncated) {
+        max-width: 100%;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        display: inline-block;
+        overflow: hidden;
+    }
+    @each $size in (large, default, small) {
+        @include m($size) {
+            @include set-css-var-value(('text', 'font-size'), map.get($text-font-size, $size));
+        }
+    }
+    @each $num in (1, 2, 3, 4, 5) {
+        @include m(multiline-#{$num}) {
+            @include set-css-var-value(('text', 'multiline'), $num);
+        }
+    }
+    @include when(multiline) {
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: getCssVar('text', 'multiline');
+    }
 }

@@ -280,7 +280,17 @@ $text: () !default;
 $text: map.deep-merge(
         (
             'font-size': getCssVar('font-size', 'base'),
-            'color': getCssVar('text-color', 'regular')
+            'color': getCssVar('text-color', 'regular'),
+            'multiline': -1
         ),
         $text
+);
+$text-font-size: () !default;
+$text-font-size: map.merge(
+        (
+            'large': getCssVar('font-size', 'medium'),
+            'default': getCssVar('font-size', 'base'),
+            'small': getCssVar('font-size', 'extra-small'),
+        ),
+        $text-font-size
 );

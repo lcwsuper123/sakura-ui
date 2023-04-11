@@ -12,15 +12,14 @@ import { useNamespace } from '@sakura-ui/hooks/index'
 const props = defineProps(textProps)
 const ns = useNamespace('text')
 const textKls = computed(() => {
-    return [ns.b(), ns.m(props.type), ns.m(props.size), ns.is('truncated', props.truncated)]
+    const { type, size, truncated, multiline } = props
+    return [
+        ns.b(),
+        ns.m(type),
+        ns.m(size),
+        ns.is('truncated', truncated),
+        ns.is('multiline', multiline > 0),
+        ns.m(`multiline-${ multiline }`)
+    ]
 })
-// console.log(ns.is('loading', true))
-// console.log(ns.cssVar({
-//     'background': 'pink',
-//     'borderRadius': '24px'
-// }))
-// console.log(ns.cssBlockVar('text', {
-//     'background': 'pink',
-//     'borderRadius': '24px'
-// }))
 </script>
