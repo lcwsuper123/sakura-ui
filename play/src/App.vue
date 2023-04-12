@@ -1,6 +1,13 @@
 <template>
     <s-text
         tag="p"
+        type="primary"
+        size="large"
+    >
+        primary
+    </s-text>
+    <s-text
+        tag="p"
         type="success"
     >
         success
@@ -38,10 +45,30 @@
             multilinemultilinemultilinemultilinemultiline
         </s-text>
     </div>
+    <s-button
+    >
+        default
+    </s-button>
+    <s-button
+        type="success"
+    >
+        success
+    </s-button>
+    <s-button
+        type="primary"
+    >
+        primary
+    </s-button>
+    <s-button
+        type="info"
+    >
+        info
+    </s-button>
 </template>
 
 <script setup lang="ts">
 import SText from '@sakura-ui/components/text'
+import SButton from '@sakura-ui/components/button'
 </script>
 
 

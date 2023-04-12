@@ -294,3 +294,13 @@ $text-font-size: map.merge(
         ),
         $text-font-size
 );
+$button: () !default;
+$button: map.deep-merge(
+        (
+            'background-color': getCssVar('fill', 'color', 'blank'),
+            'text-color': getCssVar('text', 'color', 'regular'),
+            'hover-background-color': getCssVar('color', 'primary', 'light', '9'),
+            'hover-text-color': getCssVar('color', 'primary')
+        ),
+        $button
+);

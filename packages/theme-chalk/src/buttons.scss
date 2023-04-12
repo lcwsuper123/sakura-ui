@@ -1,0 +1,45 @@
+@use 'sass:map';
+@use 'mixins/mixins' as *;
+@use 'mixins/var' as *;
+@use 'common/var' as *;
+@use 'mixins/_var' as *;
+
+@include b(button) {
+    @include set-component-css-var('button', $button);
+}
+
+@include b(button) {
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    height: 32px;
+    padding: 8px 15px;
+    box-sizing: border-box;
+    text-align: center;
+    cursor: pointer;
+    outline: none !important;
+    vertical-align: middle;
+    user-select: none;
+    transition: .1s;
+    -webkit-appearance: none;
+    background-color: getCssVar('button', 'background', 'color');
+    color: getCssVar('button', 'text', 'color');
+    border: none;
+    @each $type in $types {
+        &.#{bem('button', '', $type)} {
+            @include set-css-var-value(('button', 'background', 'color'), getCssVar('color', $type));
+            @include set-css-var-value(('button', 'text', 'color'), getCssVar('color', 'white'));
+            @include set-css-var-value(('button', 'hover', 'background', 'color'), getCssVar('color', $type, 'light', '3'));
+            @include set-css-var-value(('button', 'hover', 'text', 'color'), getCssVar('color', 'white'))
+        }
+    }
+    &:focus,
+    &:hover {
+        background-color: getCssVar('button', 'hover', 'background', 'color');
+        color: getCssVar('button', 'hover', 'text', 'color');
+    }
+    & + & {
+        margin-left: 12px;
+    }
+}

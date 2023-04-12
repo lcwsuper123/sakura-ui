@@ -19,7 +19,7 @@ const textKls = computed(() => {
         ns.m(size),
         ns.is('truncated', truncated),
         ns.is('multiline', multiline > 0),
-        ns.m(`multiline-${ multiline }`)
+        multiline > 0 && ns.m(`multiline-${ multiline }`)
     ]
 })
 </script>

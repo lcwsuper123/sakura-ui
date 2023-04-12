@@ -35,5 +35,14 @@
 
     // common component size
     @include set-component-css-var('component-size', $common-component-size);
+    @include set-component-css-var('fill-color', $fill-color);
 
+}
+
+:root {
+    color-scheme: light;
+    // get rgb
+    @each $type in (primary, success, warning, danger, error, info) {
+        @include set-css-color-type($colors, $type);
+    }
 }
