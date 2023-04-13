@@ -7,6 +7,10 @@ export const buttonProps = buildProps({
         type: String,
         values: ['', 'primary', 'success', 'warning', 'danger', 'info', 'text'],
         default: ''
+    },
+    plain: {
+        type: Boolean,
+        default: false
     }
 })
 

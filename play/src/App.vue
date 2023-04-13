@@ -47,7 +47,7 @@
     </div>
     <s-button
     >
-        default
+        DEFAULT
     </s-button>
     <s-button
         type="success"
@@ -63,6 +63,23 @@
         type="info"
     >
         info
+    </s-button>
+    <s-button
+        plain
+    >
+        plain
+    </s-button>
+    <s-button
+        plain
+        type="primary"
+    >
+        primary-plain
+    </s-button>
+    <s-button
+        plain
+        type="success"
+    >
+        success-plain
     </s-button>
 </template>
 

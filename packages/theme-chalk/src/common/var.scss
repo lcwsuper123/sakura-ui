@@ -178,7 +178,7 @@ $border-radius: map.merge(
         ),
         $border-radius
 );
-
+$border: getCssVar('border-width') getCssVar('border-style') getCssVar('border-color');
 $box-shadow: () !default;
 $box-shadow: map.merge(
         (
@@ -300,7 +300,11 @@ $button: map.deep-merge(
             'background-color': getCssVar('fill', 'color', 'blank'),
             'text-color': getCssVar('text', 'color', 'regular'),
             'hover-background-color': getCssVar('color', 'primary', 'light', '9'),
-            'hover-text-color': getCssVar('color', 'primary')
+            'hover-text-color': getCssVar('color', 'primary'),
+            'hover-border-color': getCssVar('color-primary-light-7'),
+            'border-color': getCssVar('border-color'),
+            'font-weight': getCssVar('font-weight-primary')
+            //'border-radius'
         ),
         $button
 );

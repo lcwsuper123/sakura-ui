@@ -8,6 +8,89 @@
     @include set-component-css-var('button', $button);
 }
 
+@mixin button-variant($type) {
+    $button-color-types: (
+        '': (
+            'text-color': (
+                'color',
+                'white'
+            ),
+            'background-color': (
+                'color',
+                $type
+            ),
+            'border-color': (
+                'color',
+                $type
+            )
+        ),
+        'hover': (
+            'text-color': (
+                'color',
+                'white'
+            ),
+            'background-color': (
+                'color',
+                $type,
+                'light-3'
+            ),
+            'border-color': (
+                'color',
+                $type,
+                'light-3'
+            )
+        )
+    );
+    @each $type, $typeMap in $button-color-types {
+        @each $typeColor, $list in $typeMap {
+            @include css-var-from-global(('button', $type, $typeColor), $list);
+        }
+    }
+    &.is-plain {
+        @include button-plain($type);
+    }
+}
+
+@mixin button-plain($type) {
+    $button-color-types: (
+        '': (
+            'text-color': (
+                'color',
+                $type
+            ),
+            'background-color': (
+                'color',
+                $type,
+                'light-9'
+            ),
+            'border-color': (
+                'color',
+                $type,
+                'light-5'
+            )
+        ),
+        'hover': (
+            'text-color': (
+                'color',
+                'white'
+            ),
+            'background-color': (
+                'color',
+                $type
+            ),
+            'border-color': (
+                'color',
+                $type
+            )
+        )
+    );
+    @each $type, $typeMap in $button-color-types {
+        @each $typeColor, $list in $typeMap {
+            @include css-var-from-global(('button', $type, $typeColor), $list);
+        }
+    }
+}
+
 @include b(button) {
     display: inline-block;
     align-items: center;
@@ -25,19 +108,21 @@
     -webkit-appearance: none;
     background-color: getCssVar('button', 'background', 'color');
     color: getCssVar('button', 'text', 'color');
-    border: none;
+    border: getCssVar('border');
+    border-color: getCssVar('button', 'border', 'color');
+    border-radius: getCssVar('border', 'radius', 'base');
+    font-weight: getCssVar('button', 'font', 'weight');
     @each $type in $types {
-        &.#{bem('button', '', $type)} {
-            @include set-css-var-value(('button', 'background', 'color'), getCssVar('color', $type));
-            @include set-css-var-value(('button', 'text', 'color'), getCssVar('color', 'white'));
-            @include set-css-var-value(('button', 'hover', 'background', 'color'), getCssVar('color', $type, 'light', '3'));
-            @include set-css-var-value(('button', 'hover', 'text', 'color'), getCssVar('color', 'white'))
+        @include m($type) {
+            @include button-variant($type);
         }
     }
     &:focus,
     &:hover {
         background-color: getCssVar('button', 'hover', 'background', 'color');
         color: getCssVar('button', 'hover', 'text', 'color');
+        border-color: getCssVar('button', 'hover', 'border', 'color');
+        outline: none;
     }
     & + & {
         margin-left: 12px;

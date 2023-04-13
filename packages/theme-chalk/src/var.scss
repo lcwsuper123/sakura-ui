@@ -21,12 +21,21 @@
 
     @include set-component-css-var('font-size', $font-size);
     @include set-component-css-var('text-color', $text-color);
+    @include set-css-var-value('font-weight-primary', 500);
 
     // z-index
     @include set-component-css-var('index', $z-index);
 
+    // border
     // border-radius
     @include set-component-css-var('border-radius', $border-radius);
+    // border-color
+    @include set-component-css-var('border-color', $border-color);
+    @include set-css-var-value('border-width', $border-width);
+    @include set-css-var-value('border-style', $border-style);
+    @include set-css-var-value('border-color-hover', $border-color-hover);
+    @include set-css-var-value('border', $border);
+
 
     @include set-component-css-var('transition-duration', $transition-duration);
 
@@ -35,6 +44,7 @@
 
     // common component size
     @include set-component-css-var('component-size', $common-component-size);
+    // fill-color
     @include set-component-css-var('fill-color', $fill-color);
 
 }

@@ -1,6 +1,6 @@
 <template>
     <button
-        :class="[ns.b(), ns.m(type)]"
+        :class="[ns.b(), ns.m(type), ns.is('plain', plain)]"
     >
         <slot />
     </button>
