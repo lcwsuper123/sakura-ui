@@ -55,4 +55,12 @@
     @each $type in (primary, success, warning, danger, error, info) {
         @include set-css-color-type($colors, $type);
     }
+
+    button, input, optgroup, select, textarea {
+        font-family: inherit;
+    }
+
+    button, input {
+        overflow: visible;
+    }
 }

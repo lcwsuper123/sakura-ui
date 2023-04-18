@@ -39,6 +39,22 @@
                 $type,
                 'light-3'
             )
+        ),
+        'active': (
+            'text-color': (
+                'color',
+                'white'
+            ),
+            'background-color': (
+                'color',
+                $type,
+                'dark-2'
+            ),
+            'border-color': (
+                'color',
+                $type,
+                'dark-2'
+            )
         )
     );
     @each $type, $typeMap in $button-color-types {
@@ -48,6 +64,16 @@
     }
     &.is-plain {
         @include button-plain($type);
+    }
+    &.is-disabled {
+        &,
+        &:hover,
+        &:focus,
+        &:active {
+            color: getCssVar('color', $type, 'light-5');
+            background-color: getCssVar('color', $type, 'light-9');
+            border-color: getCssVar('color', $type, 'light-8');
+        }
     }
 }
 
@@ -82,6 +108,12 @@
                 'color',
                 $type
             )
+        ),
+        'active': (
+            'text-color': (
+                'color',
+                'white'
+            )
         )
     );
     @each $type, $typeMap in $button-color-types {
@@ -96,7 +128,7 @@
     align-items: center;
     justify-content: center;
     line-height: 1;
-    height: 32px;
+    height: map.get($input-height, 'default');
     padding: 8px 15px;
     box-sizing: border-box;
     text-align: center;
@@ -112,11 +144,6 @@
     border-color: getCssVar('button', 'border', 'color');
     border-radius: getCssVar('border', 'radius', 'base');
     font-weight: getCssVar('button', 'font', 'weight');
-    @each $type in $types {
-        @include m($type) {
-            @include button-variant($type);
-        }
-    }
     &:focus,
     &:hover {
         background-color: getCssVar('button', 'hover', 'background', 'color');
@@ -124,7 +151,32 @@
         border-color: getCssVar('button', 'hover', 'border', 'color');
         outline: none;
     }
+    &:active {
+        background-color: getCssVar('button', 'active', 'background', 'color');
+        color: getCssVar('button', 'active', 'text', 'color');
+        border-color: getCssVar('button', 'active', 'border', 'color');
+        outline: none;
+    }
     & + & {
         margin-left: 12px;
+    }
+    @include when(round) {
+        border-radius: getCssVar('border', 'radius', 'round');
+    }
+    @include when(disabled) {
+        &,
+        &:focus,
+        &:hover,
+        &.active {
+            cursor: not-allowed;
+            background-color: getCssVar('button', 'disabled', 'background', 'color');
+            color: getCssVar('button', 'disabled', 'text', 'color');
+            border-color: getCssVar('button', 'disabled', 'border', 'color')
+        }
+    }
+    @each $type in $types {
+        @include m($type) {
+            @include button-variant($type);
+        }
     }
 }

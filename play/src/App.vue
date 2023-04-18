@@ -66,6 +66,7 @@
     </s-button>
     <s-button
         plain
+        round
     >
         plain
     </s-button>
@@ -81,11 +82,28 @@
     >
         success-plain
     </s-button>
+    <s-button
+        type="success"
+        plain
+        round
+    >
+        success-round
+    </s-button>
+    <s-button
+        type="danger"
+        round
+        plain
+        disabled
+    >
+        disabled
+    </s-button>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
 import SText from '@sakura-ui/components/text'
 import SButton from '@sakura-ui/components/button'
+const prop = ref('width')
 </script>
 
 

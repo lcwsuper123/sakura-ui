@@ -1,6 +1,15 @@
 <template>
     <button
-        :class="[ns.b(), ns.m(type), ns.is('plain', plain)]"
+        :class="[
+            ns.b(),
+            ns.m(type),
+            size ? ns.m(size) : '',
+            ns.is('plain', plain),
+            ns.is('round', round),
+            ns.is('disabled', disabled)
+        ]"
+        :disabled="disabled"
+        :type="nativeType"
     >
         <slot />
     </button>

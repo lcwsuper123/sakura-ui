@@ -299,12 +299,20 @@ $button: map.deep-merge(
         (
             'background-color': getCssVar('fill', 'color', 'blank'),
             'text-color': getCssVar('text', 'color', 'regular'),
+            'border-color': getCssVar('border-color'),
+            'font-weight': getCssVar('font-weight-primary'),
             'hover-background-color': getCssVar('color', 'primary', 'light', '9'),
             'hover-text-color': getCssVar('color', 'primary'),
             'hover-border-color': getCssVar('color-primary-light-7'),
-            'border-color': getCssVar('border-color'),
-            'font-weight': getCssVar('font-weight-primary')
-            //'border-radius'
+            'disabled-background-color': getCssVar('fill-color', 'blank'),
+            'disabled-text-color': getCssVar('text-color', 'disabled'),
+            'disabled-border-color': getCssVar('border-color', 'light'),
+            'active-text-color':  getCssVar('button-hover-text-color'),
+            'active-border-color': getCssVar('color-primary'),
+            'active-background-color': getCssVar('button', 'hover-background-color')
         ),
         $button
 );
+// input
+$input-height: () !default;
+$input-height: map.merge($common-component-size, $input-height);
