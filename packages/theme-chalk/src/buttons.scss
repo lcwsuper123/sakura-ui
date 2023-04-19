@@ -144,6 +144,7 @@
     border-color: getCssVar('button', 'border', 'color');
     border-radius: getCssVar('border', 'radius', 'base');
     font-weight: getCssVar('button', 'font', 'weight');
+    font-size: getCssVar('font', 'size', 'base');
     &:focus,
     &:hover {
         background-color: getCssVar('button', 'hover', 'background', 'color');
@@ -174,9 +175,31 @@
             border-color: getCssVar('button', 'disabled', 'border', 'color')
         }
     }
+    @include when(plain) {
+        @include css-var-from-global(('button', 'hover', 'text-color'), ('color', 'primary'));
+        @include css-var-from-global(('button', 'hover', 'background-color'), ('fill', 'color', 'blank'));
+        @include css-var-from-global(('button', 'hover', 'border-color'), ('color', 'primary'));
+    }
+    @include when(circle) {
+        border-radius: 50%;
+        padding: 8px;
+    }
     @each $type in $types {
         @include m($type) {
             @include button-variant($type);
+        }
+    }
+    @each $size in (large, small) {
+        @include m($size) {
+            @include set-css-var-value(('button', 'size'), map.get($input-height, $size));
+            height: getCssVar('button', 'size');
+            font-size: map.get($button-font-size, $size);
+            padding: map.get($button-padding-vertical, $size) - $button-border-width map.get($button-padding-horizontal, $size) - $button-border-width;
+            border-radius: map.get($button-border-radius, $size);
+            &.is-circle {
+                padding: map.get($button-padding-vertical, $size) - $button-border-width;
+                width: getCssVar('button', 'size');
+            }
         }
     }
 }

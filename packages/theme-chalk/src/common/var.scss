@@ -294,6 +294,7 @@ $text-font-size: map.merge(
         ),
         $text-font-size
 );
+// Button
 $button: () !default;
 $button: map.deep-merge(
         (
@@ -307,11 +308,48 @@ $button: map.deep-merge(
             'disabled-background-color': getCssVar('fill-color', 'blank'),
             'disabled-text-color': getCssVar('text-color', 'disabled'),
             'disabled-border-color': getCssVar('border-color', 'light'),
-            'active-text-color':  getCssVar('button-hover-text-color'),
+            'active-text-color': getCssVar('button-hover-text-color'),
             'active-border-color': getCssVar('color-primary'),
             'active-background-color': getCssVar('button', 'hover-background-color')
         ),
         $button
+);
+$button-border-width: $border-width;
+$button-font-size: () !default;
+$button-font-size: map.deep-merge(
+        (
+            'large': getCssVar('font', 'size', 'base'),
+            'default': getCssVar('font', 'size', 'base'),
+            'small': 12px
+        ),
+        $button-font-size
+);
+$button-border-radius: () !default;
+$button-border-radius: map.deep-merge(
+        (
+            'large': getCssVar('border', 'radius', 'base'),
+            'default': getCssVar('border', 'radius', 'base'),
+            'small': calc(#{getCssVar('border', 'radius', 'base')} - 1px)
+        ),
+        $button-border-radius
+);
+$button-padding-vertical: () !default;
+$button-padding-vertical: map.deep-merge(
+        (
+            'large': 13px,
+            'default': 9px,
+            'small': 6px
+        ),
+        $button-padding-vertical
+);
+$button-padding-horizontal: () !default;
+$button-padding-horizontal: map.deep-merge(
+        (
+            'large': 20px,
+            'default': 16px,
+            'small': 12px
+        ),
+        $button-padding-horizontal
 );
 // input
 $input-height: () !default;

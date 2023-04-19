@@ -66,14 +66,14 @@ export const useNamespace = (block: string, namespaceOverrides?: Ref<string | un
      * @param element
      */
     const e = (element = '') => {
-        return _bem(namespace.value, block, '', element, '')
+        return element && _bem(namespace.value, block, '', element, '')
     }
     /**
      * 获取组件修饰符classname
      * @param modifier
      */
     const m = (modifier = '') => {
-        return _bem(namespace.value, block, '', '', modifier)
+        return modifier && _bem(namespace.value, block, '', '', modifier)
     }
     /**
      * 获取组件内容的classname

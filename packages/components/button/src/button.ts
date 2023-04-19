@@ -25,6 +25,11 @@ export const buttonProps = buildProps({
         type: Boolean,
         default: false
     },
+    // 是否为圆形
+    circle: {
+        type: Boolean,
+        default: false
+    },
     // 按钮原生类型
     nativeType: {
         type: String,

@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc07c7b1-2ef1-4c9d-8a8d-3936042bd441" name="变更" comment="搞懂color-">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/components/button/src/button.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/components/button/src/button.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/components/button/src/button.vue" beforeDir="false" afterPath="$PROJECT_DIR$/packages/components/button/src/button.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/theme-chalk/src/buttons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/packages/theme-chalk/src/buttons.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/theme-chalk/src/common/var.scss" beforeDir="false" afterPath="$PROJECT_DIR$/packages/theme-chalk/src/common/var.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/theme-chalk/src/var.scss" beforeDir="false" afterPath="$PROJECT_DIR$/packages/theme-chalk/src/var.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/play/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/play/src/App.vue" afterDir="false" />
-    </list>
+    <list default="true" id="cc07c7b1-2ef1-4c9d-8a8d-3936042bd441" name="变更" comment="搞懂color-" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -107,6 +99,7 @@
       <workItem from="1681538613098" duration="2196000" />
       <workItem from="1681696635676" duration="6961000" />
       <workItem from="1681798928594" duration="103000" />
+      <workItem from="1681799241266" duration="6001000" />
     </task>
     <task id="LOCAL-00001" summary="选择法院-选择身份类型样式修改">
       <created>1678431709691</created>

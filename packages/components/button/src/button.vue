@@ -3,7 +3,8 @@
         :class="[
             ns.b(),
             ns.m(type),
-            size ? ns.m(size) : '',
+            ns.m(size),
+            ns.is('circle', circle),
             ns.is('plain', plain),
             ns.is('round', round),
             ns.is('disabled', disabled)
