@@ -1,5 +1,5 @@
 import Text from './src/text.vue'
-import { withInstall } from '@sakura-ui/utils/index'
+import { withInstall } from '@sakura-ui/utils'
 
 export const SText = withInstall(Text)
 export default SText

@@ -1,11 +1,12 @@
 import { ExtractPropTypes } from 'vue'
-import { buildProps } from '@sakura-ui/utils'
+import { buildProps, definePropType } from '@sakura-ui/utils'
 export const iconProps = buildProps({
-    size: String,
+    size: {
+        type: definePropType([String, Number]),
+    },
     color: {
         type: String,
-        default: 'blue',
-        values: ['red', 'blue']
     }
+
 })
 export type IconProps = ExtractPropTypes<typeof iconProps>

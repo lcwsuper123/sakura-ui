@@ -6,6 +6,7 @@ importers:
     specifiers:
       '@commitlint/cli': ^17.0.3
       '@commitlint/config-conventional': ^17.0.3
+      '@element-plus/icons-vue': ^2.1.0
       '@esbuild-kit/cjs-loader': ^2.2.1
       '@floating-ui/dom': ^1.0.1
       '@pnpm/find-workspace-packages': ^4.0.16
@@ -70,6 +71,7 @@ importers:
       vue-router: ^4.0.16
       vue-tsc: ^0.38.2
     dependencies:
+      '@element-plus/icons-vue': registry.npmmirror.com/@element-plus/icons-vue/2.1.0_vue@3.2.47
       '@floating-ui/dom': registry.npmmirror.com/@floating-ui/dom/1.2.5
       '@popperjs/core': registry.npmmirror.com/@sxzz/popperjs-es/2.11.7
       '@sakura-ui/components': link:packages/components
@@ -2262,6 +2264,17 @@ packages:
     transitivePeerDependencies:
       - '@algolia/client-search'
     dev: true
+
+  registry.npmmirror.com/@element-plus/icons-vue/2.1.0_vue@3.2.47:
+    resolution: {integrity: sha512-PSBn3elNoanENc1vnCfh+3WA9fimRC7n+fWkf3rE5jvv+aBohNHABC/KAR5KWPecxWxDTVT1ERpRbOMRcOV/vA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@element-plus/icons-vue/-/icons-vue-2.1.0.tgz}
+    id: registry.npmmirror.com/@element-plus/icons-vue/2.1.0
+    name: '@element-plus/icons-vue'
+    version: 2.1.0
+    peerDependencies:
+      vue: ^3.2.0
+    dependencies:
+      vue: registry.npmmirror.com/vue/3.2.47
+    dev: false
 
   registry.npmmirror.com/@esbuild-kit/cjs-loader/2.4.2:
     resolution: {integrity: sha512-BDXFbYOJzT/NBEtp71cvsrGPwGAMGRB/349rwKuoxNSiKjPraNNnlK6MIIabViCjqZugu6j+xeMDlEkWdHHJSg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@esbuild-kit/cjs-loader/-/cjs-loader-2.4.2.tgz}

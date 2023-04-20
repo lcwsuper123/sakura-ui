@@ -1,6 +1,6 @@
 import { ExtractPropTypes } from 'vue'
-import { buildProps } from '@sakura-ui/utils/index'
-import { componentSizes } from '@sakura-ui/constants/index'
+import { buildProps } from '@sakura-ui/utils'
+import { componentSizes } from '@sakura-ui/constants'
 import type Text from './text.vue'
 
 export const textProps = buildProps({

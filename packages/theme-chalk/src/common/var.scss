@@ -220,7 +220,7 @@ $overlay-color: map.merge(
         ),
         $overlay-color
 );
-
+//遮罩层颜色
 $mask-color: () !default;
 $mask-color: map.merge(
         (
@@ -354,3 +354,4 @@ $button-padding-horizontal: map.deep-merge(
 // input
 $input-height: () !default;
 $input-height: map.merge($common-component-size, $input-height);
+

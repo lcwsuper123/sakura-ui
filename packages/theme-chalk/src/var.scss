@@ -46,6 +46,8 @@
     @include set-component-css-var('component-size', $common-component-size);
     // fill-color
     @include set-component-css-var('fill-color', $fill-color);
+    // 遮罩层颜色
+    @include set-component-css-var('mask-color', $mask-color)
 
 }
 

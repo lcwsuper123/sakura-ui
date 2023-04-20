@@ -122,12 +122,24 @@
         circle
         <!--cir-->
     </s-button>
+    <s-button
+        loading
+        type="primary"
+    >
+        loading
+    </s-button>
+    <s-button
+        circle
+        type="primary"
+        :icon="Search"
+    />
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
 import SText from '@sakura-ui/components/text'
 import SButton from '@sakura-ui/components/button'
+import { Edit, Search } from '@element-plus/icons-vue'
 
 const prop = ref('width')
 </script>

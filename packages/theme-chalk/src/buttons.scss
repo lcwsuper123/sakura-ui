@@ -184,6 +184,23 @@
         border-radius: 50%;
         padding: 8px;
     }
+    @include when(loading) {
+        position: relative;
+        // 阻止鼠标点击
+        pointer-events: none;
+        &:before {
+            z-index: 1;
+            pointer-events: none;
+            content: '';
+            position: absolute;
+            left: -1px;
+            top: -1px;
+            right: -1px;
+            bottom: -1px;
+            border-radius: inherit;
+            background-color: getCssVar('mask-color', 'extra-light');
+        }
+    }
     @each $type in $types {
         @include m($type) {
             @include button-variant($type);

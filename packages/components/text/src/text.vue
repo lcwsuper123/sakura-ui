@@ -7,7 +7,7 @@
 <script lang="ts" setup name="SText">
 import { ref, computed } from 'vue'
 import { textProps } from './text'
-import { useNamespace } from '@sakura-ui/hooks/index'
+import { useNamespace } from '@sakura-ui/hooks'
 
 const props = defineProps(textProps)
 const ns = useNamespace('text')

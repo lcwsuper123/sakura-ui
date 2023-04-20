@@ -1,12 +1,20 @@
 <template>
-   <i class="xbb-icon">
-      <slot></slot>
-   </i>
+    <i class="s-icon" :style="iconStyle" v-bind="$attrs">
+        <slot></slot>
+    </i>
 </template>
 <script setup lang="ts" name="SakuraIcon">
+import { computed } from 'vue'
 import { iconProps } from './icon'
-// import { computed, defineComponent, ExtractPropTypes } from 'vue'
-// type IconProps = ExtractPropTypes<typeof iconProps>
-// const props = defineProps<IconProps>()
+import { addUnit, isUndefined } from '@sakura-ui/utils'
+
 const props = defineProps(iconProps)
+const iconStyle = computed(() => {
+    const { size, color } = props
+    if (!size && !color) return {}
+    return {
+        fontSize: isUndefined(size) ? undefined : addUnit(size as number | string),
+        '--color': color
+    }
+})
 </script>
