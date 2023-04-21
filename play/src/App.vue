@@ -92,10 +92,10 @@
     <s-button
         type="danger"
         round
+        disabled
         plain
-        disabled
     >
-        disabled
+        disableddisableddisableddisabled
     </s-button>
     <s-button
         size="large"
@@ -133,6 +133,11 @@
         type="primary"
         :icon="Search"
     />
+    <s-button
+        :color="customColor"
+    >
+        custom-color
+    </s-button>
 </template>
 
 <script setup lang="ts">
@@ -140,7 +145,7 @@ import { ref } from 'vue'
 import SText from '@sakura-ui/components/text'
 import SButton from '@sakura-ui/components/button'
 import { Edit, Search } from '@element-plus/icons-vue'
-
+const customColor = ref('#626aef')
 const prop = ref('width')
 </script>
 

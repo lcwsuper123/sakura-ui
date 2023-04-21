@@ -64,7 +64,9 @@ export const buttonProps = buildProps({
         default: 'button'
     },
     // 自定义颜色
-    color: String
+    color: String,
+    // 使用自定义颜色时是否启用dark模式
+    dark: Boolean
 })
 
 export type ButtonProps = ExtractPropTypes<typeof buttonProps>

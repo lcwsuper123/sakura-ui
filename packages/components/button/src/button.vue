@@ -10,8 +10,9 @@
             ns.is('loading', loading),
             ns.is('disabled', disabled),
         ]"
-        :disabled="disabled"
+        :disabled="disabled || loading"
         :type="nativeType"
+        :style="buttonCustomStyle"
     >
         <template v-if="loading">
             <template v-if="$slots.loading">
@@ -45,7 +46,9 @@ import { computed } from 'vue'
 import { buttonProps } from './button'
 import { useNamespace } from '@sakura-ui/hooks'
 import SIcon from '@sakura-ui/components/icon'
+import { useButtonCustomStyle } from './button-custom'
 
 const ns = useNamespace('button')
 const props = defineProps(buttonProps)
+const buttonCustomStyle = useButtonCustomStyle(props)
 </script>

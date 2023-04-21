@@ -64,15 +64,27 @@
     }
     &.is-plain {
         @include button-plain($type);
+        &.is-disabled {
+            &,
+            &:hover,
+            &:focus,
+            &:active {
+                color: getCssVar('color', $type, 'light-5');
+                background-color: getCssVar('color', $type, 'light-9');
+                border-color: getCssVar('color', $type, 'light-8');
+            }
+        }
     }
     &.is-disabled {
         &,
         &:hover,
         &:focus,
         &:active {
-            color: getCssVar('color', $type, 'light-5');
-            background-color: getCssVar('color', $type, 'light-9');
-            border-color: getCssVar('color', $type, 'light-8');
+            color: getCssVar('button-disabled', 'text-color');
+            background-color: getCssVar('color', $type, 'light-5');
+            border-color: getCssVar('color', $type, 'light-5');
+            cursor: not-allowed;
+            background-image: none;
         }
     }
 }

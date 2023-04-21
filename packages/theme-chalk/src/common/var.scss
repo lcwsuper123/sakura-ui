@@ -306,7 +306,7 @@ $button: map.deep-merge(
             'hover-text-color': getCssVar('color', 'primary'),
             'hover-border-color': getCssVar('color-primary-light-7'),
             'disabled-background-color': getCssVar('fill-color', 'blank'),
-            'disabled-text-color': getCssVar('text-color', 'disabled'),
+            'disabled-text-color': getCssVar('color-white'),
             'disabled-border-color': getCssVar('border-color', 'light'),
             'active-text-color': getCssVar('button-hover-text-color'),
             'active-border-color': getCssVar('color-primary'),
