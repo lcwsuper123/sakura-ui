@@ -80,11 +80,33 @@
         &:hover,
         &:focus,
         &:active {
-            color: getCssVar('button-disabled', 'text-color');
+            color: getCssVar('color', 'white');
             background-color: getCssVar('color', $type, 'light-5');
             border-color: getCssVar('color', $type, 'light-5');
             cursor: not-allowed;
             background-image: none;
+        }
+
+        &.is-text {
+            &,
+            &:hover,
+            &:focus,
+            &:active {
+                color: getCssVar('color', $type, 'light-5');
+                border-color: getCssVar('color', $type, 'light-8');
+                background-color: transparent;
+            }
+        }
+    }
+    &.is-text {
+        background-color: transparent;
+        border: 0 solid transparent;
+
+        &:not(.is-disabled) {
+            &,
+            &:hover {
+                color: getCssVar('color', $type);
+            }
         }
     }
 }
@@ -186,6 +208,15 @@
             color: getCssVar('button', 'disabled', 'text', 'color');
             border-color: getCssVar('button', 'disabled', 'border', 'color')
         }
+        &.is-text {
+            &,
+            &:hover,
+            &:hover,
+            &.active{
+                //color: getCssVar('button', 'text-color');
+                border: 0 solid transparent;
+            }
+        }
     }
     @include when(plain) {
         @include css-var-from-global(('button', 'hover', 'text-color'), ('color', 'primary'));
@@ -211,6 +242,32 @@
             bottom: -1px;
             border-radius: inherit;
             background-color: getCssVar('mask-color', 'extra-light');
+        }
+    }
+    @include when(text) {
+        &:not(.is-disabled) {
+            color: getCssVar('button', 'text-color');
+            background-color: transparent;
+            border: 0 solid transparent;
+            &:hover {
+                background-color: getCssVar('fill-color', 'light');
+                color: getCssVar('button', 'text-color');
+            }
+
+            &:active {
+                background-color: getCssVar('fill-color');
+            }
+
+            @include when(has-background) {
+                background-color: getCssVar('fill-color', 'light');
+                &:hover {
+                    background-color: getCssVar('fill-color');
+                }
+                &:active {
+                    background-color: getCssVar('fill-color', 'dark');
+                }
+            }
+
         }
     }
     @each $type in $types {

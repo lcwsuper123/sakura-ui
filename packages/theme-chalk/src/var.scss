@@ -21,7 +21,8 @@
 
     @include set-component-css-var('font-size', $font-size);
     @include set-component-css-var('text-color', $text-color);
-    @include set-css-var-value('font-weight-primary', 500);
+    @include set-css-var-value('font-weight-primary', 600);
+    @include set-component-css-var('disabled', $disabled);
 
     // z-index
     @include set-component-css-var('index', $z-index);

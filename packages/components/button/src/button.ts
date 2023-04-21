@@ -40,7 +40,7 @@ export const buttonProps = buildProps({
     },
     // 图标
     icon: {
-        type: IconPropType,
+        type: IconPropType
     },
     // 是否加载中
     loading: {
@@ -51,6 +51,16 @@ export const buttonProps = buildProps({
     loadingIcon: {
         type: IconPropType,
         default: () => Loading
+    },
+    // 是否是文字按钮
+    text: {
+        type: Boolean,
+        default: false
+    },
+    // 使用文字的时候是否默认就显示背景色
+    textBackground: {
+        type: Boolean,
+        default: false
     },
     // 是否禁用
     disabled: {

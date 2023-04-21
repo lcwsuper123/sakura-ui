@@ -62,6 +62,15 @@ export function useButtonCustomStyle(props: ButtonProps) {
         if (disabled) {
             Object.assign(style, disabledColorStyle)
         }
+        if (props.text) {
+            Object.assign(style, ns.cssBlockVar('button', {
+                'text-color': buttonColor,
+                'background-color': 'transparent',
+                'disabled-background-color': 'transparent',
+                'disabled-text-color': color50,
+                'disabled-border-color': color80
+            }))
+        }
         console.log(style)
         return style
     })

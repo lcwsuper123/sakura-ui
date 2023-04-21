@@ -46,11 +46,13 @@
         </s-text>
     </div>
     <s-button
+        disabled
     >
         DEFAULT
     </s-button>
     <s-button
         type="success"
+        disabled
     >
         success
     </s-button>
@@ -117,7 +119,6 @@
     <s-button
         circle
         type="success"
-        plain
     >
         circle
         <!--cir-->
@@ -137,6 +138,40 @@
         :color="customColor"
     >
         custom-color
+    </s-button>
+    <s-button
+        text
+    >
+        text
+    </s-button>
+    <s-button
+        text
+        text-background
+    >
+        text
+    </s-button>
+    <s-button
+        text
+        text-background
+        type="primary"
+    >
+        background--text
+    </s-button>
+    <s-button
+        text
+        text-background
+        type="success"
+        disabled
+    >
+        disabled--text
+    </s-button>
+    <s-button
+        text
+        text-background
+        :color="customColor"
+        disabled
+    >
+        custom-color--text
     </s-button>
 </template>
 

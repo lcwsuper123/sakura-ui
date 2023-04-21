@@ -9,6 +9,8 @@
             ns.is('round', round),
             ns.is('loading', loading),
             ns.is('disabled', disabled),
+            ns.is('text', text),
+            ns.is('has-background', textBackground)
         ]"
         :disabled="disabled || loading"
         :type="nativeType"
