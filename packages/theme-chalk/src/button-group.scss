@@ -1,0 +1,71 @@
+@use 'sass:map';
+@use 'mixins/mixins' as *;
+@use 'common/var' as *;
+@use "mixins/config" as *;
+
+@include b(button-group) {
+    display: inline-flex;
+    vertical-align: middle;
+    & > .#{$namespace}-button {
+        position: relative;
+
+        &:first-child {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        &:last-child {
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+        }
+
+        & + .#{$namespace}-button {
+            margin-left: 0;
+        }
+
+        &:first-child:last-child {
+            border-radius: map.get($button-border-radius, 'default');
+
+            &.is-round {
+                border-radius: map.get($button-border-radius, 'round');
+            }
+
+            &.is-circle {
+                border-radius: 50%;
+            }
+        }
+
+        // 不是开头也不是最后
+        &:not(:first-child):not(:last-child) {
+            border-radius: 0;
+        }
+
+        &:not(:last-child) {
+            margin-right: -1px;
+        }
+
+        &:focus,
+        &:hover,
+        &:active {
+            z-index: 1;
+        }
+
+        @include when(active) {
+            z-index: 1;
+        }
+    }
+    @each $type in $types {
+        .#{$namespace}-button--#{$type} {
+            &:first-child {
+                border-right-color: getCssVar('button', 'divide-border-color');
+            }
+            &:last-child{
+                border-left-color: getCssVar('button', 'divide-border-color');
+            }
+            &:not(:first-child):not(:last-child) {
+                border-left-color: getCssVar('button', 'divide-border-color');
+                border-right-color: getCssVar('button', 'divide-border-color');
+            }
+        }
+    }
+}

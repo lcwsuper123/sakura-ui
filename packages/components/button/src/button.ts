@@ -24,49 +24,31 @@ export const buttonProps = buildProps({
         default: ''
     },
     // 是否镂空
-    plain: {
-        type: Boolean,
-        default: false
-    },
+    plain: Boolean,
     // 是否是圆角
     round: {
         type: Boolean,
         default: false
     },
     // 是否为圆形
-    circle: {
-        type: Boolean,
-        default: false
-    },
+    circle: Boolean,
     // 图标
     icon: {
         type: IconPropType
     },
     // 是否加载中
-    loading: {
-        type: Boolean,
-        default: false
-    },
+    loading: Boolean,
     // 加载中的图标
     loadingIcon: {
         type: IconPropType,
         default: () => Loading
     },
     // 是否是文字按钮
-    text: {
-        type: Boolean,
-        default: false
-    },
+    text: Boolean,
     // 使用文字的时候是否默认就显示背景色
-    textBackground: {
-        type: Boolean,
-        default: false
-    },
+    textBackground: Boolean,
     // 是否禁用
-    disabled: {
-        type: Boolean,
-        default: false
-    },
+    disabled: Boolean,
     // 按钮原生类型
     nativeType: {
         type: String,
@@ -78,6 +60,9 @@ export const buttonProps = buildProps({
     // 使用自定义颜色时是否启用dark模式
     dark: Boolean
 })
-
+export const buttonEmits = {
+    click: (event: MouseEvent) => event instanceof MouseEvent
+}
 export type ButtonProps = ExtractPropTypes<typeof buttonProps>
 export type ButtonInstance = InstanceType<typeof Button>
+export type ButtonEmits = ExtractPropTypes<typeof buttonEmits>

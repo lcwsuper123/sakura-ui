@@ -71,7 +71,6 @@ export function useButtonCustomStyle(props: ButtonProps) {
                 'disabled-border-color': color80
             }))
         }
-        console.log(style)
         return style
     })
 }

@@ -170,18 +170,44 @@
         text-background
         :color="customColor"
         disabled
+        size="small"
     >
         custom-color--text
     </s-button>
+    <s-button-group
+        type="primary"
+    >
+        <s-button
+            ref="customButton"
+        >
+            custom-color--text
+        </s-button>
+        <s-button
+            ref="customButton"
+        >
+            custom-color--text
+        </s-button>
+        <s-button
+            ref="customButton"
+        >
+            custom-color--text
+        </s-button>
+    </s-button-group>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import SText from '@sakura-ui/components/text'
-import SButton from '@sakura-ui/components/button'
+import SButton, { SButtonGroup } from '@sakura-ui/components/button'
 import { Edit, Search } from '@element-plus/icons-vue'
+
 const customColor = ref('#626aef')
 const prop = ref('width')
+const customButton = ref(null)
+onMounted(() => {
+    console.log(customButton)
+})
+
 </script>
 
 

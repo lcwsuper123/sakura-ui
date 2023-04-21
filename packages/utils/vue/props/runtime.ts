@@ -12,7 +12,7 @@ import type {
     EpPropMergeType,
     IfEpProp,
     IfNativePropType,
-    NativePropType,
+    NativePropType
 } from './type'
 import * as jsdom from 'jsdom'
 import object from 'async-validator/dist-types/validator/object'
@@ -57,10 +57,10 @@ export const buildProp = <
             if (hasOwn(prop, 'default') && !allowedValues.includes(defaultValue)) {
                 allowedValues.push(defaultValue)
             }
-            valid ||= allowedValues.includes(value)
+            valid = valid || allowedValues.includes(value)
         }
         // 如果有传递效验规, 则使用用户传递的效验规则来效验
-        if (validator) valid ||= validator(value)
+        if (validator) valid = valid || validator(value)
         // 如果效验的内容为不符合,并且有传递默认值的话则抛出警告
         if (!valid && allowedValues.length) {
             const allowValuesText = [...new Set(allowedValues)].map(v => JSON.stringify(v)).join(', ')
@@ -103,9 +103,9 @@ export const uBuildProp = (prop: {
             if (defaultValue && !allowValues.includes(defaultValue)) {
                 allowValues.push(defaultValue)
             }
-            valid ||= allowValues.includes(value)
+            valid = valid || allowValues.includes(value)
         }
-        if (validator) valid ||= validator(value)
+        if (validator) valid = valid || validator(value)
         return valid
     } : undefined
     const epProp: any = {
