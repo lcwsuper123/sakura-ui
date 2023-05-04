@@ -6,18 +6,21 @@ export const useButton = (props: ButtonProps, emits: ButtonEmits) => {
     const _this = getCurrentInstance()
     // 按钮分组上下文
     const buttonGroupContext = inject(buttonGroupContextKey, undefined)
-
     const _ref = ref<HTMLButtonElement>()
-    const _size = props.size || buttonGroupContext?.size || ''
-    const _type = props.type || buttonGroupContext?.type || ''
-    if (buttonGroupContext) {
-        console.log(buttonGroupContext)
-        console.log('_size---', _size)
-        console.log('_type---', _type)
-    }
+    const _size = computed(() => props.size || buttonGroupContext?.size || '')
+    const _type = computed(() => props.type || buttonGroupContext?.type || '')
+    const _buttonAttrs = computed(() => {
+        const { tag, disabled, loading, nativeType } = props
+        if (tag !== 'button') return {}
+        return {
+            disabled: disabled || loading,
+            type: nativeType
+        }
+    })
     return {
         _ref,
         _size,
-        _type
+        _type,
+        _buttonAttrs
     }
 }

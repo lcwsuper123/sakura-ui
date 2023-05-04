@@ -11,6 +11,11 @@ export const IconPropType = definePropType([
     Function
 ])
 export const buttonProps = buildProps({
+    // 组件标签
+    tag: {
+        type: String,
+        default: 'button'
+    },
     // 按钮大小
     size: {
         type: String,

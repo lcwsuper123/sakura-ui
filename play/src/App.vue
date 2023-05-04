@@ -46,7 +46,9 @@
         </s-text>
     </div>
     <s-button
-        disabled
+        tag="a"
+        href="https://github.com/element-plus/element-plus"
+        target="_blank"
     >
         DEFAULT
     </s-button>
@@ -200,12 +202,13 @@ import { ref, onMounted } from 'vue'
 import SText from '@sakura-ui/components/text'
 import SButton, { SButtonGroup } from '@sakura-ui/components/button'
 import { Edit, Search } from '@element-plus/icons-vue'
+import a from './components/a.vue'
 
 const customColor = ref('#626aef')
 const prop = ref('width')
 const customButton = ref(null)
 onMounted(() => {
-    console.log(customButton)
+    // console.log(customButton)
 })
 
 </script>

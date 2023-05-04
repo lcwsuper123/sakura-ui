@@ -1,5 +1,6 @@
 <template>
-    <button
+    <component
+        :is="tag"
         ref="_ref"
         :class="[
             ns.b(),
@@ -13,8 +14,7 @@
             ns.is('text', text),
             ns.is('has-background', textBackground)
         ]"
-        :disabled="disabled || loading"
-        :type="nativeType"
+        v-bind="_buttonAttrs"
         :style="buttonCustomStyle"
     >
         <template v-if="loading">
@@ -22,11 +22,11 @@
                 <slot name="loading" />
             </template>
             <template v-else>
-                <!--<s-icon :class="ns.is('loading')">-->
-                <!--    <component-->
-                <!--        :is="loadingIcon"-->
-                <!--    />-->
-                <!--</s-icon>-->
+                <s-icon :class="ns.is('loading')">
+                    <component
+                        :is="loadingIcon"
+                    />
+                </s-icon>
             </template>
         </template>
         <template v-if="icon">
@@ -42,7 +42,7 @@
             </template>
         </template>
         <slot />
-    </button>
+    </component>
 </template>
 <script lang="ts" setup name="SButton">
 import { computed } from 'vue'
@@ -56,7 +56,7 @@ const props = defineProps(buttonProps)
 const emits = defineEmits(buttonEmits)
 const ns = useNamespace('button')
 const buttonCustomStyle = useButtonCustomStyle(props)
-const { _ref, _size, _type } = useButton(props, emits)
+const { _ref, _size, _type, _buttonAttrs } = useButton(props, emits)
 defineExpose({
     _ref,
     _size,
