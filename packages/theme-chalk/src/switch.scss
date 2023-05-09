@@ -81,6 +81,8 @@ $switch-action-size: map.deep-merge(
         cursor: pointer;
         border-radius: map.get($switch-core-border-radius, 'default');
         overflow: hidden;
+        border: 1px solid getCssVar('switch', 'off-color');
+        box-sizing: border-box;
     }
     @include e(action) {
         position: absolute;
