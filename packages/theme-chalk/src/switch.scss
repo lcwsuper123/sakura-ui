@@ -2,10 +2,82 @@
 @use './mixins/mixins' as *;
 @use './common/var' as *;
 
+$switch-height: () !default;
+$switch-height: map.deep-merge(
+        (
+            'default': 32px,
+            'small': 24px,
+            'large': 40px
+        ),
+        $switch-height
+);
+
+$switch-color-width: () !default;
+$switch-color-width: map.deep-merge(
+        (
+            'default': 40px,
+            'small': 30px,
+            'large': 50px
+        ),
+        $switch-color-width
+);
+
+$switch-core-height: () !default;
+$switch-core-height: map.deep-merge(
+        (
+            'default': 20px,
+            'small': 16px,
+            'large': 24px
+        ),
+        $switch-core-height
+);
+$switch-core-border-radius: () !default;
+$switch-core-border-radius: map.deep-merge(
+        (
+            'default': 10px,
+            'small': 8px,
+            'large': 12px
+        ),
+        $switch-core-border-radius
+);
 @include b(switch) {
     @include set-component-css-var('switch', $switch);
 }
 
+@mixin setSwitchStyle($size: 'default') {
+    min-width: #{map.get($switch-color-width, $size)};
+    height: map.get($switch-height, $size);
+    line-height: map.get($switch-core-height, $size);
+}
+
 @include b(switch) {
-    background-color: pink;
+    @include setSwitchStyle();
+    vertical-align: middle;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    @each $size in (small, large) {
+        @include m($size) {
+            @include setSwitchStyle($size);
+        }
+    }
+    @include e(core) {
+        display: inline-flex;
+        position: relative;
+        align-items: center;
+        min-width: #{map.get($switch-color-width, 'default')};
+        height: map.get($switch-core-height, 'default');
+        background-color: getCssVar('switch', 'off-color');
+        outline: none;
+        cursor: pointer;
+        border-radius: map.get($switch-core-border-radius, 'default');
+        overflow: hidden;
+    }
+    @include e(action) {
+        position: absolute;
+        width: map.get($switch-core-height, 'default');
+        height: map.get($switch-core-height, 'default');
+        border-radius: 100%;
+        background-color: getCssVar('color-white');
+    }
 }

@@ -16,8 +16,8 @@ export const switchProps = buildProps({
     // 尺寸
     size: {
         type: String,
-        values: ['large', 'default', 'small'],
-        default: 'default'
+        values: ['', 'large', 'default', 'small'],
+        default: ''
     }
 })
 

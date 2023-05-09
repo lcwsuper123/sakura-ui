@@ -1,5 +1,6 @@
 <template>
-    <s-switch />
+    <s-switch
+    />
 </template>
 <script lang="ts" setup>
 import SSwitch from '@sakura-ui/components/switch'

@@ -1,8 +1,15 @@
 <template>
     <div :class="[
-        ns.b()
+        ns.b(),
+        ns.m(size)
     ]">
-        switch
+        <div
+            :class="[ns.e('core')]"
+        >
+            <span
+                :class="[ns.e('action')]"
+            ></span>
+        </div>
     </div>
 </template>
 <script lang="ts" setup name="SSwitch">
