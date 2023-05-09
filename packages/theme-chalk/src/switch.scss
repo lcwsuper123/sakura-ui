@@ -40,6 +40,15 @@ $switch-core-border-radius: map.deep-merge(
         ),
         $switch-core-border-radius
 );
+$switch-action-size: () !default;
+$switch-action-size: map.deep-merge(
+        (
+            'default': 16px,
+            'small': 12px,
+            'large': 20px
+        ),
+        $switch-action-size
+);
 @include b(switch) {
     @include set-component-css-var('switch', $switch);
 }
@@ -75,9 +84,10 @@ $switch-core-border-radius: map.deep-merge(
     }
     @include e(action) {
         position: absolute;
-        width: map.get($switch-core-height, 'default');
-        height: map.get($switch-core-height, 'default');
-        border-radius: 100%;
+        width: map.get($switch-action-size, 'default');
+        height: map.get($switch-action-size, 'default');
+        border-radius: getCssVar('border-radius-circle');
         background-color: getCssVar('color-white');
+        left: 1px;
     }
 }
