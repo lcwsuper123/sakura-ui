@@ -1,0 +1,11 @@
+@use 'sass:map';
+@use './mixins/mixins' as *;
+@use './common/var' as *;
+
+@include b(switch) {
+    @include set-component-css-var('switch', $switch);
+}
+
+@include b(switch) {
+    background-color: pink;
+}
