@@ -115,7 +115,6 @@ $switch-action-size: map.deep-merge(
         }
     }
     @include when(disabled) {
-        //@include set-css-var-value('switch-on-color', getCssVar('color-primary', 'light-3'));
         opacity: .6;
         & .#{$namespace}-switch__core, & .#{$namespace}-switch__action {
             cursor: not-allowed;
