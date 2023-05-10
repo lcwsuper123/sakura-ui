@@ -1,8 +1,17 @@
 <template>
     <s-switch
+        v-model="checked"
+        size="small"
+     />
+    <s-switch
+        model-value
+        disabled
     />
 </template>
 <script lang="ts" setup>
+import { ref } from 'vue'
 import SSwitch from '@sakura-ui/components/switch'
+
+const checked = ref(false)
 </script>
 <style lang="scss" scoped></style>

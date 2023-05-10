@@ -1,5 +1,6 @@
 <template>
-    <switch-test />
+    <switch-test
+    />
 </template>
 
 <script setup lang="ts">

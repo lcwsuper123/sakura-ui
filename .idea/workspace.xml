@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc07c7b1-2ef1-4c9d-8a8d-3936042bd441" name="变更" comment="button增加tag属性">
+    <list default="true" id="cc07c7b1-2ef1-4c9d-8a8d-3936042bd441" name="变更" comment="switch组件架构搭建">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,7 +49,7 @@
       <recent name="D:\Work\sakura-ui\packages\theme-chalk\src" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript 调试.index.html">
+  <component name="RunManager" selected="Vitest.Button.vue">
     <configuration name="Button.vue" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <vitest-package value="$PROJECT_DIR$/node_modules/vitest" />
@@ -89,10 +89,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript 调试.index.html" />
-        <item itemvalue="Vitest.Button.vue.create" />
-        <item itemvalue="Vitest.button.test.tsx" />
         <item itemvalue="Vitest.Button.vue" />
+        <item itemvalue="Vitest.Button.vue.create" />
+        <item itemvalue="JavaScript 调试.index.html" />
+        <item itemvalue="Vitest.button.test.tsx" />
       </list>
     </recent_temporary>
   </component>
@@ -163,6 +163,8 @@
       <workItem from="1683251936016" duration="5256000" />
       <workItem from="1683369814521" duration="14000" />
       <workItem from="1683533151206" duration="2004000" />
+      <workItem from="1683616884027" duration="7534000" />
+      <workItem from="1683680927430" duration="1027000" />
     </task>
     <task id="LOCAL-00001" summary="选择法院-选择身份类型样式修改">
       <created>1678431709691</created>
@@ -290,7 +292,35 @@
       <option name="project" value="LOCAL" />
       <updated>1683190632798</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="switch组件架构搭建">
+      <created>1683621709602</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1683621709602</updated>
+    </task>
+    <task id="LOCAL-00020" summary="switch组件架构搭建">
+      <created>1683624027907</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1683624027907</updated>
+    </task>
+    <task id="LOCAL-00021" summary="switch组件架构搭建">
+      <created>1683624341351</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1683624341351</updated>
+    </task>
+    <task id="LOCAL-00022" summary="switch组件架构搭建">
+      <created>1683624687567</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1683624687567</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -309,7 +339,8 @@
     <MESSAGE value="var.scss完善" />
     <MESSAGE value="搞懂color-" />
     <MESSAGE value="button增加tag属性" />
-    <option name="LAST_COMMIT_MESSAGE" value="button增加tag属性" />
+    <MESSAGE value="switch组件架构搭建" />
+    <option name="LAST_COMMIT_MESSAGE" value="switch组件架构搭建" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/sakura_ui$Button_vue_create.info" NAME="Button.vue.create 覆盖结果" MODIFIED="1682074172275" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="VitestJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
