@@ -31,7 +31,11 @@ export const switchProps = buildProps({
     inactiveValue: {
         type: [Boolean, String, Number],
         default: false
-    }
+    },
+    // switch 打开时的文字描述
+    activeText: String,
+    // switch 的状态为 off 时的文字描述
+    inactionText: String
 })
 
 export type SwitchProps = ExtractPropTypes<typeof switchProps>
