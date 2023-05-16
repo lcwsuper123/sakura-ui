@@ -11,7 +11,7 @@
         v-model="checked"
         active-text="你好"
         inaction-text="世界"
-        size="large"
+        size="default"
     />
 </template>
 <script lang="ts" setup>

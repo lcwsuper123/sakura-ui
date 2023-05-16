@@ -134,7 +134,6 @@ $switch-label-font-size: map.deep-merge(
         * {
             line-height: 1;
             display: inline-block;
-            font-size: map.get($switch-label-font-size, 'default');
         }
     }
     @include when(checked) {
@@ -167,10 +166,9 @@ $switch-label-font-size: map.deep-merge(
                 }
             }
             @include e(label) {
-                font-size: map.get($switch-label-font-size, $size);
                 height: map.get($switch-core-height, $size);
                 * {
-                    font-size: map.get($switch-label-font-size, 'default');
+                    font-size: map.get($switch-label-font-size, $size);
                 }
             }
         }
