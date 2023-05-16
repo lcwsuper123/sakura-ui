@@ -49,6 +49,15 @@ $switch-action-size: map.deep-merge(
         ),
         $switch-action-size
 );
+$switch-label-font-size: () !default;
+$switch-label-font-size: map.deep-merge(
+        (
+            'default': 14px,
+            'small':12px,
+            'large': 14px
+        ),
+        $switch-label-font-size
+);
 @include b(switch) {
     @include set-component-css-var('switch', $switch);
 }
@@ -105,6 +114,29 @@ $switch-action-size: map.deep-merge(
         margin: 0;
         z-index: 0;
     }
+    @include e(label) {
+        font-size: map.get($switch-label-font-size, 'default');
+        height: map.get($switch-core-height, 'default');
+        font-weight: 500;
+        cursor: pointer;
+        vertical-align: middle;
+        transition: all getCssVar('transition-duration');
+        color: getCssVar('text', 'color-primary');
+        @include m(left) {
+            margin-right: 10px;
+        }
+        @include m(right) {
+            margin-left: 10px;
+        }
+        @include when(active) {
+            color: getCssVar('switch', 'on-color');
+        }
+        * {
+            line-height: 1;
+            display: inline-block;
+            font-size: map.get($switch-label-font-size, 'default');
+        }
+    }
     @include when(checked) {
         @include e(core) {
             background-color: getCssVar('switch', 'on-color');
@@ -132,6 +164,13 @@ $switch-action-size: map.deep-merge(
             @include when(checked) {
                 @include e(action) {
                     left: calc(100% - #{map.get($switch-action-size, $size) + 1px});
+                }
+            }
+            @include e(label) {
+                font-size: map.get($switch-label-font-size, $size);
+                height: map.get($switch-core-height, $size);
+                * {
+                    font-size: map.get($switch-label-font-size, 'default');
                 }
             }
         }

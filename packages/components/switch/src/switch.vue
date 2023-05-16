@@ -13,8 +13,18 @@
             :class="[ns.e('input')]"
             type="checkbox"
             role="switch"
-            true
         />
+        <template v-if="activeText">
+            <span
+                :class="[
+                    ns.e('label'),
+                    ns.em('label', 'left'),
+                    ns.is('active', !modelValue)
+                ]"
+            >
+                <span>{{ activeText }}</span>
+            </span>
+        </template>
         <span
             :class="[ns.e('core')]"
         >
@@ -22,6 +32,17 @@
                 :class="[ns.e('action')]"
             ></div>
         </span>
+        <template v-if="inactionText">
+            <span
+                :class="[
+                    ns.e('label'),
+                    ns.em('label', 'right'),
+                    ns.is('active', modelValue)
+                ]"
+            >
+                <span>{{ inactionText }}</span>
+            </span>
+        </template>
     </div>
 </template>
 <script lang="ts" setup name="SSwitch">

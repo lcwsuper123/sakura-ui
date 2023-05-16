@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc07c7b1-2ef1-4c9d-8a8d-3936042bd441" name="变更" comment="switch组件架构搭建">
+    <list default="true" id="cc07c7b1-2ef1-4c9d-8a8d-3936042bd441" name="变更" comment="switch-size&#10;switch-disabled">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,7 +26,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Work/sakura-ui/demo&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Work/共享法庭-v1&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -165,6 +165,9 @@
       <workItem from="1683533151206" duration="2004000" />
       <workItem from="1683616884027" duration="7534000" />
       <workItem from="1683680927430" duration="1027000" />
+      <workItem from="1683690447927" duration="10094000" />
+      <workItem from="1684114227606" duration="63000" />
+      <workItem from="1684131562078" duration="342000" />
     </task>
     <task id="LOCAL-00001" summary="选择法院-选择身份类型样式修改">
       <created>1678431709691</created>
@@ -320,7 +323,28 @@
       <option name="project" value="LOCAL" />
       <updated>1683624687567</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="switch-size&#10;switch-disabled">
+      <created>1683701175380</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1683701175380</updated>
+    </task>
+    <task id="LOCAL-00024" summary="switch-size&#10;switch-disabled">
+      <created>1683701359321</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1683701359321</updated>
+    </task>
+    <task id="LOCAL-00025" summary="switch-size&#10;switch-disabled">
+      <created>1683708714696</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1683708714696</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -340,7 +364,8 @@
     <MESSAGE value="搞懂color-" />
     <MESSAGE value="button增加tag属性" />
     <MESSAGE value="switch组件架构搭建" />
-    <option name="LAST_COMMIT_MESSAGE" value="switch组件架构搭建" />
+    <MESSAGE value="switch-size&#10;switch-disabled" />
+    <option name="LAST_COMMIT_MESSAGE" value="switch-size&#10;switch-disabled" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/sakura_ui$Button_vue_create.info" NAME="Button.vue.create 覆盖结果" MODIFIED="1682074172275" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="VitestJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
