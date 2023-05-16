@@ -129,7 +129,7 @@ $switch-label-font-size: map.deep-merge(
             margin-left: 10px;
         }
         @include when(active) {
-            color: getCssVar('switch', 'on-color');
+            color: getCssVar('color-primary');
         }
         * {
             line-height: 1;
