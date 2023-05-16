@@ -14,7 +14,7 @@
             type="checkbox"
             role="switch"
         />
-        <template v-if="activeText">
+        <template v-if="activeText && !inlinePrompt">
             <span
                 :class="[
                     ns.e('label'),
@@ -27,12 +27,23 @@
         </template>
         <span
             :class="[ns.e('core')]"
+            :style="switchCoreWidth"
         >
+            <template v-if="inlinePrompt && activeText && inactionText">
+                <div
+                    :class="[ns.e('inner')]"
+                >
+                    <span
+                        :class="[ns.is('text', true)]"
+                        :aria-hidden="!modelValue"
+                    >{{ modelValue ? activeText : inactionText }}</span>
+                </div>
+            </template>
             <div
                 :class="[ns.e('action')]"
             ></div>
         </span>
-        <template v-if="inactionText">
+        <template v-if="inactionText && !inlinePrompt">
             <span
                 :class="[
                     ns.e('label'),
@@ -48,7 +59,7 @@
 <script lang="ts" setup name="SSwitch">
 import { switchProps, switchEmits } from './switch'
 import { useNamespace } from '@sakura-ui/hooks'
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { CHANGE_EVENT, UPDATE_MODEL_EVENT, INPUT_EVENT } from '@sakura-ui/constants'
 
 const props = defineProps(switchProps)
@@ -66,6 +77,12 @@ const switchValue = () => {
     if (props.disabled) return
     handleChange()
 }
+const switchCoreWidth = computed(() => {
+    if (!props.width) return {}
+    return {
+        width: props.width + 'px'
+    }
+})
 </script>
 <style lang="scss" scoped>
 

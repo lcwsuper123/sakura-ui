@@ -12,6 +12,8 @@ export const switchProps = buildProps({
         type: [Boolean, String, Number],
         default: false
     },
+    // switch宽度
+    width: String,
     // 是否禁用
     disabled: Boolean,
     // 是否显示加载中
@@ -35,7 +37,9 @@ export const switchProps = buildProps({
     // switch 打开时的文字描述
     activeText: String,
     // switch 的状态为 off 时的文字描述
-    inactionText: String
+    inactionText: String,
+    // 无论图标或文本是否显示在点内，只会呈现文本的第一个字符
+    inlinePrompt: Boolean
 })
 
 export type SwitchProps = ExtractPropTypes<typeof switchProps>

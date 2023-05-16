@@ -13,6 +13,13 @@
         inaction-text="世界"
         size="default"
     />
+    <s-switch
+        v-model="checked"
+        active-text="你好你好你好1"
+        inaction-text="你好你好你好2"
+        inline-prompt
+        size="large"
+    />
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'

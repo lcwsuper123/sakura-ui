@@ -106,6 +106,26 @@ $switch-label-font-size: map.deep-merge(
         left: 1px;
         transition: all getCssVar('transition-duration');
     }
+    @include e(inner) {
+        width: 100%;
+        transition: all getCssVar('transition-duration');
+        overflow: hidden;
+        height: map.get($switch-core-height, 'default');
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        //width: map.get($switch-action-size, $size);
+        //    height: map.get($switch-action-size, $size);
+        padding: 0 4px 0 map.get($switch-action-size, 'default') + 2px;
+        .is-text {
+            font-size: 12px;
+            color: getCssVar('color-white');
+            user-select: none;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
     @include e(input) {
         position: absolute;
         width: 0;
@@ -144,6 +164,9 @@ $switch-label-font-size: map.deep-merge(
         @include e(action) {
             left: calc(100% - #{map.get($switch-action-size, 'default') + 1px});
         }
+        @include e(inner) {
+            padding: 0 map.get($switch-action-size, 'default') + 2px 0 4px;
+        }
     }
     @include when(disabled) {
         opacity: .6;
@@ -160,9 +183,16 @@ $switch-label-font-size: map.deep-merge(
             @include e(action) {
                 @include setSwitchActionStyle($size);
             }
+            @include e(inner) {
+                height: map.get($switch-action-size, $size);
+                padding: 0 4px 0 map.get($switch-action-size, $size) + 2px;
+            }
             @include when(checked) {
                 @include e(action) {
                     left: calc(100% - #{map.get($switch-action-size, $size) + 1px});
+                }
+                @include e(inner) {
+                    padding: 0 map.get($switch-action-size, $size) + 2px 0 4px;
                 }
             }
             @include e(label) {
