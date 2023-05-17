@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc07c7b1-2ef1-4c9d-8a8d-3936042bd441" name="变更" comment="active-text 10%" />
+    <list default="true" id="cc07c7b1-2ef1-4c9d-8a8d-3936042bd441" name="变更" comment="switch inline-prompt">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -167,6 +169,8 @@
       <workItem from="1684114227606" duration="63000" />
       <workItem from="1684131562078" duration="342000" />
       <workItem from="1684226496808" duration="3190000" />
+      <workItem from="1684237560576" duration="4293000" />
+      <workItem from="1684290395492" duration="1189000" />
     </task>
     <task id="LOCAL-00001" summary="选择法院-选择身份类型样式修改">
       <created>1678431709691</created>
@@ -357,7 +361,28 @@
       <option name="project" value="LOCAL" />
       <updated>1684228898165</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="reset.scss">
+      <created>1684238646085</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1684238646085</updated>
+    </task>
+    <task id="LOCAL-00029" summary="reset.scss">
+      <created>1684239452139</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1684239452139</updated>
+    </task>
+    <task id="LOCAL-00030" summary="switch inline-prompt">
+      <created>1684241213060</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1684241213060</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -379,7 +404,9 @@
     <MESSAGE value="switch组件架构搭建" />
     <MESSAGE value="switch-size&#10;switch-disabled" />
     <MESSAGE value="active-text 10%" />
-    <option name="LAST_COMMIT_MESSAGE" value="active-text 10%" />
+    <MESSAGE value="reset.scss" />
+    <MESSAGE value="switch inline-prompt" />
+    <option name="LAST_COMMIT_MESSAGE" value="switch inline-prompt" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/sakura_ui$Button_vue_create.info" NAME="Button.vue.create 覆盖结果" MODIFIED="1682074172275" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="VitestJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

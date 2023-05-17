@@ -20,6 +20,15 @@
         inline-prompt
         size="large"
     />
+    <s-switch
+        v-model="checked"
+        active-text="多出部分隐藏"
+        inaction-text="多出部分隐藏"
+        width="90"
+        inline-prompt
+        size="large"
+        style="--s-switch-on-color: pink; --s-switch-off-color: red;"
+    />
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
