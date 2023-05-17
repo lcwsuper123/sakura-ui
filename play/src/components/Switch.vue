@@ -2,7 +2,7 @@
     <s-switch
         v-model="checked"
         size="small"
-     />
+    />
     <s-switch
         model-value
         disabled
@@ -20,8 +20,11 @@
         inline-prompt
         size="large"
     />
+    customValue---{{ customValue }}
     <s-switch
-        v-model="checked"
+        v-model="customValue"
+        :active-value="1"
+        :inactive-value="0"
         active-text="多出部分隐藏"
         inaction-text="多出部分隐藏"
         width="90"
@@ -35,6 +38,7 @@ import { ref } from 'vue'
 import SSwitch from '@sakura-ui/components/switch'
 
 const checked = ref(false)
+const customValue = ref(1)
 </script>
 <style lang="scss" scoped>
 //.s-switch{
