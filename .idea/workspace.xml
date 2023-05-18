@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc07c7b1-2ef1-4c9d-8a8d-3936042bd441" name="变更" comment="switch inline-prompt">
+    <list default="true" id="cc07c7b1-2ef1-4c9d-8a8d-3936042bd441" name="变更" comment="示例">
+      <change afterPath="$PROJECT_DIR$/packages/utils/vue/icon.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/components/button/src/button.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/components/button/src/button.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/components/switch/src/switch.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/components/switch/src/switch.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/components/switch/src/switch.vue" beforeDir="false" afterPath="$PROJECT_DIR$/packages/components/switch/src/switch.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/utils/vue/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/utils/vue/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/play/src/components/Switch.vue" beforeDir="false" afterPath="$PROJECT_DIR$/play/src/components/Switch.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,6 +177,8 @@
       <workItem from="1684226496808" duration="3190000" />
       <workItem from="1684237560576" duration="4293000" />
       <workItem from="1684290395492" duration="1189000" />
+      <workItem from="1684313774603" duration="916000" />
+      <workItem from="1684373278706" duration="2088000" />
     </task>
     <task id="LOCAL-00001" summary="选择法院-选择身份类型样式修改">
       <created>1678431709691</created>
@@ -382,7 +390,21 @@
       <option name="project" value="LOCAL" />
       <updated>1684241213060</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="示例">
+      <created>1684314001729</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1684314001729</updated>
+    </task>
+    <task id="LOCAL-00032" summary="示例">
+      <created>1684314103929</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1684314103929</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -406,7 +428,8 @@
     <MESSAGE value="active-text 10%" />
     <MESSAGE value="reset.scss" />
     <MESSAGE value="switch inline-prompt" />
-    <option name="LAST_COMMIT_MESSAGE" value="switch inline-prompt" />
+    <MESSAGE value="示例" />
+    <option name="LAST_COMMIT_MESSAGE" value="示例" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/sakura_ui$Button_vue_create.info" NAME="Button.vue.create 覆盖结果" MODIFIED="1682074172275" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="VitestJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

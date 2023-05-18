@@ -1,15 +1,10 @@
 import { ExtractPropTypes, h } from 'vue'
-import { buildProps, definePropType } from '@sakura-ui/utils'
+import { buildProps, IconPropType } from '@sakura-ui/utils'
 import Button from './button.vue'
 import { Loading } from '@element-plus/icons-vue'
 
 // import type { Component } from 'vue'
 // 'primary'| 'success'| 'warning'| 'danger'| 'info'| 'text'(delete)
-export const IconPropType = definePropType([
-    String,
-    Object,
-    Function
-])
 export const buttonProps = buildProps({
     // 组件标签
     tag: {
