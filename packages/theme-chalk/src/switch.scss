@@ -81,6 +81,7 @@ $switch-label-font-size: map.deep-merge(
 
 @include b(switch) {
     @include setSwitchWrapStyle('default');
+    font-size: map.get($switch-label-font-size, 'default');
     vertical-align: middle;
     position: relative;
     display: inline-flex;
@@ -105,6 +106,10 @@ $switch-label-font-size: map.deep-merge(
         background-color: getCssVar('color-white');
         left: 1px;
         transition: all getCssVar('transition-duration');
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: getCssVar('switch', 'off-color');
     }
     @include e(inner) {
         width: 100%;
@@ -155,7 +160,7 @@ $switch-label-font-size: map.deep-merge(
             line-height: 1;
             display: inline-block;
         }
-        .s-icon {
+        .#{$namespace}-icon {
             height: inherit;
         }
     }
@@ -166,6 +171,7 @@ $switch-label-font-size: map.deep-merge(
         }
         @include e(action) {
             left: calc(100% - #{map.get($switch-action-size, 'default') + 1px});
+            color: getCssVar('switch', 'on-color');
         }
         @include e(inner) {
             padding: 0 map.get($switch-action-size, 'default') + 2px 0 4px;
@@ -178,6 +184,7 @@ $switch-label-font-size: map.deep-merge(
         }
     }
     @each $size in (small, large) {
+        font-size: map.get($switch-label-font-size, $size);
         @include m($size) {
             @include setSwitchWrapStyle($size);
             @include e(core) {

@@ -48,7 +48,7 @@ export const switchProps = buildProps({
     // switch 状态为 off 时所显示图标，设置此项会忽略 inactive-text
     inactiveIcon: {
         type: IconPropType
-    }
+    },
 })
 
 export type SwitchProps = ExtractPropTypes<typeof switchProps>

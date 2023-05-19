@@ -15,7 +15,6 @@
     & > svg {
         width: 1em;
         height: 1em;
-        vertical-align: middle;
     }
     @include when(loading){
         animation: rotating 2s linear infinite;

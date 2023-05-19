@@ -4,7 +4,7 @@
             ns.b(),
             ns.m(size),
             ns.is('checked', modelValue),
-            ns.is('disabled', disabled)
+            ns.is('disabled', disabled || loading),
         ]"
         @click.prevent="switchValue"
     >
@@ -58,15 +58,27 @@
             </template>
             <div
                 :class="[ns.e('action')]"
-            ></div>
+            >
+                <template v-if="loading">
+
+                    <!---->
+                    <s-icon
+                        :class="[ns.is('loading', loading)]"
+                    >
+                        <component
+                            :is="Loading"
+                        />
+                    </s-icon>
+                </template>
+            </div>
         </span>
         <template v-if="!inlinePrompt">
             <span
                 :class="[
-                        ns.e('label'),
-                        ns.em('label', 'right'),
-                        ns.is('active', modelValue)
-                    ]"
+                    ns.e('label'),
+                    ns.em('label', 'right'),
+                    ns.is('active', modelValue)
+                ]"
             >
                 <template v-if="activeIcon">
                     <s-icon>
@@ -84,6 +96,7 @@
 </template>
 <script lang="ts" setup name="SSwitch">
 import { switchProps, switchEmits } from './switch'
+import { Loading } from '@element-plus/icons-vue'
 import { useNamespace } from '@sakura-ui/hooks'
 import { ref, computed } from 'vue'
 import { CHANGE_EVENT, UPDATE_MODEL_EVENT, INPUT_EVENT } from '@sakura-ui/constants'
@@ -101,7 +114,8 @@ const handleChange = () => {
     emits(INPUT_EVENT, value)
 }
 const switchValue = () => {
-    if (props.disabled) return
+    const { disabled, loading } = props
+    if (disabled || loading) return
     handleChange()
 }
 const switchCoreWidth = computed(() => {

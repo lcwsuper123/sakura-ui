@@ -1,47 +1,72 @@
 <template>
-    <s-switch
-        v-model="checked"
-        size="small"
-    />
-    <s-switch
-        model-value
-        disabled
-    />
-    <s-switch
-        v-model="checked"
-        active-text="你好"
-        inaction-text="世界"
-        size="default"
-    />
-    <s-switch
-        v-model="checked"
-        active-text="你好你好你好1"
-        inaction-text="你好你好你好2"
-        inline-prompt
-        size="large"
-    />
-    customValue---{{ customValue }}
-    <s-switch
-        v-model="customValue"
-        :active-value="1"
-        :inactive-value="0"
-        active-text="多出部分隐藏"
-        inaction-text="多出部分隐藏"
-        width="90"
-        inline-prompt
-        size="large"
-        style="--s-switch-on-color: pink; --s-switch-off-color: red;"
-    />
+    <div class="column">
+        <s-switch
+            v-model="checked"
+            size="small"
+        />
+        <s-switch
+            model-value
+            disabled
+        />
+        <s-switch
+            v-model="checked"
+            active-text="你好"
+            inactive-text="世界"
+            size="default"
+        />
+        <s-switch
+            v-model="checked"
+            active-text="你好你好你好1"
+            inactive-text="你好你好你好2"
+            inline-prompt
+            size="large"
+        />
+        customValue---{{ customValue }}
+        <s-switch
+            v-model="customValue"
+            :active-value="1"
+            :inactive-value="0"
+            active-text="多出部分隐藏"
+            inactive-text="多出部分隐藏"
+            width="90"
+            inline-prompt
+            size="large"
+            style="--s-switch-on-color: pink; --s-switch-off-color: red;"
+        />
+        <s-switch
+            v-model="customValue"
+            :active-value="1"
+            :inactive-value="0"
+            :active-icon="Check"
+            :inactive-icon="Close"
+            size="large"
+        />
+        <s-switch
+            v-model="customValue"
+            :active-value="1"
+            :inactive-value="0"
+            :active-icon="Check"
+            :inactive-icon="Close"
+            inline-prompt
+        />
+        <s-switch
+            loading
+            v-model="customValue"
+        />
+    </div>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
+import { Check, Close } from '@element-plus/icons-vue'
 import SSwitch from '@sakura-ui/components/switch'
 
 const checked = ref(false)
 const customValue = ref(1)
 </script>
 <style lang="scss" scoped>
-//.s-switch{
-//    display: block;
-//}
+.column{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
 </style>
