@@ -49,6 +49,11 @@ export const switchProps = buildProps({
     inactiveIcon: {
         type: IconPropType
     },
+    // switch 状态改变前的钩子, 返回 false 或者返回 Promise 且被 reject 则停止切换
+    beforeChange: {
+        type: [Boolean, Function],
+        default: null
+    }
 })
 
 export type SwitchProps = ExtractPropTypes<typeof switchProps>

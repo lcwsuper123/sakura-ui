@@ -53,6 +53,14 @@
             loading
             v-model="customValue"
         />
+        <s-switch
+            loading
+        />
+        <s-switch
+            v-model="beforeChangeValue"
+            :loading="isLoading"
+            :before-change="beforeChangeFunction"
+        />
     </div>
 </template>
 <script lang="ts" setup>
@@ -61,12 +69,29 @@ import { Check, Close } from '@element-plus/icons-vue'
 import SSwitch from '@sakura-ui/components/switch'
 
 const checked = ref(false)
+const isLoading = ref(false)
 const customValue = ref(1)
+
+const beforeChangeValue = ref(false)
+const beforeChangeBoolean = ref(false)
+const beforeChangeFunction = () => {
+    return new Promise((resolve, reject) => {
+        isLoading.value = true
+        setTimeout(() => {
+            isLoading.value = false
+            resolve(true)
+        }, 1500)
+    })
+}
 </script>
 <style lang="scss" scoped>
-.column{
+.column {
     display: flex;
     flex-flow: column;
     align-items: center;
+}
+
+p {
+    background-color: pink;
 }
 </style>

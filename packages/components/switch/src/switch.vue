@@ -98,6 +98,7 @@
 import { switchProps, switchEmits } from './switch'
 import { Loading } from '@element-plus/icons-vue'
 import { useNamespace } from '@sakura-ui/hooks'
+import { isBoolean, isPromise, isFunction } from '@sakura-ui/utils'
 import { ref, computed } from 'vue'
 import { CHANGE_EVENT, UPDATE_MODEL_EVENT, INPUT_EVENT } from '@sakura-ui/constants'
 import SIcon from '@sakura-ui/components/icon'
@@ -114,9 +115,32 @@ const handleChange = () => {
     emits(INPUT_EVENT, value)
 }
 const switchValue = () => {
-    const { disabled, loading } = props
+    const { disabled, loading, beforeChange } = props
     if (disabled || loading) return
+    if (beforeChange !== null) {
+        beforeChangeCall()
+        return
+    }
     handleChange()
+}
+const beforeChangeCall = () => {
+    const { beforeChange } = props
+    if (!isFunction(beforeChange) && !isBoolean(beforeChange)) {
+        throw new Error('beforeChange type is not promise function or boolean')
+    }
+    // 如果是boolean类型并且值是true则就改变switch的值
+    if (isBoolean(beforeChange) && beforeChange) {
+        handleChange()
+        return
+    }
+    // 如果是promise类型
+    if (isFunction(beforeChange)) {
+        const value = beforeChange()
+        if (!value.then) {
+            throw new Error('beforeChange return value is not promise')
+        }
+        value.then(res => res && handleChange())
+    }
 }
 const switchCoreWidth = computed(() => {
     if (!props.width) return {}
