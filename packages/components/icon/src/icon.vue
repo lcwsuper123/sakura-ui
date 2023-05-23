@@ -3,7 +3,7 @@
         <slot></slot>
     </i>
 </template>
-<script setup lang="ts" name="SakuraIcon">
+<script setup lang="ts" name="SIcon">
 import { computed } from 'vue'
 import { iconProps } from './icon'
 import { addUnit, isUndefined } from '@sakura-ui/utils'

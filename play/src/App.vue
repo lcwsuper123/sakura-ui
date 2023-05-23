@@ -1,11 +1,11 @@
 <template>
-    <switch-test
+    <radio-test
     />
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import SwitchTest from './components/Switch.vue'
+import RadioTest from './components/Radio.vue'
 </script>
 
 

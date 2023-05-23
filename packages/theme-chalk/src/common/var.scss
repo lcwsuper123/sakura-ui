@@ -364,4 +364,20 @@ $switch: map.deep-merge(
         ),
         $switch
 );
-
+// radio
+$radio: () !default;
+$radio: map.deep-merge(
+        (
+            'font-size': getCssVar('font-size', 'base'),
+            'text-color': getCssVar('text-color', 'regular'),
+            'font-weight': getCssVar('font-weight', 'primary'),
+            'input-height': 14px,
+            'input-width': 14px,
+            'input-border-radius': getCssVar('border-radius', 'circle'),
+            'input-bg-color': getCssVar('fill-color', 'blank'),
+            'input-border': getCssVar('border'),
+            'input-border-color': getCssVar('border-color'),
+            'input-border-color-hover': getCssVar('color', 'primary')
+        ),
+        $radio
+);

@@ -1,0 +1,49 @@
+@use 'sass:map';
+@use './mixins/mixins' as *;
+@use './common/var' as *;
+
+$radio-height: () !default;
+$radio-height: map.deep-merge(
+        (
+            'default': 32px,
+            'small': 24px,
+            'large': 40px
+        ),
+        $radio-height
+);
+
+@include b(radio) {
+    @include set-component-css-var(radio, $radio);
+}
+
+@include b(radio) {
+    display: inline-flex;
+    align-items: center;
+    color: getCssVar('radio', 'text-color');
+    font-size: getCssVar('radio', 'font-size');
+    font-weight: getCssVar('radio', 'font-weight');
+    height: map.get($radio-height, 'default');
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+    @include e(input) {
+        display: inline-flex;
+        white-space: nowrap;
+        position: relative;
+        cursor: pointer;
+        vertical-align: middle;
+        @include m(inner) {
+            display: inline-flex;
+            width: getCssVar('radio', 'input-width');
+            height: getCssVar('radio', 'input-height');
+            border-radius: getCssVar('radio', 'input-border-radius');
+            border: getCssVar('radio', 'input-border');
+            background: getCssVar('radio', 'input-bg-color');
+            position: relative;
+            cursor: pointer;
+            box-sizing: border-box;
+        }
+
+    }
+}
