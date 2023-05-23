@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc07c7b1-2ef1-4c9d-8a8d-3936042bd441" name="变更" comment="switch loading">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/play/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/play/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/play/src/components/Switch.vue" beforeDir="false" afterPath="$PROJECT_DIR$/play/src/components/Switch.vue" afterDir="false" />
-    </list>
+    <list default="true" id="cc07c7b1-2ef1-4c9d-8a8d-3936042bd441" name="变更" comment="switch before-change" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -178,6 +174,7 @@
       <workItem from="1684479375122" duration="2464000" />
       <workItem from="1684485940129" duration="433000" />
       <workItem from="1684718737923" duration="2554000" />
+      <workItem from="1684742420750" duration="2338000" />
     </task>
     <task id="LOCAL-00001" summary="选择法院-选择身份类型样式修改">
       <created>1678431709691</created>
@@ -417,7 +414,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684485952632</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="switch before-change">
+      <created>1684745069418</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1684745069418</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -444,7 +448,8 @@
     <MESSAGE value="示例" />
     <MESSAGE value="active-icon&#10;inactive-icon" />
     <MESSAGE value="switch loading" />
-    <option name="LAST_COMMIT_MESSAGE" value="switch loading" />
+    <MESSAGE value="switch before-change" />
+    <option name="LAST_COMMIT_MESSAGE" value="switch before-change" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/sakura_ui$Button_vue_create.info" NAME="Button.vue.create 覆盖结果" MODIFIED="1682074172275" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="VitestJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

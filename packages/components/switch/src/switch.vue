@@ -1,9 +1,10 @@
 <template>
     <div
+        ref="_ref"
         :class="[
             ns.b(),
             ns.m(size),
-            ns.is('checked', modelValue),
+            ns.is('checked', checked),
             ns.is('disabled', disabled || loading),
         ]"
         @click.prevent="switchValue"
@@ -13,13 +14,20 @@
             :class="[ns.e('input')]"
             type="checkbox"
             role="switch"
+            :name="name"
+            :aria-checked="checked"
+            :true-value="activeValue"
+            :false-value="inactiveValue"
+            :disabled="switchDisabled"
+            @change="handleChange"
+            @keydown.enter="switchValue"
         />
         <template v-if="!inlinePrompt">
              <span
                  :class="[
                         ns.e('label'),
                         ns.em('label', 'left'),
-                        ns.is('active', !modelValue)
+                        ns.is('active', checked)
                     ]"
              >
                 <template v-if="inactiveIcon">
@@ -28,8 +36,7 @@
                     </s-icon>
                 </template>
                 <template v-else-if="inactiveText">
-
-                        <span>{{ inactiveText }}</span>
+                    <span :aria-hidden="checked">{{ inactiveText }}</span>
                 </template>
             </span>
         </template>
@@ -44,15 +51,15 @@
                     <template v-if="activeIcon || inactiveIcon">
                         <s-icon :class="[ns.is('icon')]">
                             <component
-                                :is="modelValue ? activeIcon : inactiveIcon"
+                                :is="checked ? activeIcon : inactiveIcon"
                             />
                         </s-icon>
                     </template>
                     <template v-else-if="activeText || inactiveText">
                         <span
                             :class="[ns.is('text', true)]"
-                            :aria-hidden="!modelValue"
-                        >{{ modelValue ? activeText : inactiveText }}</span>
+                            :aria-hidden="checked"
+                        >{{ checked ? activeText : inactiveText }}</span>
                     </template>
                 </div>
             </template>
@@ -77,7 +84,7 @@
                 :class="[
                     ns.e('label'),
                     ns.em('label', 'right'),
-                    ns.is('active', modelValue)
+                    ns.is('active', checked)
                 ]"
             >
                 <template v-if="activeIcon">
@@ -99,7 +106,7 @@ import { switchProps, switchEmits } from './switch'
 import { Loading } from '@element-plus/icons-vue'
 import { useNamespace } from '@sakura-ui/hooks'
 import { isBoolean, isPromise, isFunction } from '@sakura-ui/utils'
-import { ref, computed } from 'vue'
+import { ref, computed, nextTick, watch } from 'vue'
 import { CHANGE_EVENT, UPDATE_MODEL_EVENT, INPUT_EVENT } from '@sakura-ui/constants'
 import SIcon from '@sakura-ui/components/icon'
 
@@ -107,16 +114,40 @@ const props = defineProps(switchProps)
 const emits = defineEmits(switchEmits)
 const ns = useNamespace('switch')
 const inputRef = ref<HTMLInputElement>()
+const _ref = ref<HTMLElement>()
+const switchDisabled = computed(() => props.disabled || props.loading)
+// 是否需要双向绑定
+const isControlled = ref(props.modelValue !== false)
+watch(
+    () => props.modelValue,
+    () => {
+        isControlled.value = true
+    }
+)
+watch(
+    () => props.value,
+    () => {
+        isControlled.value = false
+    }
+)
+const actualValue = computed(() => isControlled.value ? props.modelValue : props.value)
+const checked = computed(() => actualValue.value === props.activeValue)
+watch(checked, (value) => {
+    inputRef.value!.checked = value
+})
 const handleChange = () => {
-    const { activeValue, inactiveValue, modelValue } = props
-    const value = modelValue ? inactiveValue : activeValue
+    const { activeValue, inactiveValue } = props
+    const value = checked.value ? inactiveValue : activeValue
     emits(UPDATE_MODEL_EVENT, value)
     emits(CHANGE_EVENT, value)
     emits(INPUT_EVENT, value)
+    nextTick(() => {
+        inputRef.value!.checked = checked.value
+    })
 }
 const switchValue = () => {
-    const { disabled, loading, beforeChange } = props
-    if (disabled || loading) return
+    const { beforeChange } = props
+    if (switchDisabled.value) return
     if (beforeChange !== null) {
         beforeChangeCall()
         return
@@ -147,6 +178,13 @@ const switchCoreWidth = computed(() => {
     return {
         width: props.width + 'px'
     }
+})
+const focus = () => {
+    inputRef?.value?.focus()
+}
+defineExpose({
+    _ref,
+    focus
 })
 </script>
 <style lang="scss" scoped>

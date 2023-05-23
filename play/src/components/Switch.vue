@@ -61,10 +61,14 @@
             :loading="isLoading"
             :before-change="beforeChangeFunction"
         />
+        <s-switch
+            v-model="checked"
+            ref="switchFocusRef"
+        />
     </div>
 </template>
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { ref, onMounted, nextTick } from 'vue'
 import { Check, Close } from '@element-plus/icons-vue'
 import SSwitch from '@sakura-ui/components/switch'
 
@@ -74,6 +78,7 @@ const customValue = ref(1)
 
 const beforeChangeValue = ref(false)
 const beforeChangeBoolean = ref(false)
+const switchFocusRef = ref(null)
 const beforeChangeFunction = () => {
     return new Promise((resolve, reject) => {
         isLoading.value = true
@@ -83,6 +88,12 @@ const beforeChangeFunction = () => {
         }, 1500)
     })
 }
+onMounted(() => {
+    console.log()
+    nextTick(() => {
+        switchFocusRef?.value.focus()
+    })
+})
 </script>
 <style lang="scss" scoped>
 .column {

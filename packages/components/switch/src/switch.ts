@@ -13,6 +13,10 @@ export const switchProps = buildProps({
         type: [Boolean, String, Number],
         default: false
     },
+    value: {
+        type: [Boolean, String, Number],
+        default: false,
+    },
     // switch宽度
     width: String,
     // 是否禁用
@@ -53,7 +57,9 @@ export const switchProps = buildProps({
     beforeChange: {
         type: [Boolean, Function],
         default: null
-    }
+    },
+    // switch 对应的 name 属性
+    name: String
 })
 
 export type SwitchProps = ExtractPropTypes<typeof switchProps>
