@@ -13,8 +13,7 @@
     "include": [
         "internal/**/*",
         "internal/**/*.json",
-        "scripts/**/*",
-        "packages/theme-chalk/*"
+        "scripts/**/*"
     ],
     "exclude": [
         "**/__tests__/**",
