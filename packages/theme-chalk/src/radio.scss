@@ -11,6 +11,31 @@ $radio-height: map.deep-merge(
         ),
         $radio-height
 );
+$radio-input-size: () !default;
+$radio-input-size: map.deep-merge(
+        (
+            'small': 12px,
+            'large':14px
+        ),
+        $radio-input-size
+);
+$radio-label-font-size: () !default;
+$radio-label-font-size: map.deep-merge(
+        (
+            'small': 12px,
+            'large':14px
+        ),
+        $radio-label-font-size
+);
+//$radio-label-font-size: () !default;
+//$radio-label-font-size: map.deep-merge(
+//        (
+//            'default': 14px,
+//            'large': 14px,
+//            'small': 1px
+//        ),
+//        $radio-label-font-size
+//);
 
 @include b(radio) {
     @include set-component-css-var(radio, $radio);
@@ -27,12 +52,25 @@ $radio-height: map.deep-merge(
     cursor: pointer;
     outline: none;
     user-select: none;
+    margin-right: 32px;
+    &:last-child {
+        margin-right: 0;
+    }
     @include e(input) {
         display: inline-flex;
         white-space: nowrap;
         position: relative;
         cursor: pointer;
         vertical-align: middle;
+        @include m(original) {
+            position: absolute;
+            z-index: -1;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: 0;
+        }
         @include m(inner) {
             display: inline-flex;
             width: getCssVar('radio', 'input-width');
@@ -43,7 +81,70 @@ $radio-height: map.deep-merge(
             position: relative;
             cursor: pointer;
             box-sizing: border-box;
+            &::after {
+                content: "";
+                width: 4px;
+                height: 4px;
+                border-radius: getCssVar('radio-input', 'border-radius');
+                background: getCssVar('color', 'white');
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%) scale(0);
+                display: block;
+                transition: transform .15s getCssVar('transition-duration');
+            }
         }
-
     }
+    @include e(label) {
+        font-size: getCssVar('radio', 'font-size');
+        padding-left: 8px;
+    }
+    @each $size in (small, large) {
+        @include m($size) {
+            height: map.get($radio-height, $size);
+            @include e(input) {
+                @include m(inner) {
+                    width: map.get($radio-input-size, $size);
+                    height: map.get($radio-input-size, $size);
+                }
+            }
+            @include e(label) {
+                font-size: map.get($radio-label-font-size, $size);
+            }
+        }
+    }
+    @include when(checked) {
+        @include e(input) {
+            @include m(inner) {
+                background: getCssVar('color', 'primary');
+                border-color: getCssVar('color', 'primary');
+                &::after {
+                    transform: translate(-50%, -50%) scale(1);
+                }
+            }
+        }
+        @include e(label) {
+            color: getCssVar('color', 'primary');
+        }
+    }
+    @include when(disabled) {
+        cursor: not-allowed;
+        @include e(input) {
+            cursor: not-allowed;
+            @include m(inner) {
+                cursor: not-allowed;
+                background: getCssVar('disabled', 'bg-color');
+                border-color: getCssVar('disabled', 'border-color');
+                &::after {
+                    background: getCssVar('text-color', 'placeholder');
+                }
+            }
+        }
+        @include e(label) {
+            cursor: not-allowed;
+            color: getCssVar('text-color', 'placeholder');
+        }
+    }
+
 }

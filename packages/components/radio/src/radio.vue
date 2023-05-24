@@ -2,7 +2,9 @@
     <label
         :class="[
             ns.b(),
-            ns.m(size)
+            ns.m(size),
+            ns.is('checked', false),
+            ns.is('disabled', disabled)
         ]"
     >
        <span
@@ -10,12 +12,27 @@
                ns.e('input')
            ]"
        >
+           <input
+               :class="[
+                   ns.em('input', 'original')
+               ]"
+               type="radio"
+               :name="name"
+               :disabled="disabled"
+           />
             <span
                 :class="[
                     ns.em('input', 'inner')
                 ]"
             ></span>
        </span>
+        <span
+            :class="[
+                ns.e('label')
+            ]"
+        >
+            <slot />
+        </span>
     </label>
 </template>
 <script setup lang="ts" name="SRadio">

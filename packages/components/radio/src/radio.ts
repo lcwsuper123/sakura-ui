@@ -18,7 +18,11 @@ export const radioProps = buildProps({
         type: String,
         values: ['', 'large', 'small', 'default'],
         default: ''
-    }
+    },
+    // 原始 name 属性
+    name: String,
+    // 是否禁用
+    disabled: Boolean
 })
 
 export type RadioProps = ExtractPropTypes<typeof radioProps>

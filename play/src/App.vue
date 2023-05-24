@@ -1,7 +1,7 @@
 <template>
     <radio-test
-    />
-    <p>1</p>
+    >
+    </radio-test>
 </template>
 
 <script setup lang="ts">
