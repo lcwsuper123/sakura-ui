@@ -1,0 +1,91 @@
+@use 'sass:map';
+@use './mixins/mixins' as *;
+@use './common/var' as *;
+
+$radio-button-padding-vertical: () !default;
+$radio-button-padding-vertical: map.deep-merge(
+        (
+            'default': 8px,
+            'large': 12px,
+            'small': 5px
+        ),
+        $radio-button-padding-vertical
+);
+$radio-button-padding-horizontal: () !default;
+$radio-button-padding-horizontal: map.deep-merge(
+        (
+            'default': 15px,
+            'large': 19px,
+            'small': 11px
+        ),
+        $radio-button-padding-horizontal
+);
+@include b(radio-button) {
+    display: inline-block;
+    outline: none;
+    position: relative;
+    &:first-child {
+        @include e(inner) {
+            border-left: getCssVar('border');
+            border-top-left-radius: getCssVar('border', 'radius-base');
+            border-bottom-left-radius: getCssVar('border', 'radius-base');
+            //border-radius: getCssVar('border', 'radius-base');
+        }
+    }
+    &:last-child {
+        @include e(inner) {
+            border-top-right-radius: getCssVar('border', 'radius-base');
+            border-bottom-right-radius: getCssVar('border', 'radius-base');
+            //border-radius: getCssVar('border', 'radius-base');
+        }
+    }
+    @include e(original) {
+        @include m(input) {
+            position: absolute;
+            outline: none;
+            z-index: -1;
+            opacity: 0;
+        }
+    }
+    @include e(inner) {
+        display: inline-block;
+        cursor: pointer;
+        position: relative;
+        //box-sizing: ;
+        vertical-align: middle;
+        text-align: center;
+        font-size: map.get($radio, 'font-size');
+        color: map.get($radio, 'text-color');
+        transition: getCssVar('transition-all');
+        border: getCssVar('border');
+        padding: map.get($radio-button-padding-vertical, 'default') map.get($radio-button-padding-horizontal, 'default');
+        line-height: 1;
+        white-space: nowrap;
+        user-select: none;
+        border-left: 0;
+        //border-radius: getCssVar('border', 'radius-base');
+        &:hover {
+            color: getCssVar('color', 'primary');
+        }
+    }
+    @include when(checked) {
+        @include set-component-css-var('radio-button', $radio-button);
+        @include e(inner) {
+            color: getCssVar('radio-button', 'checked-text-color');
+            background: getCssVar('radio-button', 'checked-bg-color');
+            border-color: getCssVar('radio-button', 'checked-border-color');
+        }
+        @include when(disabled) {
+            @include e(inner) {
+                background: getCssVar('radio-button', 'disabled-checked-fill');
+                border-color: var(--#{$namespace}-button-disabled-border-color, var(--#{$namespace}-border-color-light));
+            }
+        }
+    }
+    @include when(disabled) {
+        @include e(inner) {
+            cursor: not-allowed;
+            color: getCssVar('disabled', 'text-color');
+        }
+    }
+}

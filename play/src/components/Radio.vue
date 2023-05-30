@@ -19,8 +19,21 @@
     >
         disabled
     </s-radio>
+    <s-radio-group>
+        <s-radio-button
+            disabled
+        >你好
+        </s-radio-button>
+        <s-radio-button
+            checked
+        >你好
+        </s-radio-button>
+        <s-radio-button
+        >你好
+        </s-radio-button>
+    </s-radio-group>
 </template>
 <script lang="ts" setup>
-import SRadio from '@sakura-ui/components/radio'
+import SRadio, { SRadioButton, SRadioGroup } from '@sakura-ui/components/radio'
 </script>
 <style lang="scss" scoped></style>

@@ -381,3 +381,13 @@ $radio: map.deep-merge(
         ),
         $radio
 );
+$radio-button: () !default;
+$radio-button: map.deep-merge(
+        (
+            'checked-bg-color': getCssVar('color', 'primary'),
+            'checked-text-color': getCssVar('color', 'white'),
+            'checked-border-color': getCssVar('color', 'primary'),
+            'disabled-checked-fill': getCssVar('border', 'color-extra-light')
+        ),
+        $radio-button
+);
