@@ -11,7 +11,12 @@ export const radioProps = buildProps({
     // 绑定值
     modelValue: {
         type: [String, Number, Boolean],
-        default: false
+        default: ''
+    },
+    // 单选框的值
+    label: {
+        type: [String, Number, Boolean],
+        default: ''
     },
     // 尺寸
     size: {
@@ -22,7 +27,9 @@ export const radioProps = buildProps({
     // 原始 name 属性
     name: String,
     // 是否禁用
-    disabled: Boolean
+    disabled: Boolean,
+    // 是否使用边框
+    border: Boolean
 })
 
 export type RadioProps = ExtractPropTypes<typeof radioProps>

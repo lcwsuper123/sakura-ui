@@ -27,6 +27,15 @@ $radio-label-font-size: map.deep-merge(
         ),
         $radio-label-font-size
 );
+$radio-border-padding: () !default;
+$radio-border-padding: map.deep-merge(
+        (
+            'default': 15px,
+            'large': 19px,
+            'small': 11px
+        ),
+        $radio-border-padding
+);
 //$radio-label-font-size: () !default;
 //$radio-label-font-size: map.deep-merge(
 //        (
@@ -127,6 +136,9 @@ $radio-label-font-size: map.deep-merge(
         @include e(label) {
             color: getCssVar('color', 'primary');
         }
+        @include when(bordered) {
+            border-color: getCssVar('color', 'primary');
+        }
     }
     @include when(disabled) {
         cursor: not-allowed;
@@ -145,6 +157,16 @@ $radio-label-font-size: map.deep-merge(
             cursor: not-allowed;
             color: getCssVar('text-color', 'placeholder');
         }
+        @include when(bordered) {
+            border-color: getCssVar('disabled', 'border-color');
+        }
+    }
+
+    @include when(bordered) {
+        border: getCssVar('border');
+        padding: 0 map.get($radio-border-padding, 'default') 0 map.get($radio-border-padding, 'default') - 6px;
+        border-radius: getCssVar('border', 'radius-base');
+        transition: all .15s getCssVar('transition-duration');
     }
 
 }

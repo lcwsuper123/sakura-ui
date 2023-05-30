@@ -1,6 +1,10 @@
 <template>
     <s-radio
-        size="large"
+        size="default"
+        border
+        model-value="1"
+        label="1"
+        disabled
     >
         option1
     </s-radio>
