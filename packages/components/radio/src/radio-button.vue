@@ -21,19 +21,11 @@
     </label>
 </template>
 <script lang="ts" setup name="SRadioButton">
-import { getCurrentInstance, onMounted } from 'vue'
 import { useNamespace } from '@sakura-ui/hooks'
 import { radioButtonProps } from './radio-button'
 
-const { parent, proxy } = getCurrentInstance()
 const ns = useNamespace('radio-button')
 const props = defineProps(radioButtonProps)
-
-onMounted(() => {
-    console.log(parent)
-    console.log(proxy.$parent)
-})
-
 </script>
 <style lang="scss" scoped>
 

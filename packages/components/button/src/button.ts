@@ -2,7 +2,7 @@ import { ExtractPropTypes, h } from 'vue'
 import { buildProps, IconPropType } from '@sakura-ui/utils'
 import Button from './button.vue'
 import { Loading } from '@element-plus/icons-vue'
-
+import { useSizeProp } from '@sakura-ui/hooks'
 // import type { Component } from 'vue'
 // 'primary'| 'success'| 'warning'| 'danger'| 'info'| 'text'(delete)
 export const buttonProps = buildProps({
@@ -12,11 +12,7 @@ export const buttonProps = buildProps({
         default: 'button'
     },
     // 按钮大小
-    size: {
-        type: String,
-        values: ['', 'large', 'default', 'small'],
-        default: ''
-    },
+    size: useSizeProp,
     // 按钮类型
     type: {
         type: String,

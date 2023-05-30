@@ -36,7 +36,7 @@ export const buildProp = <
     Required extends boolean = false
 >(
     prop: EpPropInput<Type, Value, Validator, Default, Required>,
-    key: string
+    key?: string
 ): EpPropFinalized<Type, Value, Validator, Default, Required> => {
     // 如果不是对象 color: String 类型时直接返回值
     if (!isObject(prop) || isEpProp(prop)) return prop as any
