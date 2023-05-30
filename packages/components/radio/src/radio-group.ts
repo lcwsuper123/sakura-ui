@@ -11,4 +11,4 @@ export const radioGroupProps = buildProps({
 })
 
 
-export type RadioGroup = ExtractPropTypes<typeof radioGroupProps>
+export type RadioGroupProps = ExtractPropTypes<typeof radioGroupProps>

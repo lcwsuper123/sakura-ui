@@ -11,7 +11,6 @@
 import { useNamespace } from '@sakura-ui/hooks'
 import { radioGroupProps } from './radio-group'
 
-const { parent, proxy } = getCurrentInstance()
 const ns = useNamespace('radio-group')
 const props = defineProps(radioGroupProps)
 </script>
