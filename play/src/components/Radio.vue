@@ -19,8 +19,9 @@
     >
         disabled
     </s-radio>
-    <s-radio-group>
+    <s-radio-group size="large">
         <s-radio-button
+            size="small"
             disabled
         >你好
         </s-radio-button>
@@ -32,8 +33,13 @@
         >你好
         </s-radio-button>
     </s-radio-group>
+    <s-radio-button
+        size="large"
+    >你好
+    </s-radio-button>
 </template>
 <script lang="ts" setup>
+import { provide } from 'vue'
 import SRadio, { SRadioButton, SRadioGroup } from '@sakura-ui/components/radio'
 </script>
 <style lang="scss" scoped></style>

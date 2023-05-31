@@ -8,12 +8,7 @@ export const radioEmits = {
     [CHANGE_EVENT]: (value: boolean | string | number) => isBoolean(value) || isString(value) || isNumber(value),
     [INPUT_EVENT]: (value: boolean | string | number) => isBoolean(value) || isString(value) || isNumber(value)
 }
-export const radioProps = buildProps({
-    // 绑定值
-    modelValue: {
-        type: [String, Number, Boolean],
-        default: ''
-    },
+export const radioBaseProps = buildProps({
     // 单选框的值
     label: {
         type: [String, Number, Boolean],
@@ -21,12 +16,20 @@ export const radioProps = buildProps({
     },
     // 尺寸
     size: useSizeProp,
-    // 原始 name 属性
-    name: String,
     // 是否禁用
     disabled: Boolean,
+})
+export const radioProps = buildProps({
+    ...radioBaseProps,
+    // 绑定值
+    modelValue: {
+        type: [String, Number, Boolean],
+        default: ''
+    },
     // 是否使用边框
-    border: Boolean
+    border: Boolean,
+    // 原始 name 属性
+    name: String,
 })
 
 export type RadioProps = ExtractPropTypes<typeof radioProps>
