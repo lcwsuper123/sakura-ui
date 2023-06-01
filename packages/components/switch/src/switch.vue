@@ -67,8 +67,6 @@
                 :class="[ns.e('action')]"
             >
                 <template v-if="loading">
-
-                    <!---->
                     <s-icon
                         :class="[ns.is('loading', loading)]"
                     >

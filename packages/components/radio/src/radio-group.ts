@@ -1,7 +1,8 @@
-import { buildProps } from '@sakura-ui/utils'
 import { ExtractPropTypes } from 'vue'
 import { useSizeProp } from '@sakura-ui/hooks'
-import { radioBaseProps } from './radio'
+import { radioBaseProps, radioEmits } from './radio'
+import { buildProps, isBoolean, isString, isNumber, IconPropType } from '@sakura-ui/utils'
+import { UPDATE_MODEL_EVENT, CHANGE_EVENT, INPUT_EVENT } from '@sakura-ui/constants'
 
 export const radioGroupProps = buildProps({
     ...radioBaseProps,
@@ -17,5 +18,6 @@ export const radioGroupProps = buildProps({
     }
 })
 
+export const radioGroupEmits = radioEmits
 
 export type RadioGroupProps = ExtractPropTypes<typeof radioGroupProps>

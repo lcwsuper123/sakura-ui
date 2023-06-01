@@ -19,27 +19,34 @@
     >
         disabled
     </s-radio>
-    <s-radio-group size="large">
+    <s-radio-group size="large" v-model="demo">
+        <s-radio-button
+            disabled
+            label="a"
+        >你好
+        </s-radio-button>
+        <s-radio-button
+            label="b"
+            checked
+        >你好
+        </s-radio-button>
+        <s-radio-button
+            label="c"
+        >你好
+        </s-radio-button>
+    </s-radio-group>
+    <div>
         <s-radio-button
             size="small"
             disabled
         >你好
         </s-radio-button>
-        <s-radio-button
-            checked
-        >你好
-        </s-radio-button>
-        <s-radio-button
-        >你好
-        </s-radio-button>
-    </s-radio-group>
-    <s-radio-button
-        size="large"
-    >你好
-    </s-radio-button>
+    </div>
 </template>
 <script lang="ts" setup>
-import { provide } from 'vue'
+import { provide, ref } from 'vue'
 import SRadio, { SRadioButton, SRadioGroup } from '@sakura-ui/components/radio'
+
+const demo = ref('')
 </script>
 <style lang="scss" scoped></style>

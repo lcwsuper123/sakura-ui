@@ -5,8 +5,7 @@ import { useSizeProp } from '@sakura-ui/hooks'
 
 export const radioEmits = {
     [UPDATE_MODEL_EVENT]: (value: boolean | string | number) => isBoolean(value) || isString(value) || isNumber(value),
-    [CHANGE_EVENT]: (value: boolean | string | number) => isBoolean(value) || isString(value) || isNumber(value),
-    [INPUT_EVENT]: (value: boolean | string | number) => isBoolean(value) || isString(value) || isNumber(value)
+    [CHANGE_EVENT]: (value: boolean | string | number) => isBoolean(value) || isString(value) || isNumber(value)
 }
 export const radioBaseProps = buildProps({
     // 单选框的值
@@ -17,7 +16,7 @@ export const radioBaseProps = buildProps({
     // 尺寸
     size: useSizeProp,
     // 是否禁用
-    disabled: Boolean,
+    disabled: Boolean
 })
 export const radioProps = buildProps({
     ...radioBaseProps,
@@ -29,8 +28,7 @@ export const radioProps = buildProps({
     // 是否使用边框
     border: Boolean,
     // 原始 name 属性
-    name: String,
+    name: String
 })
-
 export type RadioProps = ExtractPropTypes<typeof radioProps>
 export type RadioEmits = ExtractPropTypes<typeof radioEmits>

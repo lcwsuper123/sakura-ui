@@ -27,16 +27,19 @@ $radio-button-padding-horizontal: map.deep-merge(
     &:first-child {
         @include e(inner) {
             border-left: getCssVar('border');
-            border-top-left-radius: getCssVar('border', 'radius-base');
-            border-bottom-left-radius: getCssVar('border', 'radius-base');
+            border-radius: getCssVar('border', 'radius-base') 0 0 getCssVar('border', 'radius-base');
             //border-radius: getCssVar('border', 'radius-base');
         }
     }
     &:last-child {
         @include e(inner) {
-            border-top-right-radius: getCssVar('border', 'radius-base');
-            border-bottom-right-radius: getCssVar('border', 'radius-base');
+            border-radius: 0 getCssVar('border', 'radius-base') getCssVar('border', 'radius-base') 0;
             //border-radius: getCssVar('border', 'radius-base');
+        }
+    }
+    &:first-child:last-child{
+        @include e(inner) {
+            border-radius: getCssVar('border', 'radius-base');
         }
     }
     @include e(original) {
@@ -63,7 +66,6 @@ $radio-button-padding-horizontal: map.deep-merge(
         white-space: nowrap;
         user-select: none;
         border-left: 0;
-        //border-radius: getCssVar('border', 'radius-base');
         &:hover {
             color: getCssVar('color', 'primary');
         }
@@ -86,6 +88,16 @@ $radio-button-padding-horizontal: map.deep-merge(
         @include e(inner) {
             cursor: not-allowed;
             color: getCssVar('disabled', 'text-color');
+        }
+    }
+    @each $size in (small, large) {
+        @include m($size) {
+            @include e(inner) {
+                padding: map.get($radio-button-padding-vertical, $size) map.get($radio-button-padding-horizontal, $size);
+                @if($size == small) {
+                    font-size: 12px;
+                }
+            }
         }
     }
 }

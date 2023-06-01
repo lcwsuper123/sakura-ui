@@ -2,10 +2,11 @@
     <label
         :class="[
             ns.b('button'),
-            ns.e(_size),
-            ns.is('checked', false),
+            ns.bm('button', _size),
+            ns.is('checked', _checked),
             ns.is('disabled', _disabled),
         ]"
+        @click="isGroup ? radioGroup.changeEvent(label) : ''"
     >
         <input
             :class="[ns.bem('button', 'original', 'input')]"
@@ -28,7 +29,7 @@ import { useRadio } from './use-radio'
 
 const ns = useNamespace('radio')
 const props = defineProps(radioButtonProps)
-const { _size, _disabled } = useRadio(props)
+const { _size, _disabled, _checked, isGroup, radioGroup } = useRadio(props)
 </script>
 <style lang="scss" scoped>
 
