@@ -3,11 +3,11 @@
     <s-radio-group
         v-model="demo2"
         size="small"
-
     >
         <s-radio
             model-value="1"
             label="option1"
+            disabled
         >
             option1
         </s-radio>

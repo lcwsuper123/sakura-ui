@@ -24,6 +24,7 @@ $radio-button-padding-horizontal: map.deep-merge(
     display: inline-block;
     outline: none;
     position: relative;
+    @include set-component-css-var('radio-button', $radio-button);
     &:first-child {
         @include e(inner) {
             border-left: getCssVar('border');
@@ -67,11 +68,10 @@ $radio-button-padding-horizontal: map.deep-merge(
         user-select: none;
         border-left: 0;
         &:hover {
-            color: getCssVar('color', 'primary');
+            color: getCssVar('radio-button', 'checked-bg-color');
         }
     }
     @include when(checked) {
-        @include set-component-css-var('radio-button', $radio-button);
         @include e(inner) {
             color: getCssVar('radio-button', 'checked-text-color');
             background: getCssVar('radio-button', 'checked-bg-color');
