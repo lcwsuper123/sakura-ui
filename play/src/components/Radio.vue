@@ -1,24 +1,28 @@
 <template>
-    <s-radio
-        size="default"
-        border
-        model-value="1"
-        label="1"
-        disabled
-    >
-        option1
-    </s-radio>
-    <s-radio
+    demo2--{{ demo2 }}
+    <s-radio-group
+        v-model="demo2"
         size="small"
+
     >
-        option1
-    </s-radio>
-    <s-radio
-        size="large"
-        disabled
-    >
-        disabled
-    </s-radio>
+        <s-radio
+            model-value="1"
+            label="option1"
+        >
+            option1
+        </s-radio>
+        <s-radio
+            label="option2"
+        >
+            option1
+        </s-radio>
+        <s-radio
+            label="option3"
+            size="large"
+        >
+            option3
+        </s-radio>
+    </s-radio-group>
     <s-radio-group size="large" v-model="demo">
         <s-radio-button
             label="a"
@@ -53,5 +57,6 @@ import { provide, ref } from 'vue'
 import SRadio, { SRadioButton, SRadioGroup } from '@sakura-ui/components/radio'
 
 const demo = ref('')
+const demo2 = ref('')
 </script>
 <style lang="scss" scoped></style>

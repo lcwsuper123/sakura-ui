@@ -2,9 +2,9 @@
     <label
         :class="[
             ns.b(),
-            ns.m(size),
-            ns.is('checked', checked),
-            ns.is('disabled', disabled),
+            ns.m(_size),
+            ns.is('checked', _checked),
+            ns.is('disabled', _disabled),
             ns.is('bordered', border)
         ]"
     >
@@ -14,12 +14,14 @@
            ]"
        >
            <input
+               v-model="modelValue"
                :class="[
                    ns.em('input', 'original')
                ]"
+               :value="label"
                type="radio"
                :name="name"
-               :disabled="disabled"
+               :disabled="_disabled"
            />
             <span
                 :class="[
@@ -40,13 +42,11 @@
 import { computed } from 'vue'
 import { useNamespace } from '@sakura-ui/hooks'
 import { radioProps, radioEmits } from './radio.ts'
+import { useRadio } from './use-radio'
 
 const ns = useNamespace('radio')
 const props = defineProps(radioProps)
 const emits = defineEmits(radioEmits)
-const checked = computed(() => {
-    const { modelValue, label } = props
-    return modelValue !== '' && label !== '' && modelValue === label
-})
+const { _checked, modelValue, _disabled, _size } = useRadio(props, emits)
 </script>
 <style lang="scss" scoped></style>

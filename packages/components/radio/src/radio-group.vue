@@ -24,7 +24,6 @@ const changeEvent = (value: string | number | boolean) => {
     if (props.disabled) return
     emits(UPDATE_MODEL_EVENT, value)
 }
-console.log('emits---', emits)
 provide(radioGroupKey, reactive({
     ...toRefs(props),
     changeEvent
