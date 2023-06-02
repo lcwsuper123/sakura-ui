@@ -21,8 +21,8 @@
     </s-radio>
     <s-radio-group size="large" v-model="demo">
         <s-radio-button
-            disabled
             label="a"
+            disabled
         >你好
         </s-radio-button>
         <s-radio-button
@@ -39,6 +39,11 @@
         <s-radio-button
             size="small"
             disabled
+        >你好
+        </s-radio-button>
+        <s-radio-button
+            v-model="demo"
+            label="a"
         >你好
         </s-radio-button>
     </div>

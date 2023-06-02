@@ -8,6 +8,11 @@ export const radioEmits = {
     [CHANGE_EVENT]: (value: boolean | string | number) => isBoolean(value) || isString(value) || isNumber(value)
 }
 export const radioBaseProps = buildProps({
+    // 绑定值
+    modelValue: {
+        type: [String, Number, Boolean],
+        default: ''
+    },
     // 单选框的值
     label: {
         type: [String, Number, Boolean],
@@ -20,11 +25,6 @@ export const radioBaseProps = buildProps({
 })
 export const radioProps = buildProps({
     ...radioBaseProps,
-    // 绑定值
-    modelValue: {
-        type: [String, Number, Boolean],
-        default: ''
-    },
     // 是否使用边框
     border: Boolean,
     // 原始 name 属性

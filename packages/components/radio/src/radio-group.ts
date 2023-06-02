@@ -6,11 +6,6 @@ import { UPDATE_MODEL_EVENT, CHANGE_EVENT, INPUT_EVENT } from '@sakura-ui/consta
 
 export const radioGroupProps = buildProps({
     ...radioBaseProps,
-    // 绑定值
-    modelValue: {
-        type: [String, Number, Boolean],
-        default: ''
-    },
     // 原生name值
     name: {
         type: String,
