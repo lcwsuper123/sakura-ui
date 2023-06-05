@@ -62,6 +62,6 @@ import SRadio, { SRadioButton, SRadioGroup } from '@sakura-ui/components/radio'
 
 const demo = ref('')
 const demo2 = ref('option1')
-const change = e => console.log('e---', e)
+const change = (e: string | number | boolean) => console.log('e---', e)
 </script>
 <style lang="scss" scoped></style>

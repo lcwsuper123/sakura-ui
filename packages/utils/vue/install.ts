@@ -32,7 +32,7 @@ export const withInstallFunction = <T>(fn: T, name: string) => {
     }
 }
 /**
- * 安装质量
+ * 安装指令
  * @param directive 指令内容
  * @param name 指令名称
  */
