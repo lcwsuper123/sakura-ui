@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc07c7b1-2ef1-4c9d-8a8d-3936042bd441" name="变更" comment="radio-button handleChange" />
+    <list default="true" id="cc07c7b1-2ef1-4c9d-8a8d-3936042bd441" name="变更" comment="radio-group 实现&#10;textColor: 按钮形式的 Radio 激活时的文本颜色&#10;fill: 按钮形式的 Radio 激活时的填充色和边框色&#10;功能&#10;radio-button添加checkedStyle方法，该方法依赖于textColor, fill" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -182,6 +182,7 @@
       <workItem from="1685518900796" duration="6078000" />
       <workItem from="1685527331353" duration="2000" />
       <workItem from="1685581634594" duration="7546000" />
+      <workItem from="1685693042947" duration="10481000" />
     </task>
     <task id="LOCAL-00001" summary="选择法院-选择身份类型样式修改">
       <created>1678431709691</created>
@@ -449,7 +450,28 @@
       <option name="project" value="LOCAL" />
       <updated>1685610994664</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="useRadio实现双向绑定。&#10;useRadio _checked 判断条件重写&#10;radio-button 实现双向绑定">
+      <created>1685696902992</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1685696902992</updated>
+    </task>
+    <task id="LOCAL-00040" summary="s-radio实现于s-radio-group双向绑定">
+      <created>1685710656021</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1685710656021</updated>
+    </task>
+    <task id="LOCAL-00041" summary="radio-group 实现&#10;textColor: 按钮形式的 Radio 激活时的文本颜色&#10;fill: 按钮形式的 Radio 激活时的填充色和边框色&#10;功能&#10;radio-button添加checkedStyle方法，该方法依赖于textColor, fill">
+      <created>1685713003681</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1685713003681</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -467,7 +489,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="选择法院-选择身份类型样式修改" />
     <MESSAGE value="取消在线庭审联审" />
     <MESSAGE value="背景音频与结束庭审提示" />
     <MESSAGE value="排期" />
@@ -490,7 +511,10 @@
     <MESSAGE value="switch before-change" />
     <MESSAGE value="radio before-change" />
     <MESSAGE value="radio-button handleChange" />
-    <option name="LAST_COMMIT_MESSAGE" value="radio-button handleChange" />
+    <MESSAGE value="useRadio实现双向绑定。&#10;useRadio _checked 判断条件重写&#10;radio-button 实现双向绑定" />
+    <MESSAGE value="s-radio实现于s-radio-group双向绑定" />
+    <MESSAGE value="radio-group 实现&#10;textColor: 按钮形式的 Radio 激活时的文本颜色&#10;fill: 按钮形式的 Radio 激活时的填充色和边框色&#10;功能&#10;radio-button添加checkedStyle方法，该方法依赖于textColor, fill" />
+    <option name="LAST_COMMIT_MESSAGE" value="radio-group 实现&#10;textColor: 按钮形式的 Radio 激活时的文本颜色&#10;fill: 按钮形式的 Radio 激活时的填充色和边框色&#10;功能&#10;radio-button添加checkedStyle方法，该方法依赖于textColor, fill" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/sakura_ui$Button_vue_create.info" NAME="Button.vue.create 覆盖结果" MODIFIED="1682074172275" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="VitestJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

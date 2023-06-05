@@ -1,4 +1,4 @@
-import { ref, inject, computed } from 'vue'
+import { inject, computed } from 'vue'
 import { radioGroupKey } from './constants'
 import { RadioEmits, RadioProps } from './radio'
 import { isString } from '@sakura-ui/utils'

@@ -20,6 +20,11 @@ export const radioGroupProps = buildProps({
     fill: {
         type: String,
         default: '#409EFF'
+    },
+    // id
+    id: {
+        type: String,
+        default: undefined
     }
 })
 

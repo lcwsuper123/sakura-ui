@@ -101,7 +101,7 @@ $radio-border-padding: map.deep-merge(
                 top: 50%;
                 transform: translate(-50%, -50%) scale(0);
                 display: block;
-                transition: transform .15s getCssVar('transition-duration');
+                transition: transform getCssVar('transition-duration', 'fast');
             }
         }
     }
@@ -166,7 +166,7 @@ $radio-border-padding: map.deep-merge(
         border: getCssVar('border');
         padding: 0 map.get($radio-border-padding, 'default') 0 map.get($radio-border-padding, 'default') - 6px;
         border-radius: getCssVar('border', 'radius-base');
-        transition: all .15s getCssVar('transition-duration');
+        transition: all getCssVar('transition-fast');
     }
 
 }

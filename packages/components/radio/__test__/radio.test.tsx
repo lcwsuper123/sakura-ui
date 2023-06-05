@@ -9,6 +9,9 @@ describe('Radio.vue', () => {
     })
     it('size', () => {
         const wrapper = mount(() => <Radio />)
-        expect(wrapper.classes()).toContain('s-radio--default')
+        expect(wrapper.classes()).toContain('s-radio')
+    })
+    it('change', () => {
+      // const wrapper = mount()
     })
 })

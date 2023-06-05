@@ -22,6 +22,7 @@
                type="radio"
                :name="name"
                :disabled="_disabled"
+               @change="handleChange"
            />
             <span
                 :class="[
@@ -39,14 +40,18 @@
     </label>
 </template>
 <script setup lang="ts" name="SRadio">
-import { computed } from 'vue'
+import { nextTick, SetupContext } from 'vue'
 import { useNamespace } from '@sakura-ui/hooks'
 import { radioProps, radioEmits } from './radio.ts'
 import { useRadio } from './use-radio'
+import { CHANGE_EVENT } from '@sakura-ui/constants'
 
 const ns = useNamespace('radio')
 const props = defineProps(radioProps)
-const emits = defineEmits(radioEmits)
+const emits: SetupContext<RadioEmits>['emit'] = defineEmits(radioEmits)
 const { _checked, modelValue, _disabled, _size } = useRadio(props, emits)
+const handleChange = () => {
+    nextTick(() => emits(CHANGE_EVENT, modelValue.value))
+}
 </script>
 <style lang="scss" scoped></style>
