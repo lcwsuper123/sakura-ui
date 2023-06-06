@@ -1,12 +1,12 @@
 <template>
-    <radio-test
+    <input-number
     >
-    </radio-test>
+    </input-number>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import RadioTest from './components/Radio.vue'
+import InputNumber from './components/InputNumber.vue'
 </script>
 
 
