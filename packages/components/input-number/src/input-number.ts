@@ -23,12 +23,22 @@ export const inputNumberProps = buildProps({
     disabled: {
         type: Boolean,
         default: false
+    },
+    // 计数器步长
+    step: {
+        type: Number,
+        default: 1
+    },
+    // 是否只读
+    readonly: {
+        type: Boolean,
+        default: false
     }
 })
 
 export const inputNumberEmits = {
     [UPDATE_MODEL_EVENT]: (value: number) => isNumber(value),
-    [CHANGE_EVENT]: (value: number) => isNumber(value),
+    [CHANGE_EVENT]: (value: number) => isNumber(value)
 }
 
 export type InputNumberProps = ExtractPropTypes<typeof inputNumberProps>

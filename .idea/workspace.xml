@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc07c7b1-2ef1-4c9d-8a8d-3936042bd441" name="变更" comment="实现use-id -hooks&#10;radio组件完成change事件&#10;radio-group组件完成change事件&#10;radio-group组件完成id属性" />
+    <list default="true" id="cc07c7b1-2ef1-4c9d-8a8d-3936042bd441" name="变更" comment="input-number 初始化">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,29 +49,43 @@
       <recent name="D:\Work\sakura-ui\packages\theme-chalk\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Vitest.Radio.vue.size">
-    <configuration name="Button.vue" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <vitest-package value="$PROJECT_DIR$/node_modules/vitest" />
-      <working-dir value="$PROJECT_DIR$/packages/components" />
-      <envs />
-      <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/packages/components/button/__tests__/button.test.tsx" />
-      <test-names>
-        <test-name value="Button.vue" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="Button.vue.create" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Vitest.InputNumber.vue.disabled">
+    <configuration name="InputNumber.vue.create" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <vitest-package value="$PROJECT_DIR$/node_modules/vitest" />
       <working-dir value="$PROJECT_DIR$/packages/components" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/packages/components/button/__tests__/button.test.tsx" />
+      <test-file value="$PROJECT_DIR$/packages/components/input-number/__test__/input-number.test.tsx" />
       <test-names>
-        <test-name value="Button.vue" />
+        <test-name value="InputNumber.vue" />
         <test-name value="create" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="InputNumber.vue.disabled" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <vitest-package value="$PROJECT_DIR$/node_modules/vitest" />
+      <working-dir value="$PROJECT_DIR$/packages/components" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/packages/components/input-number/__test__/input-number.test.tsx" />
+      <test-names>
+        <test-name value="InputNumber.vue" />
+        <test-name value="disabled" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="InputNumber.vue.size" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <vitest-package value="$PROJECT_DIR$/node_modules/vitest" />
+      <working-dir value="$PROJECT_DIR$/packages/components" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/packages/components/input-number/__test__/input-number.test.tsx" />
+      <test-names>
+        <test-name value="InputNumber.vue" />
+        <test-name value="size" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -98,16 +114,13 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/sakura-ui/demo/index.html" useBuiltInWebServerPort="true">
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Vitest.InputNumber.vue.disabled" />
+        <item itemvalue="Vitest.InputNumber.vue.size" />
+        <item itemvalue="Vitest.InputNumber.vue.create" />
         <item itemvalue="Vitest.Radio.vue.size" />
         <item itemvalue="Vitest.Radio.vue" />
-        <item itemvalue="Vitest.Button.vue" />
-        <item itemvalue="Vitest.Button.vue.create" />
-        <item itemvalue="JavaScript 调试.index.html" />
       </list>
     </recent_temporary>
   </component>
@@ -201,6 +214,9 @@
       <workItem from="1685581634594" duration="7546000" />
       <workItem from="1685693042947" duration="10481000" />
       <workItem from="1685928588113" duration="3250000" />
+      <workItem from="1686016210474" duration="3865000" />
+      <workItem from="1686127948847" duration="324000" />
+      <workItem from="1686273180215" duration="1190000" />
     </task>
     <task id="LOCAL-00001" summary="选择法院-选择身份类型样式修改">
       <created>1678431709691</created>
@@ -503,7 +519,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685931276931</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="input-number 初始化">
+      <created>1686042392051</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1686042392051</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -521,7 +544,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="背景音频与结束庭审提示" />
     <MESSAGE value="排期" />
     <MESSAGE value="共享空间在线庭审庭审笔录签字,参与人签过字后依然显示未签字, 受托人的委托承诺书显示错误, 陈穗燕法官进入远程信访，上传材料未显示材料bug修复" />
     <MESSAGE value="代理见证签字状态修改" />
@@ -546,7 +568,8 @@
     <MESSAGE value="s-radio实现于s-radio-group双向绑定" />
     <MESSAGE value="radio-group 实现&#10;textColor: 按钮形式的 Radio 激活时的文本颜色&#10;fill: 按钮形式的 Radio 激活时的填充色和边框色&#10;功能&#10;radio-button添加checkedStyle方法，该方法依赖于textColor, fill" />
     <MESSAGE value="实现use-id -hooks&#10;radio组件完成change事件&#10;radio-group组件完成change事件&#10;radio-group组件完成id属性" />
-    <option name="LAST_COMMIT_MESSAGE" value="实现use-id -hooks&#10;radio组件完成change事件&#10;radio-group组件完成change事件&#10;radio-group组件完成id属性" />
+    <MESSAGE value="input-number 初始化" />
+    <option name="LAST_COMMIT_MESSAGE" value="input-number 初始化" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/sakura_ui$Button_vue_create.info" NAME="Button.vue.create 覆盖结果" MODIFIED="1682074172275" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="VitestJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

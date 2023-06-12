@@ -2,6 +2,77 @@
 @use './mixins/mixins' as *;
 @use './common/var' as *;
 
-@include b(input-number) {
+$input-number-width: () !default;
+$input-number-width: map.deep-merge(
+        (
+            'small': 120px,
+            'default': 150px,
+            'lager':180px
+        ),
+        $input-number-width
+);
 
+@include b(input-number) {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    width: map.get($input-number-width, 'default');
+    .#{$B + $element-separator}increase, .#{$B + $element-separator}decrease {
+        position: absolute;
+        top: 1px;
+        bottom: 1px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        width: map.get($common-component-size, 'default');
+        height: auto;
+        background: getCssVar('fill-color', 'light');
+        cursor: pointer;
+        user-select: none;
+        font-size: map.get($font-size, 'small');
+        color: getCssVar('text-color', 'regular');
+        @include when(disabled) {
+            color: getCssVar('disabled-text-color');
+            cursor: not-allowed;
+        }
+    }
+    @include e(decrease) {
+        left: 1px;
+        border-radius: getCssVar('border-radius', 'base') 0 0 getCssVar('border-radius', 'base');
+        border-right: getCssVar('border');
+    }
+    @include e(increase) {
+        right: 1px;
+        border-radius: 0 getCssVar('border-radius', 'base') getCssVar('border-radius', 'base') 0;
+        border-left: getCssVar('border');
+    }
+    @include m(wrapper) {
+        height: map.get($common-component-size, 'default');
+        line-height: 1;
+        padding: 0 calc(map.get($common-component-size, 'default') + 10px);
+        flex: 1;
+        border: getCssVar('border');
+        border-radius: getCssVar('border-radius', 'base');
+        overflow: hidden;
+        transition: border getCssVar('transition-duration');
+        @include when(focus) {
+            border-color: getCssVar('color', 'primary');
+        }
+    }
+    @include m(inner) {
+        &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+        -moz-appearance: none;
+        width: 100%;
+        line-height: 1;
+        height: calc(map.get($common-component-size, 'default') - 2px);
+        padding: 0;
+        margin: 0;
+        border: none;
+        outline: none;
+        font-size: getCssVar('font-size', 'small');
+        color: getCssVar('text-color', 'regular');
+    }
 }
