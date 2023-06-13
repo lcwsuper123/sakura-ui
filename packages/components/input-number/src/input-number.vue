@@ -3,7 +3,7 @@
         :class="[
             ns.b(),
             ns.m(size),
-            ns.is('disabled', disabled)
+            ns.is('disabled', disabled),
         ]"
     >
         <span
@@ -32,13 +32,13 @@
         </span>
         <div
             :class="[
-                ns.m('wrapper'),
+                ns.e('wrapper'),
                 ns.is('focus', focus)
             ]"
         >
             <input
                 :class="[
-                    ns.m('inner')
+                    ns.e('inner')
                 ]"
                 :min="min"
                 :max="max"

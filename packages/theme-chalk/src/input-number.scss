@@ -7,7 +7,7 @@ $input-number-width: map.deep-merge(
         (
             'small': 120px,
             'default': 150px,
-            'lager':180px
+            'large': 180px
         ),
         $input-number-width
 );
@@ -17,7 +17,7 @@ $input-number-width: map.deep-merge(
     align-items: center;
     position: relative;
     width: map.get($input-number-width, 'default');
-    .#{$B + $element-separator}increase, .#{$B + $element-separator}decrease {
+    .#{$B}__increase, .#{$B}__decrease {
         position: absolute;
         top: 1px;
         bottom: 1px;
@@ -47,7 +47,7 @@ $input-number-width: map.deep-merge(
         border-radius: 0 getCssVar('border-radius', 'base') getCssVar('border-radius', 'base') 0;
         border-left: getCssVar('border');
     }
-    @include m(wrapper) {
+    @include e(wrapper) {
         height: map.get($common-component-size, 'default');
         line-height: 1;
         padding: 0 calc(map.get($common-component-size, 'default') + 10px);
@@ -60,7 +60,7 @@ $input-number-width: map.deep-merge(
             border-color: getCssVar('color', 'primary');
         }
     }
-    @include m(inner) {
+    @include e(inner) {
         &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
             -webkit-appearance: none;
         }
@@ -74,5 +74,20 @@ $input-number-width: map.deep-merge(
         outline: none;
         font-size: getCssVar('font-size', 'small');
         color: getCssVar('text-color', 'regular');
+    }
+    @each $size in (small, large) {
+        @include m($size) {
+            width: map.get($input-number-width, $size);
+            .#{$B}__increase, .#{$B}__decrease {
+                width: map.get($common-component-size, $size);
+            }
+            @include e(wrapper) {
+                padding: 0 calc(map.get($common-component-size, $size) + 10px);
+                height: map.get($common-component-size, $size);
+            }
+            @include e(inner) {
+                height: calc(map.get($common-component-size, $size) - 2px);
+            }
+        }
     }
 }
