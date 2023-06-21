@@ -32,6 +32,12 @@ $input-number-width: map.deep-merge(
         user-select: none;
         font-size: map.get($font-size, 'small');
         color: getCssVar('text-color', 'regular');
+        &:hover{
+            color: getCssVar('color', 'primary');
+            & ~ .#{$B}__wrapper{
+                border-color: getCssVar('color', 'primary');
+            }
+        }
         @include when(disabled) {
             color: getCssVar('disabled-text-color');
             cursor: not-allowed;
