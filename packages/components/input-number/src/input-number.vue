@@ -89,9 +89,9 @@ const data: Data = reactive({
     current: props.modelValue
 })
 // 加是否禁用
-const increaseDisabled = computed<boolean>(() => data.current >= props.max)
+const increaseDisabled = computed<boolean>(() => !isUndefined(props.max) && data.current >= props.max)
 // 减是否禁用
-const decreaseDisabled = computed<boolean>(() => data.current <= props.min)
+const decreaseDisabled = computed<boolean>(() => !isUndefined(props.min) && data.current <= props.min)
 // 初始化
 onMounted(() => {
     initData()
