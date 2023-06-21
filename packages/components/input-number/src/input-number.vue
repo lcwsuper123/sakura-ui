@@ -73,6 +73,7 @@ import { useNamespace } from '@sakura-ui/hooks'
 import { UPDATE_MODEL_EVENT } from '@sakura-ui/constants'
 import { inputNumberEmits, inputNumberProps } from './input-number'
 import { useId } from '@sakura-ui/hooks'
+import { isUndefined } from '@sakura-ui/utils'
 
 type TargetElement = HTMLInputElement | HTMLTextAreaElement
 type Data = {
@@ -97,11 +98,15 @@ onMounted(() => {
 })
 const initData = () => {
     const input = unref(inputRef) as HTMLInputElement
+    if (isNaN(Number(data.current))) {
+        data.current = 1
+    }
     input.setAttribute('aria-valuenow', String(data.current))
     input.setAttribute('value', String(data.current))
 }
 // 设置最新的值
 const setCurrentValue = (value: number) => {
+    if (data.current === value) return
     const { max, min } = props
     if (value > max) {
         value = max
@@ -120,13 +125,19 @@ const handleInput = (e: Event) => {
 const decrease = () => {
     if (unref(decreaseDisabled)) return
     const { step, min } = props
-    const value = Math.max(data.current - step, min)
+    let value = data.current - step
+    if (min) {
+        value = Math.max(value, min)
+    }
     setCurrentValue(value)
 }
 const increase = () => {
     if (unref(increaseDisabled)) return
     const { step, max } = props
-    const value = Math.min(data.current + step, max)
+    let value = data.current + step
+    if (max) {
+        value = Math.min(value, max)
+    }
     setCurrentValue(value)
 }
 </script>
