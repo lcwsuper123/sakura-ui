@@ -48,10 +48,14 @@ $input-number-width: map.deep-merge(
         border-left: getCssVar('border');
     }
     @include e(wrapper) {
+        width: 100%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         height: map.get($common-component-size, 'default');
         line-height: 1;
         padding: 0 calc(map.get($common-component-size, 'default') + 10px);
-        flex: 1;
+        flex-grow: 1;
         border: getCssVar('border');
         border-radius: getCssVar('border-radius', 'base');
         overflow: hidden;
@@ -74,6 +78,7 @@ $input-number-width: map.deep-merge(
         outline: none;
         font-size: getCssVar('font-size', 'small');
         color: getCssVar('text-color', 'regular');
+        text-align: center;
     }
     @each $size in (small, large) {
         @include m($size) {

@@ -1,6 +1,10 @@
 <template>
     <div>
+        num---{{ num }}
         <input-number
+            v-model="num"
+            :max="10"
+            :min="1"
         />
         <input-number
             size="small"
@@ -12,7 +16,9 @@
 </template>
 
 <script lang="ts" setup>
+import { ref } from 'vue'
 import InputNumber from '@sakura-ui/components/input-number'
+const num = ref(1)
 </script>
 
 <style lang="scss" scoped>

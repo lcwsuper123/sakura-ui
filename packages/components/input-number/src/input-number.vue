@@ -10,8 +10,10 @@
             role="button"
             aria-label="crease number"
             :class="[
-                ns.e('decrease')
+                ns.e('decrease'),
+                ns.is('disabled', decreaseDisabled)
             ]"
+            @click="decrease"
         >
             <s-icon
             >
@@ -23,7 +25,9 @@
             aria-label="crease number"
             :class="[
                 ns.e('increase'),
+                ns.is('disabled', increaseDisabled)
             ]"
+            @click="increase"
         >
             <s-icon
             >
@@ -37,38 +41,94 @@
             ]"
         >
             <input
+                :value="data.current"
+                ref="inputRef"
                 :class="[
                     ns.e('inner')
                 ]"
-                :min="min"
-                :max="max"
+                :min="String(min)"
+                :max="String(max)"
                 autocomplete="off"
                 tabindex="0"
                 role="spinbutton"
                 :aria-valuemin="min"
                 :aria-valuemax="max"
                 :aria-disabled="disabled"
+                :aria-valuenow="modelValue"
                 :id="inputNumberId"
                 @focus="focus = true"
                 @blur="focus = false"
+                @input="handleInput"
+                type="number"
             />
         </div>
     </div>
 </template>
 
 <script setup lang="ts" name="SInputNumber">
-import { ref } from 'vue'
+import { ref, computed, onMounted, onUpdated, unref, nextTick, reactive } from 'vue'
 import { Minus, Plus } from '@element-plus/icons-vue'
 import SIcon from '@sakura-ui/components/icon'
 import { useNamespace } from '@sakura-ui/hooks'
+import { UPDATE_MODEL_EVENT } from '@sakura-ui/constants'
 import { inputNumberEmits, inputNumberProps } from './input-number'
 import { useId } from '@sakura-ui/hooks'
 
+type TargetElement = HTMLInputElement | HTMLTextAreaElement
+type Data = {
+    current: number | string
+}
 const props = defineProps(inputNumberProps)
 const emits = defineEmits(inputNumberEmits)
 const ns = useNamespace('input-number')
 const inputNumberId = useId()
 const focus = ref(false)
+const inputRef = ref(null)
+const data: Data = reactive({
+    current: props.modelValue
+})
+// 加是否禁用
+const increaseDisabled = computed<boolean>(() => data.current >= props.max)
+// 减是否禁用
+const decreaseDisabled = computed<boolean>(() => data.current <= props.min)
+// 初始化
+onMounted(() => {
+    initData()
+})
+const initData = () => {
+    const input = unref(inputRef) as HTMLInputElement
+    input.setAttribute('aria-valuenow', String(data.current))
+    input.setAttribute('value', String(data.current))
+}
+// 设置最新的值
+const setCurrentValue = (value: number) => {
+    const { max, min } = props
+    if (value > max) {
+        value = max
+    } else if (value < min) {
+        value = min
+    }
+    emits(UPDATE_MODEL_EVENT, Number(value))
+    data.current = value
+}
+// 监听input输入
+const handleInput = (e: Event) => {
+    const target = e.target as TargetElement
+    let value = Number(target.value)
+    setCurrentValue(value)
+}
+const decrease = () => {
+    if (unref(decreaseDisabled)) return
+    const { step, min } = props
+    const value = Math.max(data.current - step, min)
+    setCurrentValue(value)
+}
+const increase = () => {
+    if (unref(increaseDisabled)) return
+    const { step, max } = props
+    const value = Math.min(data.current + step, max)
+    setCurrentValue(value)
+}
 </script>
 
 <style lang="scss" scoped></style>

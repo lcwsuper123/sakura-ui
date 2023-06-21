@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc07c7b1-2ef1-4c9d-8a8d-3936042bd441" name="变更" comment="input-number 完成基本样式" />
+    <list default="true" id="cc07c7b1-2ef1-4c9d-8a8d-3936042bd441" name="变更" comment="input-number size 央视完成">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -216,6 +218,8 @@
       <workItem from="1686127948847" duration="324000" />
       <workItem from="1686273180215" duration="1190000" />
       <workItem from="1686537668796" duration="5738000" />
+      <workItem from="1686621293411" duration="4157000" />
+      <workItem from="1687165019732" duration="757000" />
     </task>
     <task id="LOCAL-00001" summary="选择法院-选择身份类型样式修改">
       <created>1678431709691</created>
@@ -532,7 +536,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686542139064</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="input-number size 央视完成">
+      <created>1686623053135</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1686623053135</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -550,7 +561,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="共享空间在线庭审庭审笔录签字,参与人签过字后依然显示未签字, 受托人的委托承诺书显示错误, 陈穗燕法官进入远程信访，上传材料未显示材料bug修复" />
     <MESSAGE value="代理见证签字状态修改" />
     <MESSAGE value="整理在线庭审" />
     <MESSAGE value="收款账户书" />
@@ -575,7 +585,8 @@
     <MESSAGE value="实现use-id -hooks&#10;radio组件完成change事件&#10;radio-group组件完成change事件&#10;radio-group组件完成id属性" />
     <MESSAGE value="input-number 初始化" />
     <MESSAGE value="input-number 完成基本样式" />
-    <option name="LAST_COMMIT_MESSAGE" value="input-number 完成基本样式" />
+    <MESSAGE value="input-number size 央视完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="input-number size 央视完成" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/sakura_ui$Button_vue_create.info" NAME="Button.vue.create 覆盖结果" MODIFIED="1682074172275" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="VitestJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
