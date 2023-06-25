@@ -94,9 +94,9 @@ const data: Data = reactive({
     currentValue: props.modelValue
 })
 // 加是否禁用
-const increaseDisabled = computed<boolean>(() => !isUndefined(props.max) && data.currentValue >= props.max)
+const increaseDisabled = computed<boolean>(() => !isUndefined(props.max) && Number(data.currentValue) >= props.max)
 // 减是否禁用
-const decreaseDisabled = computed<boolean>(() => !isUndefined(props.min) && data.currentValue <= props.min)
+const decreaseDisabled = computed<boolean>(() => !isUndefined(props.min) && Number(data.currentValue) <= props.min)
 // 初始化
 onMounted(() => {
     initData()
@@ -137,7 +137,7 @@ const validationValue = (value: number): number => {
  * 效验值, 返回符合规则的值
  * @param value
  */
-const verifyValue = (value: Data['current']): number => {
+const verifyValue = (value: Data['currentValue']): number => {
     const { min, max, stepStrictly } = props
     if (isString(value)) {
         value = Number(value)
@@ -155,7 +155,7 @@ const verifyValue = (value: Data['current']): number => {
  * @param value 新值
  * @param emitChange 是否发送change事件
  */
-const setCurrentValue = (value: Data['current'], emitChange: boolean = false) => {
+const setCurrentValue = (value: Data['currentValue'], emitChange: boolean = false) => {
     const oldValue = data.currentValue
     const newValue = verifyValue(value)
     if (!emitChange) {
@@ -212,7 +212,7 @@ const handleChange = (e: Event) => {
 const decrease = () => {
     if (unref(decreaseDisabled) || props.disabled) return
     const { step, min } = props
-    let value = data.currentValue - step
+    let value = Number(data.currentValue) - step
     if (min) {
         value = Math.max(value, min)
     }
@@ -224,7 +224,7 @@ const decrease = () => {
 const increase = () => {
     if (unref(increaseDisabled) || props.disabled) return
     const { step, max } = props
-    let value = data.currentValue + step
+    let value = Number(data.currentValue) + step
     if (max) {
         value = Math.min(value, max)
     }
