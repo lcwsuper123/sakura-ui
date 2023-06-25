@@ -7,11 +7,15 @@
             :min="1"
             :step="3"
             disabled
+            size="large"
         />
+        {{ num2 }}
         <input-number
-            size="small"
+            v-model="num2"
             :max="10"
             :min="1"
+            :step="3"
+            step-strictly
         />
         <input-number
             size="large"
@@ -23,6 +27,7 @@
 import { ref } from 'vue'
 import InputNumber from '@sakura-ui/components/input-number'
 const num = ref(1)
+const num2 = ref(3)
 </script>
 
 <style lang="scss" scoped>

@@ -41,13 +41,14 @@
             ]"
         >
             <input
-                :value="data.current"
+                :value="displayValue"
+                type="number"
                 ref="inputRef"
                 :class="[
                     ns.e('inner')
                 ]"
-                :min="String(min)"
-                :max="String(max)"
+                :min="min || '-Infinity'"
+                :max="max || 'Infinity'"
                 :disabled="disabled"
                 autocomplete="off"
                 tabindex="0"
@@ -55,12 +56,12 @@
                 :aria-valuemin="min"
                 :aria-valuemax="max"
                 :aria-disabled="disabled"
-                :aria-valuenow="modelValue"
+                :aria-valuenow="displayValue"
                 :id="inputNumberId"
                 @focus="focus = true"
                 @blur="focus = false"
                 @input="handleInput"
-                type="number"
+                @change="handleChange"
             />
         </div>
     </div>
@@ -71,14 +72,16 @@ import { ref, computed, onMounted, onUpdated, unref, nextTick, reactive } from '
 import { Minus, Plus } from '@element-plus/icons-vue'
 import SIcon from '@sakura-ui/components/icon'
 import { useNamespace } from '@sakura-ui/hooks'
-import { UPDATE_MODEL_EVENT } from '@sakura-ui/constants'
+import { CHANGE_EVENT, UPDATE_MODEL_EVENT } from '@sakura-ui/constants'
 import { inputNumberEmits, inputNumberProps } from './input-number'
 import { useId } from '@sakura-ui/hooks'
-import { isUndefined } from '@sakura-ui/utils'
+import { isNumber, isString, isUndefined } from '@sakura-ui/utils'
+import { isNil } from 'lodash-es'
 
 type TargetElement = HTMLInputElement | HTMLTextAreaElement
 type Data = {
-    current: number | string
+    userInput: number | string | null,
+    currentValue: number | string
 }
 const props = defineProps(inputNumberProps)
 const emits = defineEmits(inputNumberEmits)
@@ -87,59 +90,145 @@ const inputNumberId = useId()
 const focus = ref(false)
 const inputRef = ref(null)
 const data: Data = reactive({
-    current: props.modelValue
+    userInput: null,
+    currentValue: props.modelValue
 })
 // 加是否禁用
-const increaseDisabled = computed<boolean>(() => !isUndefined(props.max) && data.current >= props.max)
+const increaseDisabled = computed<boolean>(() => !isUndefined(props.max) && data.currentValue >= props.max)
 // 减是否禁用
-const decreaseDisabled = computed<boolean>(() => !isUndefined(props.min) && data.current <= props.min)
+const decreaseDisabled = computed<boolean>(() => !isUndefined(props.min) && data.currentValue <= props.min)
 // 初始化
 onMounted(() => {
     initData()
 })
+/**
+ * 初始化数据
+ */
 const initData = () => {
+    const { step, stepStrictly } = props
+    if (isNaN(Number(data.currentValue))) {
+        data.currentValue = stepStrictly ? step : 1
+    }
+    changeInputProps()
+}
+const changeInputProps = () => {
     const input = unref(inputRef) as HTMLInputElement
-    if (isNaN(Number(data.current))) {
-        data.current = 1
-    }
-    input.setAttribute('aria-valuenow', String(data.current))
-    input.setAttribute('value', String(data.current))
+    input.setAttribute('aria-valuenow', String(data.currentValue))
 }
-// 设置最新的值
-const setCurrentValue = (value: number) => {
-    if (data.current === value) return
-    const { max, min } = props
-    if (value > max) {
-        value = max
-    } else if (value < min) {
-        value = min
+/**
+ * 效验数据是否符合步数
+ * @param value
+ */
+const validationValue = (value: number): number => {
+    const { step } = props
+    const remainder: number = value % step
+    if (value < step) {
+        return step
     }
-    emits(UPDATE_MODEL_EVENT, Number(value))
-    data.current = value
+    if (remainder === 0) {
+        return value
+    }
+    if ((remainder / step * 100) > 50) {
+        return value + (step - remainder)
+    }
+    return value - remainder
 }
-// 监听input输入
+/**
+ * 效验值, 返回符合规则的值
+ * @param value
+ */
+const verifyValue = (value: Data['current']): number => {
+    const { min, max, stepStrictly } = props
+    if (isString(value)) {
+        value = Number(value)
+    }
+    if (value > max || value < min) {
+        value = value > max ? max : min
+    }
+    if (stepStrictly) {
+        value = validationValue(Number(value))
+    }
+    return Number(value)
+}
+/**
+ * 设置最新的值
+ * @param value 新值
+ * @param emitChange 是否发送change事件
+ */
+const setCurrentValue = (value: Data['current'], emitChange: boolean = false) => {
+    const oldValue = data.currentValue
+    const newValue = verifyValue(value)
+    if (!emitChange) {
+        return emits(UPDATE_MODEL_EVENT, newValue)
+    }
+    if (oldValue === newValue) return
+    data.userInput = null
+    emits(UPDATE_MODEL_EVENT, newValue)
+    emits(CHANGE_EVENT, newValue)
+    data.currentValue = newValue
+}
+/**
+ * 输入框显示的值
+ */
+const displayValue = computed<number | string>(() => {
+    if (data.userInput !== null) {
+        return data.userInput
+    }
+    let currentValue: string | number | undefined | null = data.currentValue
+    if (isNil(currentValue)) return ''
+    if (isUndefined(currentValue)) return ''
+    if (isNumber(currentValue)) {
+        if (Number.isNaN(currentValue)) return ''
+    }
+    return data.currentValue
+})
+/**
+ * 监听input输入
+ * @param e
+ */
 const handleInput = (e: Event) => {
     const target = e.target as TargetElement
-    let value = Number(target.value)
-    setCurrentValue(value)
+    const value = target.value === '' ? '' : Number(target.value)
+    data.userInput = value
+    if (isNumber(value) && !Number.isNaN(value) || value === '') {
+        setCurrentValue(value, false)
+    }
 }
+/**
+ * 输入框改变
+ * @param e
+ */
+const handleChange = (e: Event) => {
+    const target = e.target as TargetElement
+    const value = target.value === '' ? '' : Number(target.value)
+    if (isNumber(value) && !Number.isNaN(value) || value === '') {
+        setCurrentValue(value, true)
+        data.userInput = null
+    }
+}
+/**
+ * 加-步进
+ */
 const decrease = () => {
     if (unref(decreaseDisabled) || props.disabled) return
     const { step, min } = props
-    let value = data.current - step
+    let value = data.currentValue - step
     if (min) {
         value = Math.max(value, min)
     }
-    setCurrentValue(value)
+    setCurrentValue(value, true)
 }
+/**
+ * 减-步进
+ */
 const increase = () => {
     if (unref(increaseDisabled) || props.disabled) return
     const { step, max } = props
-    let value = data.current + step
+    let value = data.currentValue + step
     if (max) {
         value = Math.min(value, max)
     }
-    setCurrentValue(value)
+    setCurrentValue(value, true)
 }
 </script>
 

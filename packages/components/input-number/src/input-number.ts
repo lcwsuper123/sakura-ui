@@ -29,6 +29,11 @@ export const inputNumberProps = buildProps({
         type: Number,
         default: 1
     },
+    // 严格步数, 如果使用这个参数则只能输入步进的步数
+    stepStrictly: {
+        type: Boolean,
+        default: false
+    },
     // 是否只读
     readonly: {
         type: Boolean,
