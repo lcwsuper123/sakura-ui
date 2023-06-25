@@ -32,15 +32,17 @@ $input-number-width: map.deep-merge(
         user-select: none;
         font-size: map.get($font-size, 'small');
         color: getCssVar('text-color', 'regular');
-        &:hover{
-            color: getCssVar('color', 'primary');
-            & ~ .#{$B}__wrapper{
-                border-color: getCssVar('color', 'primary');
-            }
-        }
         @include when(disabled) {
             color: getCssVar('disabled-text-color');
             cursor: not-allowed;
+        }
+
+        &:hover {
+            color: getCssVar('color', 'primary');
+
+            & ~ .#{$B}__wrapper {
+                border-color: getCssVar('color', 'primary');
+            }
         }
     }
     @include e(decrease) {
@@ -85,6 +87,7 @@ $input-number-width: map.deep-merge(
         font-size: getCssVar('font-size', 'small');
         color: getCssVar('text-color', 'regular');
         text-align: center;
+        background: transparent;
     }
     @each $size in (small, large) {
         @include m($size) {
@@ -99,6 +102,29 @@ $input-number-width: map.deep-merge(
             @include e(inner) {
                 height: calc(map.get($common-component-size, $size) - 2px);
             }
+        }
+    }
+    @include when(disabled) {
+        cursor: not-allowed;
+        //border-color: getCssVar('disabled-border-color');
+        .#{$B}__increase, .#{$B}__decrease {
+            border-color: getCssVar('disabled-border-color');
+            cursor: not-allowed;
+            color: getCssVar('disabled-text-color');
+            &:hover {
+                & ~ .#{$B}__wrapper {
+                    border-color: getCssVar('disabled-border-color');
+                }
+            }
+        }
+        @include e(wrapper) {
+            border-color: getCssVar('disabled-border-color');
+            background: getCssVar('fill-color', 'light');
+            cursor: not-allowed;
+        }
+        @include e(inner) {
+            color: getCssVar('disabled-text-color');
+            cursor: not-allowed;
         }
     }
 }

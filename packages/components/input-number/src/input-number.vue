@@ -11,7 +11,7 @@
             aria-label="crease number"
             :class="[
                 ns.e('decrease'),
-                ns.is('disabled', decreaseDisabled)
+               !disabled ? ns.is('disabled', decreaseDisabled) : ''
             ]"
             @click="decrease"
         >
@@ -25,7 +25,7 @@
             aria-label="crease number"
             :class="[
                 ns.e('increase'),
-                ns.is('disabled', increaseDisabled)
+                !disabled ? ns.is('disabled', increaseDisabled) : ''
             ]"
             @click="increase"
         >
@@ -48,6 +48,7 @@
                 ]"
                 :min="String(min)"
                 :max="String(max)"
+                :disabled="disabled"
                 autocomplete="off"
                 tabindex="0"
                 role="spinbutton"
@@ -123,7 +124,7 @@ const handleInput = (e: Event) => {
     setCurrentValue(value)
 }
 const decrease = () => {
-    if (unref(decreaseDisabled)) return
+    if (unref(decreaseDisabled) || props.disabled) return
     const { step, min } = props
     let value = data.current - step
     if (min) {
@@ -132,7 +133,7 @@ const decrease = () => {
     setCurrentValue(value)
 }
 const increase = () => {
-    if (unref(increaseDisabled)) return
+    if (unref(increaseDisabled) || props.disabled) return
     const { step, max } = props
     let value = data.current + step
     if (max) {

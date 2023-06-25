@@ -5,9 +5,13 @@
             v-model="num"
             :max="10"
             :min="1"
+            :step="3"
+            disabled
         />
         <input-number
             size="small"
+            :max="10"
+            :min="1"
         />
         <input-number
             size="large"
