@@ -21,6 +21,11 @@
         <input-number
             size="large"
         />
+        <input-number
+            size="default"
+            controls-position="right"
+            disabled
+        />
     </div>
 </template>
 

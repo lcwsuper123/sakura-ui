@@ -4,6 +4,7 @@
             ns.b(),
             ns.m(size),
             ns.is('disabled', disabled),
+            ns.is('controls-right', controlsPosition === 'right')
         ]"
     >
         <span
@@ -17,7 +18,12 @@
         >
             <s-icon
             >
-                <minus />
+                <template v-if="controlsPosition !== 'right'">
+                    <minus />
+                </template>
+                <template v-else>
+                    <arrow-down />
+                </template>
             </s-icon>
         </span>
         <span
@@ -31,7 +37,12 @@
         >
             <s-icon
             >
-                <plus />
+                <template v-if="controlsPosition !== 'right'">
+                    <plus />
+                </template>
+                <template v-else>
+                    <arrow-up />
+                </template>
             </s-icon>
         </span>
         <div
@@ -69,7 +80,7 @@
 
 <script setup lang="ts" name="SInputNumber">
 import { ref, computed, onMounted, onUpdated, unref, nextTick, reactive } from 'vue'
-import { Minus, Plus } from '@element-plus/icons-vue'
+import { Minus, Plus, ArrowUp, ArrowDown } from '@element-plus/icons-vue'
 import SIcon from '@sakura-ui/components/icon'
 import { useNamespace } from '@sakura-ui/hooks'
 import { CHANGE_EVENT, UPDATE_MODEL_EVENT } from '@sakura-ui/constants'

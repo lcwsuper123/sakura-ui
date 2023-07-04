@@ -89,6 +89,30 @@ $input-number-width: map.deep-merge(
         text-align: center;
         background: transparent;
     }
+    @include when(controls-right) {
+        .#{$B}__increase, .#{$B}__decrease {
+            height: calc(50% - 1px);
+            border-left: getCssVar('border');
+        }
+        .#{$B}__increase{
+            right: 1px;
+            left: inherit;
+            border-radius: 0 getCssVar('border-radius', 'base') 0 0;
+        }
+        .#{$B}__decrease{
+            bottom: 1px;
+            right: 1px;
+            left: inherit;
+            top: inherit;
+            border-right: none;
+            border-top: getCssVar('border');
+            border-radius: 0 0 getCssVar('border-radius', 'base') 0;
+        }
+        @include e(wrapper) {
+            padding: 0 calc(map.get($common-component-size, 'default') + 17px) 0 15px;
+            justify-content: flex-start;
+        }
+    }
     @each $size in (small, large) {
         @include m($size) {
             width: map.get($input-number-width, $size);
@@ -101,6 +125,11 @@ $input-number-width: map.deep-merge(
             }
             @include e(inner) {
                 height: calc(map.get($common-component-size, $size) - 2px);
+            }
+            @include when(controls-right) {
+                @include e(wrapper) {
+                    padding: 0 calc(map.get($common-component-size, $size) + 15px) 0 15px;
+                }
             }
         }
     }

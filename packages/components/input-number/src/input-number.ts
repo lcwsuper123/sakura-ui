@@ -43,6 +43,12 @@ export const inputNumberProps = buildProps({
     precision: {
         type: Number,
         default: 0
+    },
+    // 按钮自定义位置
+    controlsPosition: {
+        type: String,
+        values: ['', 'right'],
+        default: ''
     }
 })
 
