@@ -76,7 +76,7 @@ import { CHANGE_EVENT, UPDATE_MODEL_EVENT } from '@sakura-ui/constants'
 import { inputNumberEmits, inputNumberProps } from './input-number'
 import { useId } from '@sakura-ui/hooks'
 import { isNumber, isString, isUndefined } from '@sakura-ui/utils'
-import { isNil } from 'lodash-es'
+import { isNil, max } from 'lodash-es'
 
 type TargetElement = HTMLInputElement | HTMLTextAreaElement
 type Data = {
@@ -120,12 +120,12 @@ const changeInputProps = () => {
  * @param value
  */
 const validationValue = (value: number): number => {
-    const { step } = props
+    const { step, max, min } = props
     const remainder: number = value % step
     if (value < step) {
         return step
     }
-    if (remainder === 0) {
+    if (remainder === 0 || value === max || value === min) {
         return value
     }
     if ((remainder / step * 100) > 50) {
@@ -134,11 +134,20 @@ const validationValue = (value: number): number => {
     return value - remainder
 }
 /**
+ * 当值有小数点的时候进行操作
+ * @param value
+ */
+const precisionValue = (value: Data['currentValue']): string => {
+    const { precision, step } = props
+    const stepDotLength = step.toString().split('.')[1]?.length
+    return Number(value).toFixed(precision || stepDotLength)
+}
+/**
  * 效验值, 返回符合规则的值
  * @param value
  */
 const verifyValue = (value: Data['currentValue']): number => {
-    const { min, max, stepStrictly } = props
+    const { min, max, stepStrictly, precision, step } = props
     if (isString(value)) {
         value = Number(value)
     }
@@ -148,7 +157,10 @@ const verifyValue = (value: Data['currentValue']): number => {
     if (stepStrictly) {
         value = validationValue(Number(value))
     }
-    return Number(value)
+    if (value.toString().includes('.') || precision) {
+        value = precisionValue(value)
+    }
+    return Number.parseFloat(String(value))
 }
 /**
  * 设置最新的值
@@ -179,6 +191,9 @@ const displayValue = computed<number | string>(() => {
     if (isUndefined(currentValue)) return ''
     if (isNumber(currentValue)) {
         if (Number.isNaN(currentValue)) return ''
+        if (props.precision) {
+            return Number(currentValue).toFixed(props.precision)
+        }
     }
     return data.currentValue
 })

@@ -38,6 +38,11 @@ export const inputNumberProps = buildProps({
     readonly: {
         type: Boolean,
         default: false
+    },
+    // 数值精度
+    precision: {
+        type: Number,
+        default: 0
     }
 })
 

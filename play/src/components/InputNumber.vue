@@ -14,7 +14,8 @@
             v-model="num2"
             :max="10"
             :min="1"
-            :step="3"
+            :step=".15"
+            :precision="2"
             step-strictly
         />
         <input-number
