@@ -1,0 +1,57 @@
+@use 'sass:map';
+@use './mixins/mixins' as *;
+@use './common/var' as *;
+
+$input-padding: () !default;
+$input-padding: map.merge(
+        (
+            'small': 7px,
+            'default': 11px,
+            'large': 15px
+        ),
+        $input-padding
+);
+$input-font-size: () !default;
+$input-font-size: map.merge(
+        (
+            'small':12px,
+            'large': 14px,
+        ),
+        $input-font-size
+);
+@include b(input) {
+    @include set-component-css-var('input', $input);
+}
+
+@include b(input) {
+    position: relative;
+    font-size: getCssVar('font-size', 'base');
+    width: getCssVar('input-width');
+    height: getCssVar('component-size');
+    vertical-align: middle;
+    &:hover {
+        @include e(wrapper) {
+            border-color: getCssVar('input-hover-border-color');
+        }
+    }
+    @include e(wrapper) {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        //flex-grow: 1;
+        border: getCssVar('border');
+        border-radius: getCssVar('border-radius', 'base');
+        padding: 1px map.get($input-padding, 'default');
+        height: 100%;
+        width: 100%;
+    }
+    @each $size in (small, large) {
+        @include m($size) {
+            height: getCssVar('component-size', $size);
+            font-size: map.get($input-font-size, $size);
+            @include e(wrapper) {
+                padding: 1px map.get($input-padding, $size);
+            }
+        }
+    }
+}

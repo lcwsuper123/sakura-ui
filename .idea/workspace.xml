@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc07c7b1-2ef1-4c9d-8a8d-3936042bd441" name="变更" comment="input-number 完成controlsPosition" />
+    <list default="true" id="cc07c7b1-2ef1-4c9d-8a8d-3936042bd441" name="变更" comment="select组件初始化">
+      <change afterPath="$PROJECT_DIR$/packages/components/input/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/components/input/src/input.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/components/input/src/input.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/components/select/src/select.vue" beforeDir="false" afterPath="$PROJECT_DIR$/packages/components/select/src/select.vue" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,7 +53,7 @@
       <recent name="D:\Work\sakura-ui\packages\theme-chalk\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Vitest.InputNumber.vue.disabled">
+  <component name="RunManager" selected="Vitest.Select.vue.size">
     <configuration name="InputNumber.vue.create" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <vitest-package value="$PROJECT_DIR$/node_modules/vitest" />
@@ -87,38 +93,39 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="Radio.vue" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <vitest-package value="$PROJECT_DIR$/node_modules/vitest" />
-      <working-dir value="$PROJECT_DIR$/packages/components" />
-      <envs />
-      <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/packages/components/radio/__test__/radio.test.tsx" />
-      <test-names>
-        <test-name value="Radio.vue" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="Radio.vue.size" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
+    <configuration name="Select.vue.create" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <vitest-package value="$PROJECT_DIR$/node_modules/vitest" />
       <working-dir value="$PROJECT_DIR$/packages/components" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/packages/components/radio/__test__/radio.test.tsx" />
+      <test-file value="$PROJECT_DIR$/packages/components/select/__test__/select.test.tsx" />
       <test-names>
-        <test-name value="Radio.vue" />
+        <test-name value="Select.vue" />
+        <test-name value="create" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Select.vue.size" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <vitest-package value="$PROJECT_DIR$/node_modules/vitest" />
+      <working-dir value="$PROJECT_DIR$/packages/components" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/packages/components/select/__test__/select.test.tsx" />
+      <test-names>
+        <test-name value="Select.vue" />
         <test-name value="size" />
       </test-names>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Vitest.Select.vue.size" />
+        <item itemvalue="Vitest.Select.vue.create" />
         <item itemvalue="Vitest.InputNumber.vue.disabled" />
         <item itemvalue="Vitest.InputNumber.vue.size" />
         <item itemvalue="Vitest.InputNumber.vue.create" />
-        <item itemvalue="Vitest.Radio.vue.size" />
-        <item itemvalue="Vitest.Radio.vue" />
       </list>
     </recent_temporary>
   </component>
@@ -221,13 +228,8 @@
       <workItem from="1688356599632" duration="9000" />
       <workItem from="1688454399097" duration="856000" />
       <workItem from="1688456138146" duration="6312000" />
-    </task>
-    <task id="LOCAL-00003" summary="选择法院-选择身份类型样式修改">
-      <created>1678439275455</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1678439275455</updated>
+      <workItem from="1688952117674" duration="2588000" />
+      <workItem from="1688954887650" duration="24000" />
     </task>
     <task id="LOCAL-00004" summary="选择法院-选择身份类型样式修改">
       <created>1678439816510</created>
@@ -565,7 +567,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688463641262</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="select组件初始化">
+      <created>1688954524584</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1688954524584</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -583,7 +592,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="var.scss完善" />
     <MESSAGE value="搞懂color-" />
     <MESSAGE value="button增加tag属性" />
     <MESSAGE value="switch组件架构搭建" />
@@ -608,7 +616,8 @@
     <MESSAGE value="input-number组件完成step-strictly功能&#10;input-number组件添加displayValue用于input框显示数据" />
     <MESSAGE value="input-number 完成precision" />
     <MESSAGE value="input-number 完成controlsPosition" />
-    <option name="LAST_COMMIT_MESSAGE" value="input-number 完成controlsPosition" />
+    <MESSAGE value="select组件初始化" />
+    <option name="LAST_COMMIT_MESSAGE" value="select组件初始化" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/sakura_ui$Button_vue_create.info" NAME="Button.vue.create 覆盖结果" MODIFIED="1682074172275" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="VitestJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

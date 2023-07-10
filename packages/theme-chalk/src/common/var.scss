@@ -355,6 +355,27 @@ $button-padding-horizontal: map.deep-merge(
 $input-height: () !default;
 $input-height: map.merge($common-component-size, $input-height);
 
+$input: () !default;
+$input: map.merge(
+        (
+            'width': 100%,
+            //'height': map.get($input-height, 'default'),
+            'text-color': getCssVar('text-color', 'regular'),
+            'border': getCssVar('border'),
+            'hover-border': getCssVar('border-color', 'hover'),
+            'focus-border': getCssVar('color', 'primary'),
+            'transparent-border': 0 0 1px transparent inset,
+            'border-color': getCssVar('border', 'color'),
+            'border-radius': getCssVar('border-radius', 'base'),
+            'bg-color': getCssVar('fill-color', 'blank'),
+            'icon-color': getCssVar('text-color', 'placeholder'),
+            'hover-border-color': getCssVar('border-color', 'hover'),
+            'clear-hover-color': getCssVar('text-color', 'secondary'),
+            'focus-border-color': getCssVar('color', 'primary'),
+        ),
+        $input
+);
+
 
 $switch: () !default;
 $switch: map.deep-merge(
