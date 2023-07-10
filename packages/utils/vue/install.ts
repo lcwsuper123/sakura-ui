@@ -26,7 +26,7 @@ export const withInstall = <T, E extends Record<string, any>>(main: T, extra?: E
  * @param name 方法名称
  */
 export const withInstallFunction = <T>(fn: T, name: string) => {
-    ;(fn as SFCWithInstall<T>).install = (app:App): void => {
+    ;(fn as SFCWithInstall<T>).install = (app: App): void => {
         ;(fn as SFCInstallWithContext<T>)._context = app._context
         app.config.globalProperties[name] = fn
     }

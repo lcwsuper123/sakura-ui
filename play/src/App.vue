@@ -1,12 +1,10 @@
 <template>
-    <input-number
-    >
-    </input-number>
+    <s-select />
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import InputNumber from './components/InputNumber.vue'
+import SSelect from './components/Select.vue'
 </script>
 
 
