@@ -12,7 +12,8 @@ export const inputProps = buildProps({
         type: String,
         values: componentSizes,
         default: ''
-    }
+    },
+    placeholder: String
 })
 
 export const inputEmits = {

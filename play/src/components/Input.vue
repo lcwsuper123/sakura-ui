@@ -1,6 +1,8 @@
 <template>
     <div class="input">
-        <s-input />
+        <s-input
+            placeholder="请输入"
+        />
         <s-input size="small" />
         <s-input size="large" />
     </div>

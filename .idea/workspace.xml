@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc07c7b1-2ef1-4c9d-8a8d-3936042bd441" name="变更" comment="select组件初始化">
-      <change afterPath="$PROJECT_DIR$/packages/components/input/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/components/input/src/input.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/components/input/src/input.vue" afterDir="false" />
+    <list default="true" id="cc07c7b1-2ef1-4c9d-8a8d-3936042bd441" name="变更" comment="input 组件初始化&#10;input 组件-size 30%">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/components/select/src/select.vue" beforeDir="false" afterPath="$PROJECT_DIR$/packages/components/select/src/select.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,20 +49,7 @@
       <recent name="D:\Work\sakura-ui\packages\theme-chalk\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Vitest.Select.vue.size">
-    <configuration name="InputNumber.vue.create" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <vitest-package value="$PROJECT_DIR$/node_modules/vitest" />
-      <working-dir value="$PROJECT_DIR$/packages/components" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/packages/components/input-number/__test__/input-number.test.tsx" />
-      <test-names>
-        <test-name value="InputNumber.vue" />
-        <test-name value="create" />
-      </test-names>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Vitest.Input.vue.create">
     <configuration name="InputNumber.vue.disabled" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <vitest-package value="$PROJECT_DIR$/node_modules/vitest" />
@@ -90,6 +73,19 @@
       <test-names>
         <test-name value="InputNumber.vue" />
         <test-name value="size" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Input.vue.create" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <vitest-package value="$PROJECT_DIR$/node_modules/vitest" />
+      <working-dir value="$PROJECT_DIR$/packages/components" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/packages/components/input/__test__/input.test.tsx" />
+      <test-names>
+        <test-name value="Input.vue" />
+        <test-name value="create" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -121,11 +117,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Vitest.Input.vue.create" />
         <item itemvalue="Vitest.Select.vue.size" />
         <item itemvalue="Vitest.Select.vue.create" />
         <item itemvalue="Vitest.InputNumber.vue.disabled" />
         <item itemvalue="Vitest.InputNumber.vue.size" />
-        <item itemvalue="Vitest.InputNumber.vue.create" />
       </list>
     </recent_temporary>
   </component>
@@ -230,13 +226,8 @@
       <workItem from="1688456138146" duration="6312000" />
       <workItem from="1688952117674" duration="2588000" />
       <workItem from="1688954887650" duration="24000" />
-    </task>
-    <task id="LOCAL-00004" summary="选择法院-选择身份类型样式修改">
-      <created>1678439816510</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1678439816510</updated>
+      <workItem from="1688954966273" duration="5943000" />
+      <workItem from="1689149914933" duration="28000" />
     </task>
     <task id="LOCAL-00005" summary="选择法院-选择身份类型样式修改">
       <created>1678863940132</created>
@@ -574,7 +565,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688954524584</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="input 组件初始化&#10;input 组件-size 30%">
+      <created>1688960325952</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1688960325952</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -592,7 +590,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="搞懂color-" />
     <MESSAGE value="button增加tag属性" />
     <MESSAGE value="switch组件架构搭建" />
     <MESSAGE value="switch-size&#10;switch-disabled" />
@@ -617,7 +614,8 @@
     <MESSAGE value="input-number 完成precision" />
     <MESSAGE value="input-number 完成controlsPosition" />
     <MESSAGE value="select组件初始化" />
-    <option name="LAST_COMMIT_MESSAGE" value="select组件初始化" />
+    <MESSAGE value="input 组件初始化&#10;input 组件-size 30%" />
+    <option name="LAST_COMMIT_MESSAGE" value="input 组件初始化&#10;input 组件-size 30%" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/sakura_ui$Button_vue_create.info" NAME="Button.vue.create 覆盖结果" MODIFIED="1682074172275" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="VitestJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

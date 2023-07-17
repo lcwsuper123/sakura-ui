@@ -44,6 +44,23 @@ $input-font-size: map.merge(
         padding: 1px map.get($input-padding, 'default');
         height: 100%;
         width: 100%;
+        transition: all getCssVar('transition-duration');
+        @include when(focus) {
+            border-color: getCssVar('color', 'primary');
+        }
+    }
+    @include e(inner) {
+        outline: none;
+        height: 100%;
+        width: 100%;
+        border: none;
+        font-size: getCssVar('font-size', 'base');
+        color: getCssVar('input', 'text-color');
+        margin: 0;
+        padding: 0;
+        &::-webkit-input-placeholder {
+            color: getCssVar('text-color', 'placeholder');
+        }
     }
     @each $size in (small, large) {
         @include m($size) {
