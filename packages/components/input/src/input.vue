@@ -12,6 +12,19 @@
                 ns.is('focus', isFocus)
             ]"
         >
+            <template v-if="prefixIcon">
+                <span
+                    :class="ns.e('prefix')"
+                >
+                    <span
+                        :class="ns.em('prefix', 'inner')"
+                    >
+                        <s-icon>
+                            <component :is="prefixIcon" />
+                        </s-icon>
+                    </span>
+                </span>
+            </template>
             <input
                 v-bind="$attrs"
                 :id="inputId"
@@ -24,6 +37,19 @@
                 @blur="isFocus = false"
                 @input="handleInput"
             />
+            <template v-if="suffixIcon">
+                <span
+                    :class="ns.e('suffix')"
+                >
+                    <span
+                        :class="ns.em('suffix', 'inner')"
+                    >
+                        <s-icon>
+                            <component :is="suffixIcon" />
+                        </s-icon>
+                    </span>
+                </span>
+            </template>
         </div>
     </div>
 </template>
@@ -32,6 +58,7 @@ import { computed, nextTick, onMounted, ref, watch } from 'vue'
 import { inputProps, inputEmits } from './input'
 import { useFormDisabled, useId, useNamespace } from '@sakura-ui/hooks'
 import { CHANGE_EVENT, UPDATE_MODEL_EVENT } from '@sakura-ui/constants'
+import SIcon from '@sakura-ui/components/icon'
 
 type TargetElement = HTMLInputElement | HTMLTextAreaElement
 const ns = useNamespace('input')
@@ -50,6 +77,7 @@ const setNativeInputValue = () => {
 onMounted(() => {
     setNativeInputValue()
 })
+watch(nativeInputValue, () => setNativeInputValue())
 const handleInput = async (event: Event) => {
     let { value } = event.target as TargetElement
     if (value === nativeInputValue.value) return

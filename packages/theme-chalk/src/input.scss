@@ -53,7 +53,7 @@ $input-font-size: map.merge(
         //flex-grow: 1;
         border: getCssVar('border');
         border-radius: getCssVar('border-radius', 'base');
-        padding: 1px map.get($input-padding, 'default');
+        padding: 0px map.get($input-padding, 'default');
         height: 100%;
         width: 100%;
         transition: all getCssVar('transition-duration');
@@ -74,12 +74,33 @@ $input-font-size: map.merge(
             color: getCssVar('text-color', 'placeholder');
         }
     }
+    .#{$B}__prefix, .#{$B}__suffix {
+        display: inline-flex;
+        white-space: nowrap;
+        flex-shrink: 0;
+        flex-wrap: nowrap;
+        width: 22px;
+        height: 100%;
+        text-align: center;
+        pointer-events: none;
+        color: getCssVar('input', 'icon-color');
+        transition: all getCssVar('transition', 'duration');
+        &.#{$B}__suffix{
+            justify-content: flex-end;
+        }
+        .#{$B}__prefix--inner, .#{$B}__suffix--inner {
+            pointer-events: all;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
     @each $size in (small, large) {
         @include m($size) {
             height: getCssVar('component-size', $size);
             font-size: map.get($input-font-size, $size);
             @include e(wrapper) {
-                padding: 1px map.get($input-padding, $size);
+                padding: 0px map.get($input-padding, $size);
             }
         }
     }
