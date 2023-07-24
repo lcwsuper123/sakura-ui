@@ -1,3 +1,5 @@
 export * from './use-namespace'
 export * from './use-size'
 export * from './use-id'
+export * from './use-prop'
+export * from './use-form'

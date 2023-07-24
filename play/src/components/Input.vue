@@ -1,6 +1,8 @@
 <template>
     <div class="input">
+        value---{{ value }}
         <s-input
+            v-model="value"
             placeholder="请输入"
         />
         <s-input size="small" />
@@ -14,7 +16,9 @@
     </div>
 </template>
 <script lang="ts" setup>
+import { ref } from 'vue'
 import SInput from '@sakura-ui/components/input'
+const value = ref('22222')
 </script>
 <style scoped lang="scss">
 .input {

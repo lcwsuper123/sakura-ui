@@ -15,7 +15,9 @@ export const inputProps = buildProps({
     },
     placeholder: String,
     // 是否禁用
-    disabled: Boolean
+    disabled: Boolean,
+    // 是否只读
+    readonly: Boolean
 })
 
 export const inputEmits = {
