@@ -13,7 +13,9 @@ export const inputProps = buildProps({
         values: componentSizes,
         default: ''
     },
-    placeholder: String
+    placeholder: String,
+    // 是否禁用
+    disabled: Boolean
 })
 
 export const inputEmits = {

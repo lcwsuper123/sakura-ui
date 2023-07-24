@@ -34,6 +34,18 @@ $input-font-size: map.merge(
             border-color: getCssVar('input-hover-border-color');
         }
     }
+    @include when(disabled) {
+        cursor: not-allowed;
+        @include e(wrapper) {
+            cursor: not-allowed;
+            border-color: getCssVar('disabled', 'border-color');
+            background: getCssVar('disabled', 'bg-color');
+        }
+        @include e(inner) {
+            cursor: not-allowed;
+            color: getCssVar('disabled', 'text-color');
+        }
+    }
     @include e(wrapper) {
         display: inline-flex;
         align-items: center;

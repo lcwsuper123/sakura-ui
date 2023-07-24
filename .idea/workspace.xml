@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc07c7b1-2ef1-4c9d-8a8d-3936042bd441" name="变更" comment="input 组件初始化&#10;input 组件-size 30%">
+    <list default="true" id="cc07c7b1-2ef1-4c9d-8a8d-3936042bd441" name="变更" comment="input-focus状态完成">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -228,13 +228,10 @@
       <workItem from="1688954887650" duration="24000" />
       <workItem from="1688954966273" duration="5943000" />
       <workItem from="1689149914933" duration="28000" />
-    </task>
-    <task id="LOCAL-00005" summary="选择法院-选择身份类型样式修改">
-      <created>1678863940132</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1678863940132</updated>
+      <workItem from="1689559537568" duration="2154000" />
+      <workItem from="1689576852477" duration="3158000" />
+      <workItem from="1689587835285" duration="11000" />
+      <workItem from="1689931802715" duration="686000" />
     </task>
     <task id="LOCAL-00006" summary="选择法院-选择身份类型样式修改">
       <created>1678864133561</created>
@@ -572,7 +569,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688960325952</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="input-focus状态完成">
+      <created>1689560764824</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1689560764824</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -590,7 +594,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="button增加tag属性" />
     <MESSAGE value="switch组件架构搭建" />
     <MESSAGE value="switch-size&#10;switch-disabled" />
     <MESSAGE value="active-text 10%" />
@@ -615,7 +618,8 @@
     <MESSAGE value="input-number 完成controlsPosition" />
     <MESSAGE value="select组件初始化" />
     <MESSAGE value="input 组件初始化&#10;input 组件-size 30%" />
-    <option name="LAST_COMMIT_MESSAGE" value="input 组件初始化&#10;input 组件-size 30%" />
+    <MESSAGE value="input-focus状态完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="input-focus状态完成" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/sakura_ui$Button_vue_create.info" NAME="Button.vue.create 覆盖结果" MODIFIED="1682074172275" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="VitestJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

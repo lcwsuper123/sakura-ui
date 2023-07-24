@@ -2,7 +2,8 @@
     <div
         :class="[
             ns.b(),
-            ns.m(size)
+            ns.m(size),
+            ns.is('disabled', disabled)
         ]"
     >
         <div
@@ -14,6 +15,7 @@
             <input
                 :class="[ns.e('inner')]"
                 :placeholder="placeholder"
+                :disabled="disabled"
                 @focus="isFocus = true"
                 @blur="isFocus = false"
             />
