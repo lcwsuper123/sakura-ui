@@ -46,6 +46,16 @@ $input-font-size: map.merge(
             color: getCssVar('disabled', 'text-color');
         }
     }
+    @include when(focus) {
+        @include e(wrapper) {
+            border-color: getCssVar('color', 'primary');
+        }
+        @include e(suffix) {
+            @include m(inner) {
+                cursor: pointer;
+            }
+        }
+    }
     @include e(wrapper) {
         display: inline-flex;
         align-items: center;
@@ -57,9 +67,6 @@ $input-font-size: map.merge(
         height: 100%;
         width: 100%;
         transition: all getCssVar('transition-duration');
-        @include when(focus) {
-            border-color: getCssVar('color', 'primary');
-        }
     }
     @include e(inner) {
         outline: none;

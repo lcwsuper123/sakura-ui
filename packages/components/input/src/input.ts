@@ -5,7 +5,7 @@ import { buildProps, IconPropType, isBoolean, isNumber, isString } from '@sakura
 
 export const inputProps = buildProps({
     modelValue: {
-        type: [String, Number, Boolean],
+        type: [String, Number],
         default: ''
     },
     size: {

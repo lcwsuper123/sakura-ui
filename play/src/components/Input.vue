@@ -19,13 +19,17 @@
             :prefix-icon="Search"
             :suffix-icon="Loading"
         />
+        <s-input
+            v-model="value"
+            clearable
+        />
     </div>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
 import SInput from '@sakura-ui/components/input'
 import { Search, Loading } from '@element-plus/icons-vue'
-const value = ref('22222')
+const value = ref('')
 </script>
 <style scoped lang="scss">
 .input {
