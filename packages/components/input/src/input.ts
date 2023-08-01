@@ -29,7 +29,11 @@ export const inputProps = buildProps({
     suffixIcon: {
         type: IconPropType,
         default: ''
-    }
+    },
+    // 指定输入值的格式。(只有当 type 是"text"时才能工作)
+    formatter: Function,
+    // 指定输入值的格式。(只有当 type 是"text"时才能工作)
+    parser: Function
 })
 
 export const inputEmits = {

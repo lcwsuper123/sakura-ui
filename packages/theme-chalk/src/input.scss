@@ -92,6 +92,7 @@ $input-font-size: map.merge(
         pointer-events: none;
         color: getCssVar('input', 'icon-color');
         transition: all getCssVar('transition', 'duration');
+        cursor: pointer;
         &.#{$B}__suffix{
             justify-content: flex-end;
         }

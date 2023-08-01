@@ -23,6 +23,11 @@
             v-model="value"
             clearable
         />
+        <s-input
+            v-model="value"
+            :parser="value => value + 1"
+            :formatter="value => value + 2"
+        />
     </div>
 </template>
 <script lang="ts" setup>

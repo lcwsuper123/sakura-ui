@@ -7,7 +7,6 @@
             ns.is('focus', isFocus)
         ]"
     >
-        isHover---{{ isHover }}
         <div
             :class="[
                 ns.e('wrapper'),
@@ -114,6 +113,11 @@ const setCurrentValue = (value: InputProps['modelValue']) => {
 const handleInput = async (event: Event) => {
     let { value } = event.target as TargetElement
     if (value === nativeInputValue.value) return
+    const { formatter, parser } = props
+    if (formatter) {
+        value = parser ? parser(value) : value
+        value = formatter(value)
+    }
     setCurrentValue(value)
     await nextTick()
     setNativeInputValue()
