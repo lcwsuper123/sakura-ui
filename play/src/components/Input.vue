@@ -32,6 +32,16 @@
             v-model="value"
             show-password
         />
+        <s-input
+            v-model="value"
+        >
+            <template #prepend>
+                22222222222
+            </template>
+            <template #append>
+                22222222222
+            </template>
+        </s-input>
     </div>
 </template>
 <script lang="ts" setup>

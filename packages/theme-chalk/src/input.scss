@@ -93,9 +93,11 @@ $input-font-size: map.merge(
         color: getCssVar('input', 'icon-color');
         transition: all getCssVar('transition', 'duration');
         cursor: pointer;
-        &.#{$B}__suffix{
+
+        &.#{$B}__suffix {
             justify-content: flex-end;
         }
+
         .#{$B}__prefix--inner, .#{$B}__suffix--inner {
             pointer-events: all;
             display: inline-flex;
@@ -108,6 +110,45 @@ $input-font-size: map.merge(
             height: getCssVar('component-size', $size);
             font-size: map.get($input-font-size, $size);
             @include e(wrapper) {
+                padding: 0px map.get($input-padding, $size);
+            }
+        }
+    }
+}
+
+@include b(input__group) {
+    display: inline-flex;
+    align-items: stretch;
+    &.#{$namespace}-input {
+        .#{$namespace}-input__wrapper {
+            border-radius: 0;
+        }
+    }
+    .#{$B}--prepend, .#{$B}--append {
+        display: inline-flex;
+        align-items: center;
+        padding: 0px map.get($input-padding, 'default');
+        border: $border;
+        background: getCssVar('fill-color', 'light');
+        color: getCssVar('color', 'info');
+        position: relative;
+        justify-content: center;
+        white-space: nowrap;
+        min-height: 100%;
+    }
+    .#{$B}--prepend {
+        border-right: none;
+        border-top-left-radius: getCssVar('border-radius', 'base');
+        border-bottom-left-radius: getCssVar('border-radius', 'base');
+    }
+    .#{$B}--append {
+        border-left: none;
+        border-top-right-radius: getCssVar('border-radius', 'base');
+        border-bottom-right-radius: getCssVar('border-radius', 'base');
+    }
+    @each $size in (small, large) {
+        &.#{$namespace}-input--#{$size} {
+            .#{$namespace}-input__group--prepend, .#{$namespace}-input__group--append {
                 padding: 0px map.get($input-padding, $size);
             }
         }

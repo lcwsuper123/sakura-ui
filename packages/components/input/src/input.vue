@@ -4,9 +4,17 @@
             ns.b(),
             ns.m(size),
             ns.is('disabled', inputDisabled),
-            ns.is('focus', isFocus)
+            ns.is('focus', isFocus),
+            ($slots.prepend || $slots.append) ? ns.e('group') : ''
         ]"
     >
+        <template v-if="$slots.prepend">
+            <div
+                :class="[ns.em('group', 'prepend')]"
+            >
+                <slot name="prepend" />
+            </div>
+        </template>
         <div
             :class="[
                 ns.e('wrapper'),
@@ -67,6 +75,13 @@
                 </span>
             </template>
         </div>
+        <template v-if="$slots.append">
+            <div
+                :class="[ns.em('group', 'append')]"
+            >
+                <slot name="append" />
+            </div>
+        </template>
     </div>
 </template>
 <script lang="ts" setup>
