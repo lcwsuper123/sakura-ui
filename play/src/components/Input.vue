@@ -28,6 +28,10 @@
             :parser="value => value + 1"
             :formatter="value => value + 2"
         />
+        <s-input
+            v-model="value"
+            show-password
+        />
     </div>
 </template>
 <script lang="ts" setup>

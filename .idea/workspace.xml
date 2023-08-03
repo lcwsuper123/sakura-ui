@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc07c7b1-2ef1-4c9d-8a8d-3936042bd441" name="变更" comment="input 完成 clearable">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="cc07c7b1-2ef1-4c9d-8a8d-3936042bd441" name="变更" comment="input 完成formatter和parse" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -238,13 +236,7 @@
       <workItem from="1690250804758" duration="7535000" />
       <workItem from="1690333854036" duration="604000" />
       <workItem from="1690768689553" duration="942000" />
-    </task>
-    <task id="LOCAL-00010" summary="共享空间在线庭审庭审笔录签字,参与人签过字后依然显示未签字, 受托人的委托承诺书显示错误, 陈穗燕法官进入远程信访，上传材料未显示材料bug修复">
-      <created>1679464470148</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1679464470148</updated>
+      <workItem from="1690855746394" duration="2417000" />
     </task>
     <task id="LOCAL-00011" summary="共享空间在线庭审庭审笔录签字,参与人签过字后依然显示未签字, 受托人的委托承诺书显示错误, 陈穗燕法官进入远程信访，上传材料未显示材料bug修复">
       <created>1679477036886</created>
@@ -582,7 +574,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690266212751</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="input 完成formatter和parse">
+      <created>1690857773128</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1690857773128</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -600,7 +599,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="switch inline-prompt" />
     <MESSAGE value="示例" />
     <MESSAGE value="active-icon&#10;inactive-icon" />
     <MESSAGE value="switch loading" />
@@ -625,7 +623,8 @@
     <MESSAGE value="添加use-form&#10;添加use-prop&#10;input输入框支持双向绑定" />
     <MESSAGE value="完成prefix-icon, suffix-icon" />
     <MESSAGE value="input 完成 clearable" />
-    <option name="LAST_COMMIT_MESSAGE" value="input 完成 clearable" />
+    <MESSAGE value="input 完成formatter和parse" />
+    <option name="LAST_COMMIT_MESSAGE" value="input 完成formatter和parse" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/sakura_ui$Button_vue_create.info" NAME="Button.vue.create 覆盖结果" MODIFIED="1682074172275" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="VitestJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

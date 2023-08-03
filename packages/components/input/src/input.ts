@@ -33,7 +33,14 @@ export const inputProps = buildProps({
     // 指定输入值的格式。(只有当 type 是"text"时才能工作)
     formatter: Function,
     // 指定输入值的格式。(只有当 type 是"text"时才能工作)
-    parser: Function
+    parser: Function,
+    // 是否显示切换密码图标
+    showPassword: Boolean,
+    // input框类型
+    type: {
+        type: String,
+        default: 'text'
+    }
 })
 
 export const inputEmits = {

@@ -35,25 +35,31 @@
                 :placeholder="placeholder"
                 :readonly="readonly"
                 :disabled="inputDisabled"
+                :type="showPassword ? inputType : type"
                 @focus="isFocus = true"
                 @blur="isFocus = false"
                 @input="handleInput"
             />
-            <template v-if="suffixIcon || showClearable">
+            <template v-if="suffixIcon || showClearable || showPassword">
                 <span
                     :class="ns.e('suffix')"
-                    @click.prevent.stop="clearableValue"
+                    @click.prevent.stop="suffixClick"
                 >
                     <span
                         :class="ns.em('suffix', 'inner')"
                     >
-                        <template v-if="!showClearable && suffixIcon">
+                        <template v-if="!showClearable && !showPassword && suffixIcon">
                             <s-icon>
                                 <component :is="suffixIcon" />
                             </s-icon>
                         </template>
-                        <template v-else>
+                        <template v-else-if="showPassword">
                              <s-icon>
+                                <component :is="inputType === 'password' ? Hide : View" />
+                            </s-icon>
+                        </template>
+                        <template v-else-if="showClearable">
+                            <s-icon>
                                 <component :is="CircleClose" />
                             </s-icon>
                         </template>
@@ -70,7 +76,7 @@ import { inputProps, inputEmits, type InputProps } from './input'
 import { useFormDisabled, useId, useNamespace } from '@sakura-ui/hooks'
 import { CHANGE_EVENT, UPDATE_MODEL_EVENT } from '@sakura-ui/constants'
 import SIcon from '@sakura-ui/components/icon'
-import { CircleClose } from '@element-plus/icons-vue'
+import { CircleClose, Hide, View } from '@element-plus/icons-vue'
 
 type TargetElement = HTMLInputElement | HTMLTextAreaElement
 const ns = useNamespace('input')
@@ -100,11 +106,29 @@ const showClearable = computed<boolean>(() => (
     Boolean(unref(nativeInputValue).length) &&
     (unref(isFocus) || unref(isHover))
 ))
+const inputType = ref<string>('password')
+// 是否显示password
+const showPassword = computed<boolean>(() => (
+    props.showPassword &&
+    !props.suffixIcon &&
+    Boolean(unref(nativeInputValue).length) &&
+    (unref(isFocus) || unref(isHover))
+))
+const toggleInputType = () => {
+    inputType.value = inputType.value === 'password' ? 'text' : 'password'
+}
 // 清空内容
 const clearableValue = async () => {
     setCurrentValue('')
     await nextTick()
     unref(inputRef)?.focus()
+}
+// 后缀图标按钮点击事件
+const suffixClick = () => {
+    const { clearable, showPassword } = props
+    if (!clearable && !showPassword) return
+    clearable && clearableValue()
+    showPassword && toggleInputType()
 }
 const setCurrentValue = (value: InputProps['modelValue']) => {
     emits(UPDATE_MODEL_EVENT, value)
