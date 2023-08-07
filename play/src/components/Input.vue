@@ -60,6 +60,9 @@
             disabled
             placeholder="2222"
         />
+        <input
+            type="password"
+        />
     </div>
 </template>
 <script lang="ts" setup>

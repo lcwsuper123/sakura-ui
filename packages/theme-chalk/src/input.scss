@@ -22,7 +22,17 @@ $input-font-size: map.merge(
 @include b(input) {
     @include set-component-css-var('input', $input);
 }
+input::-ms-reveal {
+    display: none;
+}
 
+input::-ms-clear {
+    display: none;
+}
+
+input::-o-clear {
+    display: none;
+}
 @include b(input) {
     position: relative;
     font-size: getCssVar('font-size', 'base');

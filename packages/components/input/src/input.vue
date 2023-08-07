@@ -5,7 +5,7 @@
             nsInput.m(size),
             nsInput.is('disabled', inputDisabled),
             nsInput.is('focus', isFocus),
-            isShowWordLimit ?  (type === 'text' ? nsInput : nsTextarea).is('exceed', nativeInputValueLength > maxlength) : '',
+            isShowWordLimit ?  (type === 'text' ? nsInput : nsTextarea).is('exceed', inputExceed) : '',
             ($slots.prepend || $slots.append) ? nsInput.e('group') : ''
         ]"
     >
@@ -25,18 +25,18 @@
                 @mouseenter="isHover = true"
                 @mouseleave="isHover = false"
             >
-                <template v-if="prefixIcon">
-                <span
-                    :class="nsInput.e('prefix')"
-                >
+                <template v-if="prefixVisible">
                     <span
-                        :class="nsInput.em('prefix', 'inner')"
+                        :class="nsInput.e('prefix')"
                     >
-                        <s-icon>
-                            <component :is="prefixIcon" />
-                        </s-icon>
+                        <span
+                            :class="nsInput.em('prefix', 'inner')"
+                        >
+                            <s-icon>
+                                <component :is="prefixIcon" />
+                            </s-icon>
+                        </span>
                     </span>
-                </span>
                 </template>
                 <input
                     v-bind="$attrs"
@@ -55,37 +55,39 @@
                     @blur="isFocus = false"
                     @input="handleInput"
                 />
-                <span
-                    :class="nsInput.e('suffix')"
-                    @click.prevent.stop="suffixClick"
-                >
-                <span
-                    :class="nsInput.em('suffix', 'inner')"
-                >
-                    <template v-if="suffixIcon || showClearable || showPassword">
-                        <template v-if="!showClearable && !showPassword && suffixIcon">
-                            <s-icon>
-                                <component :is="suffixIcon" />
-                            </s-icon>
+                <template v-if="suffixVisible">
+                    <span
+                        :class="nsInput.e('suffix')"
+                        @click.prevent.stop="suffixClick"
+                    >
+                    <span
+                        :class="nsInput.em('suffix', 'inner')"
+                    >
+                        <template v-if="suffixIcon || showClearable || isShowPassword">
+                            <template v-if="!showClearable && !isShowPassword && suffixIcon">
+                                <s-icon>
+                                    <component :is="suffixIcon" />
+                                </s-icon>
+                            </template>
+                            <template v-else-if="isShowPassword">
+                                 <s-icon>
+                                    <component :is="inputType === 'password' ? Hide : View" />
+                                </s-icon>
+                            </template>
+                            <template v-else-if="showClearable">
+                                <s-icon>
+                                    <component :is="CircleClose" />
+                                </s-icon>
+                            </template>
                         </template>
-                        <template v-else-if="showPassword">
-                             <s-icon>
-                                <component :is="inputType === 'password' ? Hide : View" />
-                            </s-icon>
+                        <template v-if="isShowWordLimit">
+                            <span
+                                :class="[nsInput.e('count')]"
+                            >{{ textlength }} / {{ maxlength }}</span>
                         </template>
-                        <template v-else-if="showClearable">
-                            <s-icon>
-                                <component :is="CircleClose" />
-                            </s-icon>
-                        </template>
-                    </template>
-                    <template v-if="showWordLimit && maxlength > 0">
-                        <span
-                            :class="[nsInput.e('count')]"
-                        >{{ nativeInputValueLength }} / {{ maxlength }}</span>
-                    </template>
+                    </span>
                 </span>
-            </span>
+                </template>
             </div>
             <template v-if="$slots.append">
                 <div
@@ -112,7 +114,7 @@
             <template v-if="isShowWordLimit">
                 <span
                     :class="[nsInput.e('count')]"
-                >{{ nativeInputValueLength }} / {{ maxlength }}</span>
+                >{{ textlength }} / {{ maxlength }}</span>
             </template>
         </template>
     </div>
@@ -125,7 +127,6 @@ import { useFormDisabled, useId, useNamespace } from '@sakura-ui/hooks'
 import { CHANGE_EVENT, UPDATE_MODEL_EVENT } from '@sakura-ui/constants'
 import SIcon from '@sakura-ui/components/icon'
 import { CircleClose, Hide, View } from '@element-plus/icons-vue'
-import boolean from 'async-validator/dist-types/validator/boolean'
 
 type TargetElement = HTMLInputElement | HTMLTextAreaElement
 const nsInput = useNamespace('input')
@@ -138,7 +139,7 @@ const isFocus = ref<boolean>(false)
 const inputDisabled = useFormDisabled() as ComputedRef<boolean>
 // 监听双向绑定的值
 const nativeInputValue = computed<string>(() => String(props.modelValue || ''))
-const nativeInputValueLength = computed<number>(() => nativeInputValue.value.length)
+const textlength = computed<number>(() => nativeInputValue.value.length)
 const setNativeInputValue = () => {
     const _input = inputRef.value
     if (!_input || _input.value === nativeInputValue.value) return
@@ -159,7 +160,7 @@ const showClearable = computed<boolean>(() => (
 ))
 const inputType = ref<string>('password')
 // 是否显示password
-const showPassword = computed<boolean>(() => (
+const isShowPassword = computed<boolean>(() => (
     props.showPassword &&
     !props.suffixIcon &&
     Boolean(unref(nativeInputValue).length) &&
@@ -169,10 +170,13 @@ const showPassword = computed<boolean>(() => (
 const isShowWordLimit = computed<boolean>(() => (
     (props.type === 'text' || props.type === 'textarea') &&
     !inputDisabled.value &&
-    !!nativeInputValueLength.value &&
     props.maxlength > 0 &&
     !props.readonly &&
-    !props.showPassword
+    props.showWordLimit
+))
+const inputExceed = computed<boolean>(() => (
+    !!isShowWordLimit.value &&
+    textlength.value > props.maxlength
 ))
 const toggleInputType = () => {
     inputType.value = inputType.value === 'password' ? 'text' : 'password'
@@ -190,6 +194,17 @@ const suffixClick = () => {
     clearable && clearableValue()
     showPassword && toggleInputType()
 }
+// 尾部icon是否显示
+const suffixVisible = computed<boolean>(() => (
+    !!props.suffixIcon ||
+    showClearable.value ||
+    isShowPassword.value ||
+    isShowWordLimit.value
+))
+// 头部icon是否显示
+const prefixVisible = computed<boolean>(() => (
+    !!props.prefixIcon
+))
 const setCurrentValue = (value: InputProps['modelValue']) => {
     emits(UPDATE_MODEL_EVENT, value)
     emits(CHANGE_EVENT, value)
