@@ -168,9 +168,11 @@ const showPassword = computed<boolean>(() => (
 // 是否显示limit
 const isShowWordLimit = computed<boolean>(() => (
     (props.type === 'text' || props.type === 'textarea') &&
-    !props.disabled &&
+    !inputDisabled.value &&
     !!nativeInputValueLength.value &&
-    props.maxlength > 0
+    props.maxlength > 0 &&
+    !props.readonly &&
+    !props.showPassword
 ))
 const toggleInputType = () => {
     inputType.value = inputType.value === 'password' ? 'text' : 'password'
