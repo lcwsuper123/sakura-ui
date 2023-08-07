@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc07c7b1-2ef1-4c9d-8a8d-3936042bd441" name="变更" comment="input 完成formatter和parse" />
+    <list default="true" id="cc07c7b1-2ef1-4c9d-8a8d-3936042bd441" name="变更" comment="input完成prepend与append插槽" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -237,20 +237,7 @@
       <workItem from="1690333854036" duration="604000" />
       <workItem from="1690768689553" duration="942000" />
       <workItem from="1690855746394" duration="2417000" />
-    </task>
-    <task id="LOCAL-00011" summary="共享空间在线庭审庭审笔录签字,参与人签过字后依然显示未签字, 受托人的委托承诺书显示错误, 陈穗燕法官进入远程信访，上传材料未显示材料bug修复">
-      <created>1679477036886</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1679477036886</updated>
-    </task>
-    <task id="LOCAL-00012" summary="代理见证签字状态修改">
-      <created>1679542137918</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1679542137918</updated>
+      <workItem from="1691028977775" duration="6463000" />
     </task>
     <task id="LOCAL-00013" summary="整理在线庭审">
       <created>1679554124327</created>
@@ -581,7 +568,21 @@
       <option name="project" value="LOCAL" />
       <updated>1690857773128</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="完成showPassword">
+      <created>1691030409343</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1691030409343</updated>
+    </task>
+    <task id="LOCAL-00061" summary="input完成prepend与append插槽">
+      <created>1691043040251</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1691043040251</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -599,8 +600,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="示例" />
-    <MESSAGE value="active-icon&#10;inactive-icon" />
     <MESSAGE value="switch loading" />
     <MESSAGE value="switch before-change" />
     <MESSAGE value="radio before-change" />
@@ -624,7 +623,9 @@
     <MESSAGE value="完成prefix-icon, suffix-icon" />
     <MESSAGE value="input 完成 clearable" />
     <MESSAGE value="input 完成formatter和parse" />
-    <option name="LAST_COMMIT_MESSAGE" value="input 完成formatter和parse" />
+    <MESSAGE value="完成showPassword" />
+    <MESSAGE value="input完成prepend与append插槽" />
+    <option name="LAST_COMMIT_MESSAGE" value="input完成prepend与append插槽" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/sakura_ui$Button_vue_create.info" NAME="Button.vue.create 覆盖结果" MODIFIED="1682074172275" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="VitestJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

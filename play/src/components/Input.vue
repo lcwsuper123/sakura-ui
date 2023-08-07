@@ -34,6 +34,7 @@
         />
         <s-input
             v-model="value"
+            :maxlength="10"
         >
             <template #prepend>
                 22222222222
@@ -42,6 +43,11 @@
                 22222222222
             </template>
         </s-input>
+        <s-input
+            v-model="value"
+            :maxlength="10"
+            show-word-limit
+        />
     </div>
 </template>
 <script lang="ts" setup>

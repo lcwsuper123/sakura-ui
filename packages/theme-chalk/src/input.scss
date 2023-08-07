@@ -14,7 +14,7 @@ $input-padding: map.merge(
 $input-font-size: () !default;
 $input-font-size: map.merge(
         (
-            'small':12px,
+            'small': 12px,
             'large': 14px,
         ),
         $input-font-size
@@ -92,7 +92,6 @@ $input-font-size: map.merge(
         pointer-events: none;
         color: getCssVar('input', 'icon-color');
         transition: all getCssVar('transition', 'duration');
-        cursor: pointer;
 
         &.#{$B}__suffix {
             justify-content: flex-end;
@@ -104,6 +103,17 @@ $input-font-size: map.merge(
             align-items: center;
             justify-content: center;
         }
+
+        .#{$namespace}-icon {
+            cursor: pointer;
+        }
+    }
+    @include e(count) {
+        display: inline-flex;
+        align-items: center;
+        height: 100%;
+        color: getCssVar('color', 'info');
+        font-size: 12px;
     }
     @each $size in (small, large) {
         @include m($size) {

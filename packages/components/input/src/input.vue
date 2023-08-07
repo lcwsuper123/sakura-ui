@@ -44,36 +44,42 @@
                 :readonly="readonly"
                 :disabled="inputDisabled"
                 :type="showPassword ? inputType : type"
+                :maxlength="maxlength"
                 @focus="isFocus = true"
                 @blur="isFocus = false"
                 @input="handleInput"
             />
-            <template v-if="suffixIcon || showClearable || showPassword">
-                <span
-                    :class="ns.e('suffix')"
-                    @click.prevent.stop="suffixClick"
-                >
+            <span
+                :class="ns.e('suffix')"
+                @click.prevent.stop="suffixClick"
+            >
                     <span
                         :class="ns.em('suffix', 'inner')"
                     >
-                        <template v-if="!showClearable && !showPassword && suffixIcon">
-                            <s-icon>
-                                <component :is="suffixIcon" />
-                            </s-icon>
+                        <template v-if="suffixIcon || showClearable || showPassword">
+                            <template v-if="!showClearable && !showPassword && suffixIcon">
+                                <s-icon>
+                                    <component :is="suffixIcon" />
+                                </s-icon>
+                            </template>
+                            <template v-else-if="showPassword">
+                                 <s-icon>
+                                    <component :is="inputType === 'password' ? Hide : View" />
+                                </s-icon>
+                            </template>
+                            <template v-else-if="showClearable">
+                                <s-icon>
+                                    <component :is="CircleClose" />
+                                </s-icon>
+                            </template>
                         </template>
-                        <template v-else-if="showPassword">
-                             <s-icon>
-                                <component :is="inputType === 'password' ? Hide : View" />
-                            </s-icon>
-                        </template>
-                        <template v-else-if="showClearable">
-                            <s-icon>
-                                <component :is="CircleClose" />
-                            </s-icon>
+                        <template v-if="showWordLimit && maxlength > 0">
+                            <span
+                                :class="[ns.e('count')]"
+                            >{{ nativeInputValueLength }} / {{ maxlength }}</span>
                         </template>
                     </span>
                 </span>
-            </template>
         </div>
         <template v-if="$slots.append">
             <div
@@ -103,6 +109,7 @@ const isFocus = ref<boolean>(false)
 const inputDisabled = useFormDisabled() as ComputedRef<boolean>
 // 监听双向绑定的值
 const nativeInputValue = computed<string>(() => String(props.modelValue || ''))
+const nativeInputValueLength = computed<number>(() => nativeInputValue.value.length)
 const setNativeInputValue = () => {
     const _input = inputRef.value
     if (!_input || _input.value === nativeInputValue.value) return

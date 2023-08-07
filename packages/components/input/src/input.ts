@@ -40,6 +40,13 @@ export const inputProps = buildProps({
     type: {
         type: String,
         default: 'text'
+    },
+    // 显示输入长度限制
+    showWordLimit: Boolean,
+    // 最大长度
+    maxlength: {
+        type: Number,
+        default: -1
     }
 })
 
