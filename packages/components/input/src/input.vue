@@ -5,7 +5,7 @@
             nsInput.m(size),
             nsInput.is('disabled', inputDisabled),
             nsInput.is('focus', isFocus),
-            showWordLimit && maxlength > 0 ?  (type === 'text' ? nsInput : nsTextarea).is('exceed', nativeInputValueLength > maxlength) : '',
+            isShowWordLimit ?  (type === 'text' ? nsInput : nsTextarea).is('exceed', nativeInputValueLength > maxlength) : '',
             ($slots.prepend || $slots.append) ? nsInput.e('group') : ''
         ]"
     >
@@ -109,7 +109,7 @@
                 @blur="isFocus = false"
                 @input="handleInput"
             />
-            <template v-if="showWordLimit && maxlength > 0">
+            <template v-if="isShowWordLimit">
                 <span
                     :class="[nsInput.e('count')]"
                 >{{ nativeInputValueLength }} / {{ maxlength }}</span>
@@ -125,6 +125,7 @@ import { useFormDisabled, useId, useNamespace } from '@sakura-ui/hooks'
 import { CHANGE_EVENT, UPDATE_MODEL_EVENT } from '@sakura-ui/constants'
 import SIcon from '@sakura-ui/components/icon'
 import { CircleClose, Hide, View } from '@element-plus/icons-vue'
+import boolean from 'async-validator/dist-types/validator/boolean'
 
 type TargetElement = HTMLInputElement | HTMLTextAreaElement
 const nsInput = useNamespace('input')
@@ -163,6 +164,13 @@ const showPassword = computed<boolean>(() => (
     !props.suffixIcon &&
     Boolean(unref(nativeInputValue).length) &&
     (unref(isFocus) || unref(isHover))
+))
+// 是否显示limit
+const isShowWordLimit = computed<boolean>(() => (
+    (props.type === 'text' || props.type === 'textarea') &&
+    !props.disabled &&
+    !!nativeInputValueLength.value &&
+    props.maxlength > 0
 ))
 const toggleInputType = () => {
     inputType.value = inputType.value === 'password' ? 'text' : 'password'

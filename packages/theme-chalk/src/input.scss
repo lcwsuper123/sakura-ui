@@ -227,9 +227,6 @@ $input-font-size: map.merge(
             border-color: getCssVar('disabled', 'border-color');
             background: getCssVar('disabled', 'bg-color');
         }
-        .#{$namespace}-input__count {
-            background-color: transparent;
-        }
     }
     @each $size in (small, large) {
         @include m($size) {

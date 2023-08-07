@@ -57,6 +57,7 @@
             type="textarea"
             :maxlength="10"
             show-word-limit
+            disabled
         />
     </div>
 </template>
