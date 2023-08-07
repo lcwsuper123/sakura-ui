@@ -1,10 +1,17 @@
 <template>
     <div
         :class="[
-            ns.b(), ns.m(size)
+            ns.b(),
+            ns.m(size)
         ]"
     >
-        s
+        <div
+            :class="[
+                ns.e('inner')
+            ]"
+        >
+
+        </div>
     </div>
 </template>
 <script lang="ts" setup>

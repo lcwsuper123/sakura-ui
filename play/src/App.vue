@@ -1,10 +1,10 @@
 <template>
-    <s-input />
+    <s-select />
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import SInput from './components/Input.vue'
+import SSelect from './components/Select.vue'
 </script>
 
 

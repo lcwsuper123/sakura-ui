@@ -4,4 +4,7 @@
 
 @include b(select) {
     display: inline-flex;
+    vertical-align: middle;
+    position: relative;
+    line-height: map.get($common-component-size, 'default');
 }
