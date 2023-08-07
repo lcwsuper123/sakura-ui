@@ -36,17 +36,33 @@ export const inputProps = buildProps({
     parser: Function,
     // 是否显示切换密码图标
     showPassword: Boolean,
-    // input框类型
-    type: {
-        type: String,
-        default: 'text'
-    },
     // 显示输入长度限制
     showWordLimit: Boolean,
     // 最大长度
     maxlength: {
         type: Number,
         default: -1
+    },
+    // 原生 autocomplete 属性
+    autocomplete: {
+        type: String,
+        default: 'off'
+    },
+    // 等价于原生 input name 属性
+    name: String,
+    max: {
+        type: [String, Number]
+    },
+    min: {
+        type: [String, Number]
+    },
+    step: {
+        type: [String, Number]
+    },
+    type: {
+        type: String,
+        values: ['text', 'textarea'],
+        default: 'text'
     }
 })
 

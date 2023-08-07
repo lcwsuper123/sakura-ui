@@ -1,92 +1,119 @@
 <template>
     <div
         :class="[
-            ns.b(),
-            ns.m(size),
-            ns.is('disabled', inputDisabled),
-            ns.is('focus', isFocus),
-            ($slots.prepend || $slots.append) ? ns.e('group') : ''
+            type === 'text' ? nsInput.b() : nsTextarea.b(),
+            nsInput.m(size),
+            nsInput.is('disabled', inputDisabled),
+            nsInput.is('focus', isFocus),
+            showWordLimit && maxlength > 0 ?  (type === 'text' ? nsInput : nsTextarea).is('exceed', nativeInputValueLength > maxlength) : '',
+            ($slots.prepend || $slots.append) ? nsInput.e('group') : ''
         ]"
     >
-        <template v-if="$slots.prepend">
+        <template v-if="type === 'text'">
+
+            <template v-if="$slots.prepend">
+                <div
+                    :class="[nsInput.em('group', 'prepend')]"
+                >
+                    <slot name="prepend" />
+                </div>
+            </template>
             <div
-                :class="[ns.em('group', 'prepend')]"
-            >
-                <slot name="prepend" />
-            </div>
-        </template>
-        <div
-            :class="[
-                ns.e('wrapper'),
+                :class="[
+                nsInput.e('wrapper'),
             ]"
-            @mouseenter="isHover = true"
-            @mouseleave="isHover = false"
-        >
-            <template v-if="prefixIcon">
+                @mouseenter="isHover = true"
+                @mouseleave="isHover = false"
+            >
+                <template v-if="prefixIcon">
                 <span
-                    :class="ns.e('prefix')"
+                    :class="nsInput.e('prefix')"
                 >
                     <span
-                        :class="ns.em('prefix', 'inner')"
+                        :class="nsInput.em('prefix', 'inner')"
                     >
                         <s-icon>
                             <component :is="prefixIcon" />
                         </s-icon>
                     </span>
                 </span>
+                </template>
+                <input
+                    v-bind="$attrs"
+                    :id="inputId"
+                    ref="inputRef"
+                    :class="[nsInput.e('inner')]"
+                    :placeholder="placeholder"
+                    :readonly="readonly"
+                    :disabled="inputDisabled"
+                    :type="showPassword ? inputType : type"
+                    :maxlength="maxlength"
+                    :max="max"
+                    :min="min"
+                    :step="step"
+                    @focus="isFocus = true"
+                    @blur="isFocus = false"
+                    @input="handleInput"
+                />
+                <span
+                    :class="nsInput.e('suffix')"
+                    @click.prevent.stop="suffixClick"
+                >
+                <span
+                    :class="nsInput.em('suffix', 'inner')"
+                >
+                    <template v-if="suffixIcon || showClearable || showPassword">
+                        <template v-if="!showClearable && !showPassword && suffixIcon">
+                            <s-icon>
+                                <component :is="suffixIcon" />
+                            </s-icon>
+                        </template>
+                        <template v-else-if="showPassword">
+                             <s-icon>
+                                <component :is="inputType === 'password' ? Hide : View" />
+                            </s-icon>
+                        </template>
+                        <template v-else-if="showClearable">
+                            <s-icon>
+                                <component :is="CircleClose" />
+                            </s-icon>
+                        </template>
+                    </template>
+                    <template v-if="showWordLimit && maxlength > 0">
+                        <span
+                            :class="[nsInput.e('count')]"
+                        >{{ nativeInputValueLength }} / {{ maxlength }}</span>
+                    </template>
+                </span>
+            </span>
+            </div>
+            <template v-if="$slots.append">
+                <div
+                    :class="[nsInput.em('group', 'append')]"
+                >
+                    <slot name="append" />
+                </div>
             </template>
-            <input
+        </template>
+        <template v-else>
+            <textarea
                 v-bind="$attrs"
                 :id="inputId"
                 ref="inputRef"
-                :class="[ns.e('inner')]"
+                :class="[nsTextarea.e('inner'), nsTextarea.m(size)]"
                 :placeholder="placeholder"
                 :readonly="readonly"
                 :disabled="inputDisabled"
-                :type="showPassword ? inputType : type"
                 :maxlength="maxlength"
                 @focus="isFocus = true"
                 @blur="isFocus = false"
                 @input="handleInput"
             />
-            <span
-                :class="ns.e('suffix')"
-                @click.prevent.stop="suffixClick"
-            >
-                    <span
-                        :class="ns.em('suffix', 'inner')"
-                    >
-                        <template v-if="suffixIcon || showClearable || showPassword">
-                            <template v-if="!showClearable && !showPassword && suffixIcon">
-                                <s-icon>
-                                    <component :is="suffixIcon" />
-                                </s-icon>
-                            </template>
-                            <template v-else-if="showPassword">
-                                 <s-icon>
-                                    <component :is="inputType === 'password' ? Hide : View" />
-                                </s-icon>
-                            </template>
-                            <template v-else-if="showClearable">
-                                <s-icon>
-                                    <component :is="CircleClose" />
-                                </s-icon>
-                            </template>
-                        </template>
-                        <template v-if="showWordLimit && maxlength > 0">
-                            <span
-                                :class="[ns.e('count')]"
-                            >{{ nativeInputValueLength }} / {{ maxlength }}</span>
-                        </template>
-                    </span>
-                </span>
-        </div>
-        <template v-if="$slots.append">
-            <div
-                :class="[ns.em('group', 'append')]"
-            >
-                <slot name="append" />
-            </div>
+            <template v-if="showWordLimit && maxlength > 0">
+                <span
+                    :class="[nsInput.e('count')]"
+                >{{ nativeInputValueLength }} / {{ maxlength }}</span>
+            </template>
         </template>
     </div>
 </template>
@@ -100,7 +127,8 @@ import SIcon from '@sakura-ui/components/icon'
 import { CircleClose, Hide, View } from '@element-plus/icons-vue'
 
 type TargetElement = HTMLInputElement | HTMLTextAreaElement
-const ns = useNamespace('input')
+const nsInput = useNamespace('input')
+const nsTextarea = useNamespace('textarea')
 const props = defineProps(inputProps)
 const emits = defineEmits(inputEmits)
 const inputId = useId()

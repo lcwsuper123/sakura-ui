@@ -48,6 +48,16 @@
             :maxlength="10"
             show-word-limit
         />
+        <s-input
+            v-model="value"
+            type="textarea"
+        />
+        <s-input
+            v-model="value"
+            type="textarea"
+            :maxlength="10"
+            show-word-limit
+        />
     </div>
 </template>
 <script lang="ts" setup>
@@ -62,7 +72,7 @@ const value = ref('')
     display: flex;
     flex-flow: column;
 
-    .s-input {
+    .s-input, .s-textarea {
         margin-bottom: 20px;
     }
 }

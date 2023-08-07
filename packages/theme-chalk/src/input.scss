@@ -56,6 +56,14 @@ $input-font-size: map.merge(
             }
         }
     }
+    @include when(exceed) {
+        @include e(wrapper) {
+            border-color: getCssVar('color', 'danger');
+        }
+        @include e(count) {
+            color: getCssVar('color', 'danger');
+        }
+    }
     @include e(wrapper) {
         display: inline-flex;
         align-items: center;
@@ -86,7 +94,7 @@ $input-font-size: map.merge(
         white-space: nowrap;
         flex-shrink: 0;
         flex-wrap: nowrap;
-        width: 22px;
+        min-width: 22px;
         height: 100%;
         text-align: center;
         pointer-events: none;
@@ -162,5 +170,82 @@ $input-font-size: map.merge(
                 padding: 0px map.get($input-padding, $size);
             }
         }
+    }
+}
+
+@include b(textarea) {
+    @include set-component-css-var('textarea', $input);
+}
+
+@include b(textarea) {
+    position: relative;
+    vertical-align: bottom;
+    display: inline-flex;
+    width: 100%;
+    //font-size: map.get($input-font-size, 'default');
+    font-size: getCssVar('font-size', 'base');
+    color: getCssVar('textarea', 'text-color');
+    border-radius: getCssVar('textarea', 'border-radius');
+    @include e(inner) {
+        position: relative;
+        display: block;
+        resize: vertical;
+        width: 100%;
+        font-size: inherit;
+        font-family: inherit;
+        padding: 5px 11px;
+        line-height: 1.5;
+        border: none;
+        color: getCssVar('textarea', 'text-color');
+        background-color: getCssVar('textarea', 'bg-color');
+        background-image: none;
+        box-shadow: 0 0 0 1px getCssVar('input', 'border-color') inset;
+        border-radius: getCssVar('textarea', 'border-radius');
+        border: getCssVar('border');
+        outline: none;
+        box-sizing: border-box;
+        min-height: 31px;
+    }
+    @include when(focus) {
+        @include e(inner) {
+            border-color: getCssVar('color', 'primary');
+        }
+    }
+    @include when(exceed) {
+        @include e(inner) {
+            border-color: getCssVar('color', 'danger');
+        }
+        @include e(count) {
+            color: getCssVar('color', 'danger');
+        }
+    }
+    @include when(disabled) {
+        cursor: not-allowed;
+        @include e(inner) {
+            cursor: not-allowed;
+            color: getCssVar('disabled', 'text-color');
+            border-color: getCssVar('disabled', 'border-color');
+            background: getCssVar('disabled', 'bg-color');
+        }
+        .#{$namespace}-input__count {
+            background-color: transparent;
+        }
+    }
+    @each $size in (small, large) {
+        @include m($size) {
+            font-size: map.get($input-font-size, $size);
+        }
+
+    }
+    .#{$namespace}-input__count {
+        display: inline-flex;
+        align-items: center;
+        color: getCssVar('color', 'info');
+        font-size: 12px;
+        position: absolute;
+        right: 10px;
+        bottom: 5px;
+        line-height: 14px;
+        background-color: getCssVar('fill', 'color-blank');
     }
 }
