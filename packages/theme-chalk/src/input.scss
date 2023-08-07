@@ -205,6 +205,9 @@ $input-font-size: map.merge(
         outline: none;
         box-sizing: border-box;
         min-height: 31px;
+        &::-webkit-input-placeholder {
+            color: getCssVar('text-color', 'placeholder');
+        }
     }
     @include when(focus) {
         @include e(inner) {

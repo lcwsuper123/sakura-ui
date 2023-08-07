@@ -58,6 +58,7 @@
             :maxlength="10"
             show-word-limit
             disabled
+            placeholder="2222"
         />
     </div>
 </template>
