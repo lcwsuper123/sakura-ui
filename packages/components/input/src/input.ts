@@ -68,7 +68,11 @@ export const inputProps = buildProps({
 
 export const inputEmits = {
     [UPDATE_MODEL_EVENT]: (value: string | number | boolean) => isString(value) || isNumber(value) || isBoolean(value),
-    [CHANGE_EVENT]: (value: string | number | boolean) => isString(value) || isNumber(value) || isBoolean(value)
+    [CHANGE_EVENT]: (value: string | number | boolean) => isString(value) || isNumber(value) || isBoolean(value),
+    focus: (evt: FocusEvent) => evt instanceof FocusEvent,
+    blur: (evt: FocusEvent) => evt instanceof FocusEvent,
+    clear: () => true,
+    keydown: (evt: KeyboardEvent) => evt instanceof KeyboardEvent
 }
 
 

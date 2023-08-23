@@ -51,9 +51,10 @@
                     :max="max"
                     :min="min"
                     :step="step"
-                    @focus="isFocus = true"
-                    @blur="isFocus = false"
+                    @focus="onFocus"
+                    @blur="onBlur"
                     @input="handleInput"
+                    @keydown="handleKeydown"
                 />
                 <template v-if="suffixVisible">
                     <span
@@ -110,6 +111,7 @@
                 @focus="isFocus = true"
                 @blur="isFocus = false"
                 @input="handleInput"
+                @keydown="handleKeydown"
             />
             <template v-if="isShowWordLimit">
                 <span
@@ -122,7 +124,7 @@
 <script lang="ts" setup>
 import { computed, nextTick, onMounted, ref, unref, watch } from 'vue'
 import type { ComputedRef } from 'vue'
-import { inputProps, inputEmits, type InputProps } from './input'
+import { inputProps, inputEmits, type InputProps, InputEmits } from './input'
 import { useFormDisabled, useId, useNamespace } from '@sakura-ui/hooks'
 import { CHANGE_EVENT, UPDATE_MODEL_EVENT } from '@sakura-ui/constants'
 import SIcon from '@sakura-ui/components/icon'
@@ -185,6 +187,7 @@ const toggleInputType = () => {
 const clearableValue = async () => {
     setCurrentValue('')
     await nextTick()
+    emits('clear', true)
     unref(inputRef)?.focus()
 }
 // 后缀图标按钮点击事件
@@ -221,6 +224,15 @@ const handleInput = async (event: Event) => {
     await nextTick()
     setNativeInputValue()
 }
+const onFocus = (event: FocusEvent) => {
+    isFocus.value = true
+    emits('focus', event)
+}
+const onBlur = (event: FocusEvent) => {
+    isFocus.value = false
+    emits('blur', event)
+}
+const handleKeydown = (event: KeyboardEvent) => emits('keydown', event)
 </script>
 <style scoped lang="scss">
 </style>

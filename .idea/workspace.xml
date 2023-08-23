@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc07c7b1-2ef1-4c9d-8a8d-3936042bd441" name="变更" comment="input完成prepend与append插槽" />
+    <list default="true" id="cc07c7b1-2ef1-4c9d-8a8d-3936042bd441" name="变更" comment="select 暂缓">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/components/input/src/input.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/components/input/src/input.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/components/input/src/input.vue" beforeDir="false" afterPath="$PROJECT_DIR$/packages/components/input/src/input.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/play/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/play/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/play/src/components/Input.vue" beforeDir="false" afterPath="$PROJECT_DIR$/play/src/components/Input.vue" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,7 +30,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Work/sakura-ui&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Work/sakura-slide-verify&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -238,55 +244,12 @@
       <workItem from="1690768689553" duration="942000" />
       <workItem from="1690855746394" duration="2417000" />
       <workItem from="1691028977775" duration="6463000" />
-    </task>
-    <task id="LOCAL-00013" summary="整理在线庭审">
-      <created>1679554124327</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1679554124327</updated>
-    </task>
-    <task id="LOCAL-00014" summary="整理在线庭审">
-      <created>1679554893260</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1679554893260</updated>
-    </task>
-    <task id="LOCAL-00015" summary="收款账户书">
-      <created>1679556175944</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1679556175944</updated>
-    </task>
-    <task id="LOCAL-00016" summary="funcation.scss完善与了解">
-      <created>1680075722590</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1680075722590</updated>
-    </task>
-    <task id="LOCAL-00017" summary="var.scss完善">
-      <created>1680772909770</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1680772909770</updated>
-    </task>
-    <task id="LOCAL-00018" summary="button增加tag属性">
-      <created>1683190632798</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1683190632798</updated>
-    </task>
-    <task id="LOCAL-00019" summary="switch组件架构搭建">
-      <created>1683621709602</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1683621709602</updated>
+      <workItem from="1691370822129" duration="13240000" />
+      <workItem from="1691394556478" duration="775000" />
+      <workItem from="1691725783681" duration="736000" />
+      <workItem from="1691741689356" duration="10000" />
+      <workItem from="1692672209398" duration="1211000" />
+      <workItem from="1692757621132" duration="959000" />
     </task>
     <task id="LOCAL-00020" summary="switch组件架构搭建">
       <created>1683624027907</created>
@@ -582,7 +545,56 @@
       <option name="project" value="LOCAL" />
       <updated>1691043040251</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="input完成showWordLimit">
+      <created>1691373222379</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1691373222379</updated>
+    </task>
+    <task id="LOCAL-00063" summary="input添加textarea">
+      <created>1691378104178</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1691378104180</updated>
+    </task>
+    <task id="LOCAL-00064" summary="完善showWordLimit显示逻辑">
+      <created>1691378510329</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1691378510329</updated>
+    </task>
+    <task id="LOCAL-00065" summary="完善showWordLimit显示逻辑">
+      <created>1691378585196</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1691378585196</updated>
+    </task>
+    <task id="LOCAL-00066" summary="textarea完成placeholder样式">
+      <created>1691378661681</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1691378661681</updated>
+    </task>
+    <task id="LOCAL-00067" summary="通过el-ui修改sakura-ui">
+      <created>1691380109172</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1691380109172</updated>
+    </task>
+    <task id="LOCAL-00068" summary="select 暂缓">
+      <created>1691390822575</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1691390822575</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -600,12 +612,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="switch loading" />
-    <MESSAGE value="switch before-change" />
-    <MESSAGE value="radio before-change" />
-    <MESSAGE value="radio-button handleChange" />
-    <MESSAGE value="useRadio实现双向绑定。&#10;useRadio _checked 判断条件重写&#10;radio-button 实现双向绑定" />
-    <MESSAGE value="s-radio实现于s-radio-group双向绑定" />
     <MESSAGE value="radio-group 实现&#10;textColor: 按钮形式的 Radio 激活时的文本颜色&#10;fill: 按钮形式的 Radio 激活时的填充色和边框色&#10;功能&#10;radio-button添加checkedStyle方法，该方法依赖于textColor, fill" />
     <MESSAGE value="实现use-id -hooks&#10;radio组件完成change事件&#10;radio-group组件完成change事件&#10;radio-group组件完成id属性" />
     <MESSAGE value="input-number 初始化" />
@@ -625,7 +631,13 @@
     <MESSAGE value="input 完成formatter和parse" />
     <MESSAGE value="完成showPassword" />
     <MESSAGE value="input完成prepend与append插槽" />
-    <option name="LAST_COMMIT_MESSAGE" value="input完成prepend与append插槽" />
+    <MESSAGE value="input完成showWordLimit" />
+    <MESSAGE value="input添加textarea" />
+    <MESSAGE value="完善showWordLimit显示逻辑" />
+    <MESSAGE value="textarea完成placeholder样式" />
+    <MESSAGE value="通过el-ui修改sakura-ui" />
+    <MESSAGE value="select 暂缓" />
+    <option name="LAST_COMMIT_MESSAGE" value="select 暂缓" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/sakura_ui$Button_vue_create.info" NAME="Button.vue.create 覆盖结果" MODIFIED="1682074172275" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="VitestJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

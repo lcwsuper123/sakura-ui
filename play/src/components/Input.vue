@@ -1,11 +1,15 @@
 <template>
     <div class="input">
-        value---{{ value }}
         <s-input
             v-model="value"
             placeholder="请输入"
         />
-        <s-input size="small" />
+        <s-input
+            size="small"
+            v-model="value"
+            @clear="onBlur"
+            clearable
+        />
         <s-input size="large" />
         <s-input
             size="large"
@@ -70,6 +74,9 @@ import { ref } from 'vue'
 import SInput from '@sakura-ui/components/input'
 import { Search, Loading } from '@element-plus/icons-vue'
 const value = ref('')
+const onBlur = (e: any) => {
+    console.log('blur---', e)
+}
 </script>
 <style scoped lang="scss">
 .input {
